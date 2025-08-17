@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EldenAion Wiki - Leveling</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<style>
+
+    :root {
+            --primary-color: #4a2c82;
+            --secondary-color: #6a3cb5;
+            --accent-color: #81725b;
+            --text-color: #f0f0f0;
+            --bg-color: #000000;
+            --card-bg: #2a2a2a;
+            --section-bg: #222222;
+        }
+
+  .card {
+            background-color: var(--card-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #333;
+        }
+        
+        .note {
+            background-color: #3a3a3a;
+            padding: 30px;
+            border-left: 4px solid var(--accent-color);
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .tab-container {
+            margin: 20px 0;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #444;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: transparent;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-btn.active {
+            border-bottom: 3px solid var(--accent-color);
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 0 0 6px 6px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        } </style>
+<body>
+    <header>
+        <img class="elden_logo" src="media/elden_logo.webp">
+        <div class="container">
+            <h1>Welcome to EldenAion Comprehensive Guide</h1>
+            <p class="subtitle">
+                In this Wiki we will explain everything you need to know in EldenAion; note that these are only recommendations
+                and notes for new comers, and perhaps some notes for veteran players too.
+            </p>
+        </div>
+    </header>
+    <main class="container">
+    <section id="leveling" class="section">
+            <h2>Leveling Guide</h2>
+            <div class="card_2">
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" onclick="openTab(event, 'asmodian')">Asmodian</button>
+                        <button class="tab-btn" onclick="openTab(event, 'elyos')">Elyos</button>
+                    </div>
+                    
+                    <div id="asmodian" class="tab-content active">
+                        <table>
+                            <tr>
+                                <th>Level Range</th>
+                                <th>Activity</th>
+                            </tr>
+                            <tr>
+                                <td>1-16</td>
+                                <td>Kill mobs in Ishaigen while heading to Munin<br>Farm mobs in Altgard until ~Lv16</td>
+                            </tr>
+                            <tr>
+                                <td>16+</td>
+                                <td>Move to Haramel for faster EXP</td>
+                            </tr>
+                            <tr>
+                                <td>20+</td>
+                                <td>Nochsans Training Camp</td>
+                            </tr>
+                            <tr>
+                                <td>25+</td>
+                                <td>Campaign quests + Free Temple or Alquimis Lab</td>
+                            </tr>
+                            <tr>
+                                <td>30+</td>
+                                <td>Do easy campaigns + Brushboim quests</td>
+                            </tr>
+                            <tr>
+                                <td>35+</td>
+                                <td>Grind Theoborros Lab</td>
+                            </tr>
+                            <tr>
+                                <td>40+</td>
+                                <td>Clear Dark Poeta (color or duo depending on class)</td>
+                            </tr>
+                            <tr>
+                                <td>45+</td>
+                                <td>Run Beahmundir Temple (color if magical, duo if physical)</td>
+                            </tr>
+                            <tr>
+                                <td>50+</td>
+                                <td>Farm Dark Poeta for Kinah and do Sappan/Tiamaranta campaigns</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div id="elyos" class="tab-content">
+                        <table>
+                            <tr>
+                                <th>Level Range</th>
+                                <th>Activity</th>
+                            </tr>
+                            <tr>
+                                <td>1-16</td>
+                                <td>Kill mobs in Poeta while moving<br>Kill mobs in Vertex</td>
+                            </tr>
+                            <tr>
+                                <td>16+</td>
+                                <td>Kill Vertex for the near Ardus Shrine entrance until you can switch to killing monsters in Nx.</td>
+                            </tr>
+                            <tr>
+                                <td>20+</td>
+                                <td>Nochsans Training C</td>
+                            </tr>
+                            <tr>
+                                <td>25+</td>
+                                <td>Campaign quests + Free</td>
+                            </tr>
+                            <tr>
+                                <td>30+</td>
+                                <td>Campaign quests + mind in Aer</td>
+                            </tr>
+                            <tr>
+                                <td>35+</td>
+                                <td>Grind Adina Strongi</td>
+                            </tr>
+                            <tr>
+                                <td>40+</td>
+                                <td>Clear Dark Poeta (earns</td>
+                            </tr>
+                            <tr>
+                                <td>45+</td>
+                                <td>Run Beahmundir Temple (as</td>
+                            </tr>
+                            <tr>
+                                <td>50+</td>
+                                <td>Farm Dark Poeta for Kinah and do Sappan</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="note">
+                    <h4>Notes</h4>
+                    <ul>
+                        <li>Be sure to complete some Campaign (yellow) quests to collect enough Prism Cores for the Level 50 AP gear (E50 set)</li>
+                        <li>If you'd prefer not to skip too much content, you can simply focus on progressing through the Campaign and some blue quests</li>
+                        <li>Don't forget: XP amulets are easy to obtain! Just vote for the server daily to earn Lumen, which you can use to get XP boosts. Additionally, you'll receive Free Siel's Blessings every 2 hours (up to 2 per day)</li>
+                        <li>Pro tip: You can create a second account to hold a group for yourself if you want to solo instances</li>
+                        <li>Save all Coins (Silver, Gold, Platinum) – they can be used to buy PvP accessories from Coin Chests available at camp NPCs</li>
+                    </ul>
+                </div>
+                
+                <h3>Side Activities</h3>
+                <p>These are useful tasks you can complete while leveling to ensure a smooth and efficient start on the server</p>
+                
+                <h4>Platinum Coins</h4>
+                <p>You can get e50 AP accessories from Platinum Coin Chests that will serve as your starter PvP accessories. You can find a full guide here.</p>
+                
+                <h4>Daily Reward</h4>
+                <p>Don't forget to claim your daily reward from the Shop – it includes potions, scrolls, and a Level 85 Enchantment Stone. You will find the daily reward in "Atreia Reward" tab in in-game shop</p>
+                
+                <h4>Starter Manastones</h4>
+                <p>As you level, look out for special pink quests. These provide bonus EXP and reward you with Level 50 Manastones, perfect for early endgame gearing. A full guide is available here.</p>
+            </div>
+        </section>
+    </main>
+       <script>
+        function openTab(evt, tabName) {
+            // Hide all tab contents
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tab buttons
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            // Show the current tab and add active class to the button
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <footer>
+       <p class="copyright" style="margin-top: 42px;color: rgb(61,61,61);font-size: 16px; text-shadow: none !important; opacity: 0.9;">                                Elden Aion is an Europe Retail Like Version 3.9 non profit Aion Private Server of the game Aion provided for educational and non profit purposes.                                <br> Aion is developed by NCSoft and published in Europe by Gameforge.                                <br> All trademarks belong to their respective owners.                                <br><br> This website is not affiliated with NCSoft or any other third parties.                                <br> Website Copyright © 2025 - EldenAion.com                                <br></p>
+    </footer>
+</body>
+
+</html>

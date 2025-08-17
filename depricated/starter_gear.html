@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EldenAion Wiki - Starter Gear</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<style>
+ .section {
+            background-color: var(--section-bg);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    :root {
+            --primary-color: #4a2c82;
+            --secondary-color: #6a3cb5;
+            --accent-color: #81725b;
+            --text-color: #f0f0f0;
+            --bg-color: #000000;
+            --card-bg: #2a2a2a;
+            --section-bg: #222222;
+        }
+
+  .card {
+            background-color: var(--card-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #333;
+        }
+        
+        .note {
+            background-color: #3a3a3a;
+            padding: 30px;
+            border-left: 4px solid var(--accent-color);
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .tab-container {
+            margin: 20px 0;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #444;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: transparent;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-btn.active {
+            border-bottom: 3px solid var(--accent-color);
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 0 0 6px 6px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        } </style>
+<body>
+    <header>
+        <img class="elden_logo" src="media/elden_logo.webp">
+        <div class="container">
+            <h1>Welcome to EldenAion Comprehensive Guide</h1>
+            <p class="subtitle">
+                In this Wiki we will explain everything you need to know in EldenAion; note that these are only recommendations
+                and notes for new comers, and perhaps some notes for veteran players too.
+            </p>
+        </div>
+    </header>
+    <main class="container">
+   <section id="starter-gear" class="section">
+            <h2>Starter Gear</h2>
+            <div class="">
+                <h3>What is Starter Gear?</h3>
+                <p>Starter Gear is a special set of 3 weapons and 1 armor set designed to help you level up quickly.</p>
+                <p>It's equivalent in stats to level 50 Daevanion gear, making it strong for early and mid-game content.</p>
+                
+                <ul>
+                    <li>The gear cannot be enchanted or socketed, but:
+                        <ul>
+                            <li>You can enchant and socket the weapons</li>
+                            <li>You can armfuse them with another Starter or e50 weapon for extra power</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="note">
+                    <p><strong>Note:</strong> This gear is completely optional. Feel free to skip it if you prefer a more classic experience!</p>
+                </div>
+                
+                <h3>Where to get it?</h3>
+                <p>You'll receive the full set by completing the "A Ceremony in Pandaemonium" (Asmo) or "A Ceremony in Sanctum" (Elyos) quest – right after Ascension!</p>
+            </div>
+        </section>
+    </main>
+       <script>
+        function openTab(evt, tabName) {
+            // Hide all tab contents
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tab buttons
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            // Show the current tab and add active class to the button
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <footer>
+       <p class="copyright" style="margin-top: 42px;color: rgb(61,61,61);font-size: 16px; text-shadow: none !important; opacity: 0.9;">                                Elden Aion is an Europe Retail Like Version 3.9 non profit Aion Private Server of the game Aion provided for educational and non profit purposes.                                <br> Aion is developed by NCSoft and published in Europe by Gameforge.                                <br> All trademarks belong to their respective owners.                                <br><br> This website is not affiliated with NCSoft or any other third parties.                                <br> Website Copyright © 2025 - EldenAion.com                                <br></p>
+    </footer>
+</body>
+
+</html>

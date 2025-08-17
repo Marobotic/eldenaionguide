@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EldenAion Wiki - Atreia Pass</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<style>
+
+    :root {
+            --primary-color: #4a2c82;
+            --secondary-color: #6a3cb5;
+            --accent-color: #81725b;
+            --text-color: #f0f0f0;
+            --bg-color: #000000;
+            --card-bg: #2a2a2a;
+            --section-bg: #222222;
+        }
+
+  .card {
+            background-color: var(--card-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #333;
+        }
+        
+        .note {
+            background-color: #3a3a3a;
+            padding: 30px;
+            border-left: 4px solid var(--accent-color);
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .tab-container {
+            margin: 20px 0;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #444;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: transparent;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-btn.active {
+            border-bottom: 3px solid var(--accent-color);
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 0 0 6px 6px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        } </style>
+<body>
+    <header>
+        <img class="elden_logo" src="media/elden_logo.webp">
+        <div class="container">
+            <h1>Welcome to EldenAion Comprehensive Guide</h1>
+            <p class="subtitle">
+                In this Wiki we will explain everything you need to know in EldenAion; note that these are only recommendations
+                and notes for new comers, and perhaps some notes for veteran players too.
+            </p>
+        </div>
+    </header>
+    <main class="container">
+  
+        <section id="atreia-pass" class="section">
+            <h2>Atreia Pass</h2>
+            <div class="">
+                <h3>What is Atreia Pass?</h3>
+                <p>The Atreia Pass is a non-pay-to-win (non-PZW) loyalty system. By completing missions and running instances, players earn tokens that allow them to progress through the pass. These tokens can be exchanged on the official website for exclusive rewards.</p>
+                <p>Rewards include cosmetics, consumables, and character-enhancing items. The system is designed to keep players engaged by offering valuable bonuses in return for their time and dedication.</p>
+                
+                <h3>Ways to obtain Atreia Pass Tokens</h3>
+                <ol>
+                    <li><strong>Staying online</strong><br>For every hour you spend in-game, you earn 1 token</li>
+                    <li><strong>Completing Campaign Quests</strong><br>Finish yellow campaign quests to receive additional tokens (one time only)</li>
+                    <li><strong>Defeating Final Bosses</strong><br>Earn tokens by killing final bosses in endgame instances and open-world content</li>
+                    <li><strong>Doing Daily & Weekly Quests</strong><br>Tokens are also rewarded for completing <strong>daily and weekly quests</strong>, as well as certain <strong>normal (blue)</strong> quests.</li>
+                </ol>
+                
+                <div class="note">
+                    <p>→ You can find the full list of quests that give tokens here</p>
+                </div>
+                
+                <h3>Exchanging Atreia Pass Tokens</h3>
+                <ol>
+                    <li>Log out from the game (Character Selection works too)</li>
+                    <li>Go to Elden Aion Website and log in</li>
+                    <li>Click on "Atreia Pass"</li>
+                    <li>Select your character name</li>
+                    <li>Click on "Exchange Tokens"</li>
+                    <li>Based on the amount exchanged, click the bonuses — they will be delivered via Express Mail in-game</li>
+                </ol>
+            </div>
+        </section>
+        
+    </main>
+       <script>
+        function openTab(evt, tabName) {
+            // Hide all tab contents
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tab buttons
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            // Show the current tab and add active class to the button
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <footer>
+       <p class="copyright" style="margin-top: 42px;color: rgb(61,61,61);font-size: 16px; text-shadow: none !important; opacity: 0.9;">                                Elden Aion is an Europe Retail Like Version 3.9 non profit Aion Private Server of the game Aion provided for educational and non profit purposes.                                <br> Aion is developed by NCSoft and published in Europe by Gameforge.                                <br> All trademarks belong to their respective owners.                                <br><br> This website is not affiliated with NCSoft or any other third parties.                                <br> Website Copyright © 2025 - EldenAion.com                                <br></p>
+    </footer>
+</body>
+
+</html>

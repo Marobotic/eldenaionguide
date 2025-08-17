@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden Aion 3.9 Quests guide</title>
+    <style>
+    :root {
+        --primary: #333333;
+        --secondary: #444444;
+        --accent: #ff6600;
+        --text: #f5f5f5;
+        --background: #121212;
+        --card-bg: #1e1e1e;
+        --highlight: #ff6600;
+        --level-color: #ffcc00;
+        --faction-text: #ff9900;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background-color: var(--background);
+        color: var(--text);
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    .container {
+
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 30px;
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    /* If you want to adjust specific elements differently: */
+    h1 {
+        font-size: 2.8rem;
+        /* Slightly larger */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        /* Optional: adds depth */
+    }
+
+    h1,
+    h2,
+    #faction-title,
+    #map-title,
+    .faction-title {
+        font-family: 'Philosopher', sans-serif;
+        font-weight: 700;
+        /* Bold weight */
+        text-transform: uppercase;
+        /* Optional: makes titles all caps */
+        letter-spacing: 1px;
+        /* Optional: improves readability */
+    }
+
+    .intro-text {
+        background-color: var(--card-bg);
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        animation: slideUp 0.4s ease-out;
+    }
+
+    .faction-selection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin: 40px 0;
+        animation: fadeIn 0.6s ease-out;
+    }
+
+    .faction-title {
+        color: var(--faction-text);
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .faction-title.hidden {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    #faction-title,
+    #map-title {
+        font-size: 2rem;
+        color: var(--highlight);
+        /* Use your orange highlight color */
+        margin-bottom: 20px;
+    }
+
+    .faction-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .faction-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        transform: scale(1);
+        filter: grayscale(30%);
+    }
+
+    .faction-btn:hover {
+        transform: scale(1.05);
+        filter: grayscale(0%);
+    }
+
+    .faction-btn img {
+        width: 150px;
+        height: auto;
+        border-radius: 50%;
+        border: 3px solid transparent;
+    }
+
+    .faction-btn.active img {
+        border-color: var(--highlight);
+        box-shadow: 0 0 15px var(--highlight);
+        filter: grayscale(0%);
+    }
+
+    .maps-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+        animation: fadeIn 0.7s ease-out;
+    }
+
+    .map-card {
+        background-color: var(--card-bg);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .map-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .map-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .map-card h3 {
+        padding: 15px;
+        text-align: center;
+        background-color: var(--primary);
+        color: white;
+    }
+
+    .quests-container {
+        display: flex;
+        margin-top: 30px;
+        gap: 20px;
+        animation: slideUp 0.5s ease-out;
+        height: calc(100vh - 300px);
+        /* Adjust based on your header height */
+    }
+
+    /* Update the quests-list style */
+    .quests-list {
+        width: 300px;
+        /* Fixed width for sidebar */
+        min-width: 300px;
+        /* Prevent shrinking */
+        background-color: var(--card-bg);
+        border-radius: 8px 0 0 8px;
+        padding: 15px;
+        overflow-y: auto;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        height: 100%;
+    }
+
+    .quest-item {
+        padding: 12px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 165, 0, 0.2);
+        /* Orange accent */
+    }
+
+    .quest-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .quest-item.active {
+        background-color: var(--primary);
+        border-left: 4px solid var(--highlight);
+    }
+
+    .quest-level {
+        color: #FFCC00;
+        /* Dark yellow */
+        font-family: 'Philosopher', sans-serif;
+        font-weight: bold;
+        margin-right: 8px;
+    }
+
+    .quest-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        vertical-align: middle;
+        content: url('quest.png');
+    }
+
+    .video-container {
+        flex: 1;
+        position: relative;
+        background-color: var(--card-bg);
+        border-radius: 0 8px 8px 0;
+        padding: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        display: flex;
+        align-items: stretch;
+        /* Changed from center to stretch */
+        justify-content: center;
+    }
+
+    /* Placeholder remains unchanged */
+    .video-placeholder {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Make video-wrapper fill container */
+    .video-wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .video-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+        min-height: 68vh;
+    }
+
+    .close-video {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        background-color: var(--accent);
+        color: white;
+        border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: all 0.2s ease;
+    }
+
+    .close-video:hover {
+        transform: scale(1.1);
+    }
+
+    .back-btn {
+        background-color: var(--secondary);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .back-btn:hover {
+        background-color: var(--accent);
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .quests-container {
+            flex-direction: column;
+        }
+
+        .quests-list {
+            max-width: 100%;
+            max-height: 300px;
+        }
+
+        .video-container {
+            min-height: 300px;
+        }
+
+        .maps-container {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+
+        .faction-buttons {
+            gap: 20px;
+        }
+
+        .faction-btn img {
+            width: 120px;
+        }
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--highlight);
+    }
+
+    .quest-tip {
+        color: #7c776b !important;
+    }
+
+    .counter-text {
+        color: var(--highlight);
+        font-family: 'Philosopher', sans-serif;
+        margin: -15px 0 20px 0;
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    .loading-text {
+        color: var(--level-color);
+        text-align: center;
+        padding: 10px;
+        font-style: italic;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Elden Aion 3.9 Quests Guide</h1>
+            <div class="intro-text">
+                <p>The following list of quests will show you a video guide from various content creators, and various patches, yet it will remain helpful information for our users who are questing to look at, as questing remains the same regardless. Mind you, videos are 9-10 years old and may have poorer quality than today's standards.</p>
+            </div>
+        </header>
+        <main>
+            <!-- Faction Selection Screen -->
+            <div id="faction-screen">
+                <div class="faction-selection">
+                    <h2 class="faction-title" id="faction-select-text">Please select your faction</h2>
+                    <h3 id="faction-quest-count" class="counter-text"></h3>
+                    <div class="faction-buttons">
+                        <button class="faction-btn" data-faction="elyos">
+                            <img src="Elyos.png" alt="Elyos Logo">
+                        </button>
+                        <button class="faction-btn" data-faction="asmodian">
+                            <img src="Asmodian.png" alt="Asmodian Logo">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Maps Selection Screen -->
+            <div id="maps-screen" class="hidden">
+                <button class="back-btn" id="back-to-faction">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Factions
+                </button>
+                <h2 id="faction-title"></h2>
+                <div class="maps-container" id="maps-container"></div>
+            </div>
+            <!-- Quests Screen -->
+            <div id="quests-screen" class="hidden">
+                <button class="back-btn" id="back-to-maps">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Maps
+                </button>
+                <h2 id="map-title"></h2>
+                <h3 id="map-quest-count" class="counter-text"></h3>
+                <div id="loading-status" class="loading-text"></div>
+                <div class="quests-container">
+                    <div class="quests-list" id="quests-list"></div>
+                    <div class="video-container">
+                        <div class="video-placeholder" id="video-placeholder">
+                            <p>Select a quest to view its video guide</p>
+                        </div>
+                        <div class="video-wrapper hidden" id="video-wrapper">
+                            <button class="close-video" id="close-video">X</button>
+                            <div id="video-player"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+    // Quest data structure
+    const questDatabase = {
+        elyos: {
+            poeta: [
+                { id: "e1001", title: "Kalio's Call", level: 1, tip: "Starting quest in Poeta", youtubeId: "guTj8LdvLkg" },
+                { id: "e1002", title: "The Kerubim Threat", level: 3, tip: "Elim village quest", youtubeId: "VP4TLB8ek9g" },
+                { id: "e1003", title: "Request of the Elim", level: 5, tip: "North of Verteron Citadel", youtubeId: "mZ-xGUbKHJQ" },
+                { id: "e1004", title: "Illegal Logging", level: 7, tip: "Near the lumber mill", youtubeId: "iJ8ECMZMuiI" },
+                { id: "e1005", title: "Neutralizing Odium", level: 8, tip: "Requires killing Odium", youtubeId: "-sTbuSWwIMI" },
+                { id: "e1006", title: "Barring the Gate", level: 9, tip: "Final defense quest", youtubeId: "spOnNej2Oro" },
+                { id: "e1007", title: "Ascension", level: 9, tip: "Class change quest", youtubeId: "vunWfqpZ7gM" }
+            ],
+            verteron: [
+                { id: "e1009", title: "Summons to the Citadel", level: 10, tip: "Verteron Citadel quest", youtubeId: "OUHx-aQpUd0" },
+                { id: "e1010", title: "Danger From Above", level: 11, tip: "Harpy elimination quest", youtubeId: "dpIutPmaRPw" },
+                { id: "e1011", title: "Masked Loiterers", level: 12, tip: "Lepharist spy investigation", youtubeId: "vRJK27I95LY" },
+                { id: "e1012", title: "Hunting Lepharist Revolutionaries", level: 13, tip: "Revolutionary camp cleanup", youtubeId: "rPeGsAB6NvA" },
+                { id: "e1013", title: "Odium in the Dukaki Settlement", level: 15, tip: "Dukaki ruins battle", youtubeId: "KjIG4hLI6g0" },
+                { id: "e1014", title: "Frillneck Hunt", level: 16, tip: "Frillneck lizard elimination", youtubeId: "hGCEt7nJYSo" },
+                { id: "e1015", title: "Trandila's Eggs", level: 17, tip: "Egg collection quest", youtubeId: "rZiQ4sTPpZU" },
+                { id: "e1016", title: "Source of the Pollution", level: 18, tip: "Contamination investigation", youtubeId: "LGzLdgkVfsI" },
+                { id: "e1017", title: "Held Sacred", level: 18, tip: "Ancient artifact recovery", youtubeId: "bcDfBYkrLl0" },
+                { id: "e1018", title: "Mark Of Vengeance", level: 21, tip: "Advanced combat trial", youtubeId: "grN8eIjtfOc" },
+                { id: "e1019", title: "Flying Reconnaissance", level: 19, tip: "Aerial scouting mission in Verteron", youtubeId: "91xAF2kPQqE" },
+                { id: "e1020", title: "Krall Desecration", level: 19, tip: "Investigate Krall activities", youtubeId: "_92mosaqKIM" },
+                { id: "e1021", title: "A Nest of Lepharists", level: 21, tip: "Eliminate Lepharist hideout", youtubeId: "zotf744hViY" },
+                { id: "e1023", title: "Sealing the Abyss Gate", level: 21, tip: "Secure the Abyss portal", youtubeId: "ccuAoQz-Euk" }
+            ],
+            eltnen: [
+                { id: "e1024", title: "The Manduri's Secret", level: 21, tip: "Investigate Manduri activities", youtubeId: "OEthQ2iQ06A" },
+                { id: "e1025", title: "A Ruler's Duty", level: 23, tip: "Leadership responsibilities quest", youtubeId: "jnX144JO-Ko" },
+                { id: "e1026", title: "Sataloca's Heart", level: 25, tip: "Sataloca monster hunt", youtubeId: "za0JZQ6tEDU" },
+                { id: "e1032", title: "Disappearing Aether", level: 26, tip: "Aether conservation mission", youtubeId: "GQ8irMahoss" },
+                { id: "e1033", title: "Kaidan Prisoner", level: 29, tip: "Prisoner rescue operation", youtubeId: "kZs-VHxW2Wo" },
+                { id: "e1034", title: "Secrets of the Temple", level: 30, tip: "Ancient temple exploration", youtubeId: "Ezn2kn5EpzE" },
+                { id: "e1035", title: "Refreshing the Springs", level: 31, tip: "Healing springs restoration", youtubeId: "wwNp56-73TU" },
+                { id: "e1037", title: "The Shadow's Command", level: 34, tip: "Covert operations mission", youtubeId: "Okx6_vyZS9c" },
+                { id: "e1038", title: "Something in the Water", level: 34, tip: "Water contamination investigation", youtubeId: "YYvcsdmTD1I" },
+                { id: "e1039", title: "Scouting the Scouts", level: 36, tip: "Track enemy reconnaissance units", youtubeId: "0v_vJzkw4b8" },
+                { id: "e1040", title: "A Dangerous Artifact", level: 38, tip: "Secure powerful ancient relic", youtubeId: "LVZk98TVVMQ" },
+                { id: "e1041", title: "Keeper of the Kaidan Key", level: 40, tip: "Obtain access to Kaidan fortress", youtubeId: "KTnd0HftX_U" },
+                { id: "e1042", title: "Balaur Conspiracy", level: 41, tip: "Uncover Balaur infiltration plot", youtubeId: "kcdXhf6IoA4" }
+            ],
+            theobomos: [
+                { id: "t4501", title: "A Request From Atropos", level: 45, tip: "", youtubeId: "H_O9_Nk4NSA" },
+                { id: "t4601", title: "Josnack's Dilemma", level: 46, tip: "", youtubeId: "09naTEzamQs" },
+                { id: "t4801", title: "The Calydon Ruins", level: 48, tip: "", youtubeId: "DmVgLUW_pGE" },
+                { id: "t5001", title: "Project Drakanhammer", level: 50, tip: "", youtubeId: "Bvs5rrWXKpg" }
+            ],
+            heiron: [
+                { id: "h3001", title: "Orders From Perento", level: 30, tip: "", youtubeId: "RRUniKOM3Rw" },
+                { id: "h3002", title: "The Ruins of Roah", level: 32, tip: "", youtubeId: "r4Lu7Ba1tMw" },
+                { id: "h3003", title: "Root of the Rot", level: 34, tip: "", youtubeId: "0DSWw4eMB_c" },
+                { id: "h3004", title: "Power of the Elim", level: 36, tip: "", youtubeId: "uWnij8X5lUs" },
+                { id: "h3005", title: "Lepharist Poison Research", level: 36, tip: "", youtubeId: "EH8IqB7XHkA" },
+                { id: "h3006", title: "Creating a Monster", level: 36, tip: "", youtubeId: "KzqEZkLJl8A" },
+                { id: "h3007", title: "The Klaw Threat", level: 38, tip: "", youtubeId: "bJ2oP3o9C2Q" },
+                { id: "h3008", title: "Eternal Rest", level: 39, tip: "", youtubeId: "nI4O5l0cQT8" },
+                { id: "h3009", title: "The Archon of Storms", level: 41, tip: "", youtubeId: "1lwz0OXBCS0" },
+                { id: "h3010", title: "Aether Insanity", level: 43, tip: "", youtubeId: "Hc95MUXRu4U" },
+                { id: "h3011", title: "Indratu Legion", level: 46, tip: "", youtubeId: "4Nw9jWgh5Vw" },
+                { id: "h3012", title: "Brigadier Indratu", level: 48, tip: "", youtubeId: "MIn4nqk_uxM" }
+            ],
+            sanctum: [
+                { id: "e1008", title: "A Ceremony in Sanctum", level: 10, tip: "Sanctum initiation ritual", youtubeId: "wECd1HPgmMs" },
+                { id: "e1022", title: "A Sliver of Darkness", level: 20, tip: "Investigate dark energy signals", youtubeId: "PHM2YUJ83sA" }
+            ],
+            inggison: [
+                { id: "e1001", title: "Secret of Inggison", level: 50, tip: "", youtubeId: "0uVQRa_j-0g" },
+                { id: "e1002", title: "Proving Yourself to Outremus", level: 51, tip: "", youtubeId: "cUiaQnwgHJQ" },
+                { id: "e1003", title: "Friends for Life", level: 52, tip: "", youtubeId: "HSelC6VOxJo" },
+                { id: "e1004", title: "Support the Inggison Outpost", level: 53, tip: "", youtubeId: "w9ciwFJ7Up0" },
+                { id: "e1005", title: "Sulla's Startling Discovery", level: 53, tip: "", youtubeId: "VkCGnjfw7Ck" },
+                { id: "e1006", title: "Will the Aether Rain?", level: 54, tip: "", youtubeId: "-4WcxCs54PU" },
+                { id: "e1007", title: "It's Better! It's an Obelisk!", level: 55, tip: "", youtubeId: "7zu9t_FEWjM" }
+            ],
+            reshanta: [
+                { id: "e1027", title: "Abyss Training", level: 25, tip: "Basic combat training in the Abyss", youtubeId: "Awfyv9-aSjA" },
+                { id: "e1028", title: "Testing Flight Skills", level: 25, tip: "Master aerial combat maneuvers", youtubeId: "0VcNZanHMFY" },
+                { id: "e1029", title: "Testing Your Mettle", level: 25, tip: "Prove your combat readiness", youtubeId: "KSgiYpPvv90" },
+                { id: "e1030", title: "The Abyss Quiz", level: 25, tip: "Knowledge test about Abyss mechanics", youtubeId: "xDKSAaDgeOQ" },
+                { id: "e1031", title: "Deliver on Your Promises", level: 25, tip: "Final Abyss initiation challenge", youtubeId: "w9DD11sIIgg" },
+                { id: "e1044a", title: "Fragment of Memory I", level: 45, tip: "Recover the first memory fragment", youtubeId: "G4Wl4gLl_Zo", series: 1 },
+                { id: "e1044b", title: "Fragment of Memory II", level: 45, tip: "Recover the second memory fragment", youtubeId: "are2AQR0dNE", series: 2 },
+                { id: "e1044c", title: "Fragment of Memory III", level: 45, tip: "Recover the final memory fragment", youtubeId: "mcLJsOqY6vk", series: 3 }
+            ],
+            sarpan: [
+                { id: "e1008", title: "Assault on Tiamaranta", level: 55, tip: "", youtubeId: "50Nb7ZGI_yY" },
+                { id: "e1009", title: "Something to Prove", level: 56, tip: "", youtubeId: "8o82EuC85r4" },
+                { id: "e1010", title: "Unwelcome Messengers", level: 56, tip: "", youtubeId: "yhPS-KQnAhk" },
+                { id: "e1011", title: "The Protector", level: 56, tip: "", youtubeId: "etXkpsuCL3Y" },
+                { id: "e1012", title: "Revelations", level: 57, tip: "", youtubeId: "eGs8QwkBEF8" }
+            ],
+            tiamaranta: [
+                { id: "e1013", title: "The Heart of Tiamat", level: 58, tip: "", youtubeId: "O4oi2Jz4Yxk" },
+                { id: "e1014", title: "The Lay of the Land", level: 58, tip: "", youtubeId: "a8qhBcLOi9Q" },
+                { id: "e1015", title: "Heaviest of Hearts", level: 59, tip: "", youtubeId: "XSL19-lpDfA" },
+                { id: "e1016", title: "Fire and Wrath", level: 59, tip: "", youtubeId: "imotmaZtzNw" },
+                { id: "e1017", title: "Shot Through the Heart", level: 60, tip: "", youtubeId: "npYtDF-v1F4" },
+                { id: "e1018", title: "The Oldest of Foes", level: 60, tip: "", youtubeId: "dGA4GkpnK7k" }
+
+            ]
+        },
+        asmodian: {
+            ishalgen: [
+                { id: "2001", title: "Thinking Ahead", level: 3, tip: "Basic combat training", youtubeId: "CjpZatRsYYo" },
+                { id: "2002", title: "Where's Rae?", level: 5, tip: "Find missing NPC", youtubeId: "qGt3hxjImrk" },
+                { id: "2003", title: "Treasure of the Deceased", level: 6, tip: "Recover lost items", youtubeId: "dLh6OMWp1Aw" },
+                { id: "2004", title: "A Charmed Cube", level: 7, tip: "Magical artifact quest", youtubeId: "QaA2JgNrRps" },
+                { id: "2005", title: "Teaching a Lesson", level: 8, tip: "Punish rogue elements", youtubeId: "xkhXM705BIg" },
+                { id: "2006", title: "Hit Them Where it Hurts", level: 8, tip: "Strategic attack mission", youtubeId: "NrEJz_hxjv4" },
+                { id: "2007", title: "Where's Rae This Time?", level: 9, tip: "Continue NPC search", youtubeId: "UhNt7myeQV8" },
+                { id: "2008", title: "Ascension", level: 9, tip: "Class advancement quest", youtubeId: "wCeesT7xTyc" }
+            ],
+            altgard: [
+                { id: "2200", title: "Altgard Duties", level: 10, tip: "Basic faction responsibilities", youtubeId: "DMrZJsHln00" },
+                { id: "2011", title: "Fungus Among Us", level: 10, tip: "Investigate fungal infestation", youtubeId: "lFhFIBukYCc" },
+                { id: "2012", title: "Encroachers", level: 10, tip: "Defend against invaders", youtubeId: "2cRmM32jzGg" },
+                { id: "2013", title: "A Dangerous Crop", level: 11, tip: "Destroy corrupted plants", youtubeId: "4N72hQg87VE" },
+                { id: "2014", title: "Scout it Out", level: 12, tip: "Reconnaissance mission", youtubeId: "q7fQn0h0bLk" },
+                { id: "2016", title: "Fear This", level: 14, tip: "Intimidation tactics", youtubeId: "QgjEp7LIq9o" },
+                { id: "2015", title: "Take the Initiative", level: 15, tip: "Offensive strike mission", youtubeId: "0-vlWX4tW_4" },
+                { id: "2021", title: "Know Your Enemy", level: 17, tip: "Study enemy tactics", youtubeId: "xF8rMqplJl8" },
+                { id: "2017", title: "Trespassers at the Observatory", level: 18, tip: "Secure research facility", youtubeId: "gDL1FZ8X0G0" },
+                { id: "2019", title: "Securing the Supply Route", level: 18, tip: "Protect logistical lines", youtubeId: "09_lGnuR3MI" },
+                { id: "2018", title: "Reconstructing Impetusium", level: 19, tip: "Restore ancient device", youtubeId: "XDePnyuF-HA" },
+                { id: "2020", title: "Keeping the Black Claw Tribe in Check", level: 19, tip: "Control hostile faction", youtubeId: "CAh39R5nmg8" },
+                { id: "2022", title: "Crushing the Conspiracy", level: 20, tip: "Foiling enemy plans", youtubeId: "ZR2iPyGDZ4A" }
+            ],
+            morheim: [
+                { id: "m2001", title: "Morheim Commander's Call", level: 20, tip: "Report to Morheim leadership", youtubeId: "mTGk5c_RnmA" },
+                { id: "m2301", title: "Petrifying Elim", level: 23, tip: "Investicate petrified Elim", youtubeId: "AGo6OHghCHY" },
+                { id: "m2501", title: "Guardian Spirit", level: 25, tip: "Spiritual defense mission", youtubeId: "bDmkB7HZbUs" },
+                { id: "m2701", title: "Destroying the Curse", level: 27, tip: "Break ancient curse", youtubeId: "QlPzBTLN-Co" },
+                { id: "m3001", title: "The Hand Behind the Ice Claw", level: 30, tip: "Investigate Ice Claw leadership", youtubeId: "9MFTO9axYg0" },
+                { id: "m3201", title: "The Three Keys", level: 32, tip: "Group dungeon quest", youtubeId: "RGdDk33hD5c", },
+                { id: "m3401", title: "A Captive Flame", level: 34, tip: "Rescue elemental spirit", youtubeId: "9Wy4daThc2M" },
+                { id: "m3601", title: "The Protector of Nepra", level: 36, tip: "Defend sacred grounds", youtubeId: "2WuJBeyxAT4" },
+                { id: "m3701", title: "Allies Among Enemies", level: 37, tip: "Unlikely alliances", youtubeId: "4S_ggKsaVPE" },
+                { id: "m3801", title: "A Lost Daeva", level: 38, tip: "Rescue mission", youtubeId: "PtkgucIlJxs" },
+                { id: "m3901", title: "Kikananta's Loyalty", level: 39, tip: "Prove your worth", youtubeId: "_DPJqfyTioU" },
+                { id: "m4001", title: "Hold The Front Line", level: 40, tip: "Group defense mission", youtubeId: "n6BpPe0rgR4" }
+            ],
+            beluslan: [
+                { id: "2051", title: "Saving Beluslan Fortress", level: 32, tip: "Defend the fortress from invaders", youtubeId: "EMyp69X70DU" },
+                { id: "2052", title: "An Undead Occupation", level: 34, tip: "Clear undead forces from the region", youtubeId: "HLflKG-8TVs" },
+                { id: "2053", title: "A Missing Father", level: 36, tip: "Search for a lost family member", youtubeId: "S1O6Du7QR_w" },
+                { id: "2058", title: "A Spy Among the Lepharists", level: 36, tip: "Infiltrate enemy organization", youtubeId: "E74m2h5TIQM" },
+                { id: "2056", title: "Thawing Kurngalfberg", level: 37, tip: "Restore the frozen mountain pass", youtubeId: "B85fdjuJ2hM" },
+                { id: "2054", title: "Light up the Lighthouse", level: 40, tip: "Reactivate the coastal beacon", youtubeId: "Mkh1mtF-kBM" },
+                { id: "2055", title: "The Seiren's Treasure", level: 43, tip: "Recover stolen artifacts", youtubeId: "2rhB3Qaamuc" },
+                { id: "2057", title: "Glaciont the Hardy", level: 43, tip: "Defeat the frost giant", youtubeId: "DpDKlN_wjy8" },
+                { id: "2059", title: "A Peace Offering", level: 43, tip: "Negotiate with hostile factions", youtubeId: "HOVakWyjStc" },
+                { id: "2060", title: "Restoring Beluslan Observatory", level: 44, tip: "Repair the astronomical facility", youtubeId: "AmY2IjN3ZZw" },
+                { id: "2061", title: "Suppressing the Bakarma Legion", level: 48, tip: "Quell the Bakarma uprising in Beluslan", youtubeId: "7cZTBKMijSU" }
+            ],
+            brusthonin: [
+
+                { id: "2092", title: "Graves of the Red Sky Legion", level: 46, tip: "Investigate fallen warrior graves", youtubeId: "T4i9NohmygE" },
+                { id: "2093", title: "The Secret Passage", level: 48, tip: "Discover hidden routes in Gelkmaros", youtubeId: "wKB5fb0ntgk" },
+                { id: "2094", title: "The Secret of Adma Stronghold", level: 50, tip: "Uncover Adma's hidden knowledge", youtubeId: "HGJozVLPBlI" }
+
+            ],
+            pandaemonium: [
+                { id: "2900", title: "No Escaping Destiny", level: 20, tip: "Fate-bound mission in Morheim", youtubeId: "PRMdSK94Mow" }
+            ],
+            gelkmaros: [
+                { id: "e1019", title: "Crash of the Dredgion", level: 51, tip: "Investigate Dredgion wreckage", youtubeId: "yI51b53EqMs" },
+
+                { id: "a1003", title: "The Aether Must Flow", level: 52, tip: "Aether energy management", youtubeId: "TifJp9l4F3A" },
+                { id: "a1004", title: "Spreading Asmodae's Reach", level: 53, tip: "Expand faction influence", youtubeId: "WJMQjagTLwY" },
+                { id: "a1005", title: "Kumbanda's Whereabouts", level: 53, tip: "Track mysterious entity", youtubeId: "InPKSaz8z0c" },
+                { id: "a1006", title: "Battles at Vorgaltem", level: 54, tip: "Combat in Vorgaltem region", youtubeId: "cvvgxrUhnNg" },
+                { id: "e20025", title: "Quest for Siel's Relics ", level: 55, tip: "!!!Video Missing!!!", youtubeId: "" }
+            ],
+            reshanta: [
+                { id: "2042", title: "The Last Checkpoint", level: 25, tip: "Final abyss training challenge", youtubeId: "tK8ODXi-FDc" },
+                { id: "2072", title: "Abyss Battle Training", level: 25, tip: "Combat techniques in abyss environment", youtubeId: "8QLi1S62F_U" },
+                { id: "2945", title: "Honing Your Skills", level: 25, tip: "Advanced combat practice", youtubeId: "6IShpy0bmfA" },
+                { id: "2946", title: "Abyss General Knowledge", level: 25, tip: "Abyss lore and mechanics", youtubeId: "7pM9itMOJEc" },
+                { id: "2947", title: "Following Through", level: 25, tip: "Mission completion training", youtubeId: "nRwCummjz5I" },
+                { id: "2071", title: "Speaking Balaur", level: 27, tip: "Balaur language and tactics", youtubeId: "PNGDq7oGuLU" },
+                { id: "2073", title: "Captured Comrades", level: 28, tip: "Rescue mission in abyss", youtubeId: "9Ba4PMvIlBo" },
+                { id: "2074", title: "Looking for Leibo", level: 31, tip: "Missing NPC search in abyss", youtubeId: "jgd_hpuolXY" },
+                { id: "2076", title: "The Shadow Summons", level: 45, tip: "High-level abyss assignment", youtubeId: "BTQFZ-seK38" }
+            ],
+            sarpan: [
+                { id: "a1008", title: "The Grand Assault", level: 55, tip: "Major offensive operation", youtubeId: "KHzUqMBTnic" },
+                { id: "a1009", title: "Building Bridges", level: 56, tip: "Diplomatic alliance mission", youtubeId: "6WcZxgPL0Kc" },
+                { id: "a1010", title: "Empirical Truth", level: 56, tip: "Scientific research quest", youtubeId: "ttwFFeMzoCI" },
+                { id: "a1011", title: "The Guiding Hand", level: 56, tip: "Leadership development task", youtubeId: "ZwvDRyzwmSs" },
+                { id: "a1012", title: "The Protector's Blessing", level: 57, tip: "Sacred ritual completion", youtubeId: "jGWoQAb6bHg" }
+
+            ],
+            tiamaranta: [
+                { id: "a1013", title: "The Four Hearts", level: 58, tip: "Recover the elemental cores", youtubeId: "xOQoxgcaI5Y" },
+                { id: "a1014", title: "Tiamarantan Training", level: 58, tip: "Master advanced combat techniques", youtubeId: "pCoSL1nadDo" },
+                { id: "a1015", title: "Powering On", level: 59, tip: "Restore energy to critical systems", youtubeId: "QA4_O3_Rwk0" },
+                { id: "a1016", title: "Watching, Waiting", level: 59, tip: "Covert surveillance operation", youtubeId: "pI5By-JZtTM" },
+                { id: "a1017", title: "The Serpent of Fear", level: 60, tip: "Confront the ancient terror", youtubeId: "VFTTXT_INpM" },
+                { id: "a1018", title: "Nemesis", level: 60, tip: "Final confrontation with your rival", youtubeId: "MXxbt2-H6NE" }
+            ],
+        }
+    };
+
+    // Update the mapsData object to use cityname.png
+    const mapsData = {
+        elyos: [
+            { name: "Poeta", image: "Elyos/poeta.jpg" },
+            { name: "Verteron", image: "Elyos/verteron.png" },
+            { name: "Eltnen", image: "Elyos/eltnen.png" },
+            { name: "Theobomos", image: "Elyos/theobomos.png" },
+            { name: "Heiron", image: "Elyos/heiron.png" },
+            { name: "Sanctum", image: "Elyos/sanctum.jpg" },
+            { name: "Inggison", image: "Elyos/inggison.jpg" },
+            { name: "Sarpan", image: "Elyos/sarpan.jpg" },
+            { name: "Tiamaranta", image: "Elyos/tiamaranta.jpg" },
+            { name: "Reshanta", image: "Elyos/reshanta.jpg" }
+        ],
+        asmodian: [
+            { name: "Ishalgen", image: "Asmos/ishalgen.jpg" },
+            { name: "Altgard", image: "Asmos/altgard.jpg" },
+            { name: "Morheim", image: "Asmos/morheim.png" },
+            { name: "Beluslan", image: "Asmos/beluslan.jpg" },
+            { name: "Brusthonin", image: "Asmos/brusthonin.jpg" },
+            { name: "Pandaemonium", image: "Asmos/pandaemonium.jpg" },
+            { name: "Gelkmaros", image: "Asmos/gelkmaros.jpg" },
+            { name: "Sarpan", image: "Asmos/sarpan.jpg" },
+            { name: "Tiamaranta", image: "Asmos/tiamaranta.jpg" },
+            { name: "Reshanta", image: "Asmos/reshanta.jpg" }
+        ]
+    };
+    // DOM elements
+    const factionScreen = document.getElementById('faction-screen');
+    const mapsScreen = document.getElementById('maps-screen');
+    const questsScreen = document.getElementById('quests-screen');
+    const factionTitle = document.getElementById('faction-title');
+    const mapTitle = document.getElementById('map-title');
+    const mapsContainer = document.getElementById('maps-container');
+    const questsList = document.getElementById('quests-list');
+    const videoPlaceholder = document.getElementById('video-placeholder');
+    const videoWrapper = document.getElementById('video-wrapper');
+    const videoPlayer = document.getElementById('video-player');
+    const closeVideoBtn = document.getElementById('close-video');
+    const backToFactionBtn = document.getElementById('back-to-faction');
+    const backToMapsBtn = document.getElementById('back-to-maps');
+    const factionSelectText = document.getElementById('faction-select-text');
+
+    // State variables
+    let currentFaction = null;
+    let currentMap = null;
+
+    // Event listeners for faction selection
+    document.querySelectorAll('.faction-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            currentFaction = this.dataset.faction;
+            // Hide the "select faction" text with animation
+            factionSelectText.classList.add('hidden');
+            showMapsScreen();
+        });
+    });
+
+    // Back button event listeners
+    backToFactionBtn.addEventListener('click', () => {
+        factionScreen.classList.remove('hidden');
+        mapsScreen.classList.add('hidden');
+        questsScreen.classList.add('hidden');
+        resetVideoPlayer();
+        // Show the "select faction" text again when returning
+        factionSelectText.classList.remove('hidden');
+    });
+
+    backToMapsBtn.addEventListener('click', () => {
+        mapsScreen.classList.remove('hidden');
+        questsScreen.classList.add('hidden');
+        resetVideoPlayer();
+    });
+
+    closeVideoBtn.addEventListener('click', resetVideoPlayer);
+
+    // Show maps screen
+    function showMapsScreen() {
+        factionScreen.classList.add('hidden');
+        mapsScreen.classList.remove('hidden');
+        questsScreen.classList.add('hidden');
+
+        factionTitle.textContent = currentFaction === 'elyos' ? 'Elyos Maps' : 'Asmodian Maps';
+        mapsContainer.innerHTML = '';
+
+        const maps = mapsData[currentFaction];
+        maps.forEach((map, index) => {
+            const mapCard = document.createElement('div');
+            mapCard.className = 'map-card';
+            mapCard.dataset.mapIndex = index;
+
+            mapCard.innerHTML = `
+                    <img src="${map.image}" alt="${map.name}">
+                    <h3>${map.name}</h3>
+                `;
+
+            mapCard.addEventListener('click', () => {
+                currentMap = map.name.toLowerCase().split(' ')[0];
+                showQuestsScreen();
+            });
+
+            mapsContainer.appendChild(mapCard);
+        });
+        updateFactionQuestCount();
+    }
+
+    // Show quests screen
+    function showQuestsScreen() {
+        mapsScreen.classList.add('hidden');
+        questsScreen.classList.remove('hidden');
+
+        // Clean up map name for display
+        const displayMapName = currentMap.charAt(0).toUpperCase() + currentMap.slice(1);
+        mapTitle.textContent = displayMapName + ' Quests';
+
+        // Load quests for this map
+        loadQuests();
+        updateMapQuestCount(); // Add this line
+    }
+
+    // Load quests for current faction and map
+    function loadQuests() {
+        questsList.innerHTML = '';
+
+        const quests = questDatabase[currentFaction][currentMap] || [];
+
+        if (quests.length === 0) {
+            questsList.innerHTML = '<p>No quests found for this area.</p>';
+            return;
+        }
+
+        quests.forEach(quest => {
+            const questItem = document.createElement('div');
+            questItem.className = 'quest-item';
+            questItem.dataset.questId = quest.id;
+
+            questItem.innerHTML = `
+                <span class="quest-level">Level ${quest.level}</span>
+                <img class="quest-icon" src="quest.png" alt="Quest icon">
+                ${quest.title}
+                ${quest.tip ? `<div class="quest-tip">${quest.tip}</div>` : ''}
+            `;
+
+            questItem.addEventListener('click', () => {
+                document.querySelectorAll('.quest-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                questItem.classList.add('active');
+                loadVideo(quest.youtubeId);
+            });
+
+            questsList.appendChild(questItem);
+        });
+    }
+
+    // Load YouTube video
+    function loadVideo(videoId) {
+        videoPlaceholder.classList.add('hidden');
+        videoWrapper.classList.remove('hidden');
+
+        videoPlayer.innerHTML = `
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
+    `;
+    }
+    // Reset video player
+    function resetVideoPlayer() {
+        videoPlayer.innerHTML = '';
+        videoWrapper.classList.add('hidden');
+        videoPlaceholder.classList.remove('hidden');
+
+        // Remove active class from quest items
+        document.querySelectorAll('.quest-item').forEach(item => {
+            item.classList.remove('active');
+        });
+    }
+
+    // Function to add a new quest (for your manual addition)
+    function addQuest(faction, map, questData) {
+        if (!questDatabase[faction]) {
+            questDatabase[faction] = {};
+        }
+
+        if (!questDatabase[faction][map]) {
+            questDatabase[faction][map] = [];
+        }
+
+        questDatabase[faction][map].push(questData);
+
+        // If we're currently viewing this map's quests, refresh the list
+        if (currentFaction === faction && currentMap === map) {
+            loadQuests();
+        }
+    }
+    // Update when faction is selected
+    function updateFactionQuestCount() {
+        const faction = currentFaction;
+        let totalQuests = 0;
+
+        Object.values(questDatabase[faction]).forEach(mapQuests => {
+            totalQuests += mapQuests.length;
+        });
+
+        document.getElementById('faction-quest-count').textContent =
+            `${totalQuests} quests available`;
+    }
+
+    // Update when map is selected
+    function updateMapQuestCount() {
+        const quests = questDatabase[currentFaction][currentMap];
+        const count = quests.length;
+
+        document.getElementById('map-quest-count').textContent =
+            `${count} quests in this zone`;
+
+        // Show loading message
+        const loadingElement = document.getElementById('loading-status');
+        loadingElement.textContent = `Loading ${count} quests...`;
+
+        // Hide after delay
+        setTimeout(() => {
+            loadingElement.textContent = '';
+        }, 1500);
+    }
+    // Example of how to use the addQuest function:
+    // addQuest('elyos', 'poeta', { id: "e1004", title: "New Quest", level: 5, tip: "New tip", youtubeId: "dQw4w9WgXcQ" });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,487 @@
+:root {
+    --primary: #4a2c82;
+    --secondary: #6a3cb5;
+    --accent: #81725b;
+    --text: #f0f0f0;
+    --bg: #000000;
+    --card-bg: #1a1a1a;
+}
+
+/* Add this at the top of your CSS */
+html {
+    font-size: 14px;
+    /* Base font size for mobile */
+    scroll-behavior: smooth;
+}
+
+/* Modify the header section */
+header {
+    will-change: backdrop-filter, opacity;
+    transition: backdrop-filter .8s ease, -webkit-backdrop-filter .8s ease;
+    height: 135px;
+    position: fixed;
+    /* width: 90%; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    margin: 0 auto;
+    z-index: 2;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.logo {
+    margin-bottom: 0.5rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.search-container {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+/* Update main content area */
+main {
+    padding: 1rem;
+    margin-top: 100px;
+    /* Reduced from 6rem */
+}
+
+/* Make sidebar full-width on mobile */
+.sidebar {
+    width: 100%;
+    left: -100%;
+    top: 120px;
+    /* Adjusted for mobile header */
+}
+
+.sidebar.visible {
+    left: 0;
+}
+
+/* Adjust section padding */
+section {
+    padding: 1rem 0;
+    scroll-margin-top: 100px;
+    margin-top: 50px;
+    /* Adjust based on your header height */
+    background: none !important;
+    border: 20px solid transparent;
+    border-image: url(https://cdn.eldenaion.com/img/frame_square_dark.png) 60 stretch;
+}
+
+/* Make navigation buttons full width */
+.nav-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    width: 100%;
+}
+
+/* Responsive font sizes */
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+/* Add media queries at the end of your CSS */
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+
+    header {
+        flex-direction: row;
+        padding: 1rem;
+        height: 72px;
+    }
+
+    .logo {
+        margin-bottom: 0;
+        justify-content: flex-start;
+        width: auto;
+    }
+
+    .search-container {
+        width: 300px;
+        margin-bottom: 0;
+    }
+
+    main {
+        padding: 6rem 2rem 2rem;
+        margin-top: 0;
+    }
+
+    .sidebar {
+        width: 250px;
+        left: -250px;
+        top: 72px;
+    }
+
+    .nav-buttons {
+        flex-direction: row;
+    }
+
+    .nav-btn {
+        width: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    main {
+        margin-left: 0;
+        transition: margin-left 0.3s ease;
+    }
+
+    .sidebar.visible+main {
+        margin-left: 250px;
+    }
+}
+
+* {
+
+    box-sizing: border-box;
+    font-family: 'Philosopher', sans-serif;
+}
+
+
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    min-height: 100vh;
+}
+
+header {
+    will-change: backdrop-filter, opacity;
+    transition: backdrop-filter .8s ease, -webkit-backdrop-filter .8s ease;
+    height: 135px;
+    position: fixed;
+    /* width: 90%; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    margin: 0 auto;
+    z-index: 2;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, rgba(169, 141, 80, 0) 0, rgba(169, 141, 80, .2) 40%, rgba(169, 141, 80, 0) 100%);
+    pointer-events: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-icon {
+    width: 60px;
+    height: 60px;
+    background-image: url("media/ico.png");
+    background-size: contain;
+    /* scale image to fit */
+    background-repeat: no-repeat;
+    /* prevent tiling */
+    background-position: center;
+    /* keep it centered */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.search-container {
+    position: relative;
+    width: 300px;
+}
+
+#search {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 5px solid transparent !important;
+    border-image-source: url(https://cdn.eldenaion.com/img/frame_square_dark.png) !important;
+    border-image-slice: 25 !important;
+    border-image-repeat: stretch !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 0 0 5px 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+}
+
+.search-results a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.search-results a:hover {
+    background: var(--primary);
+}
+
+main {
+    flex: 1;
+    padding: 6rem 2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    width: 250px;
+    background: var(--card-bg);
+    padding: 1rem;
+    position: fixed;
+    top: 135px;
+    bottom: 0;
+    left: -250px;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar.visible {
+    left: 0;
+}
+
+.sidebar h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--accent);
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+    color: var(--text);
+    text-decoration: none;
+    display: block;
+    padding: 0.25rem 0;
+}
+
+.sidebar a.active {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+section {
+    display: none;
+    padding: 2rem 0;
+}
+
+section.active {
+    display: block;
+}
+
+.titleList {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+.titleList h3 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.titleList ul {
+    list-style: none;
+}
+
+.titleList li {
+    margin-bottom: 0.25rem;
+}
+
+.titleList a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.nav-btn {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(rgba(51, 42, 34, .77), rgba(14, 11, 6, .77));
+    border: 1px solid rgba(255, 255, 255, .1);
+    color: #fff;
+    padding: 7px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 10px;
+    border-radius: 5px;
+    height: 35px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+    top: 15px;
+    position: relative;
+}
+
+.nav-btn:hover {
+    background: var(--secondary);
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+}
+
+@media (max-width: 767px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .logo {
+        padding-left: 2rem;
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(3, 50px);
+    gap: 30px;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    background-size: cover;
+}
+
+.guide_button {
+    width: auto;
+    /* padding-left: 30px; */
+    padding: 2px 50px 2px 50px;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-right: 10px;
+    background-color: #0a0d16;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.flex_row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.guide_button img {
+    position: absolute;
+    left: 0px;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.guide_button p {
+    text-align: center !important;
+    pointer-events: none;
+    inline-size: max-content;
+    margin-left: 10px;
+}
+
+.flex_column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Matches your --card-bg color */
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #4a2c82; /* Your --primary color */
+    border-radius: 5px;
+    border: 2px solid #1a1a1a;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #6a3cb5; /* Your --secondary color */
+}
+
+/* Corner */
+::-webkit-scrollbar-corner {
+    background: #1a1a1a;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #4a2c82 #1a1a1a; /* primary track */
+}

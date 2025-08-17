@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden Aion Wiki</title>
+    <style>
+        :root {
+            --primary-color: #4a2c82;
+            --secondary-color: #6a3cb5;
+            --accent-color: #81725b;
+            --text-color: #f0f0f0;
+            --bg-color: #000000;
+            --card-bg: #2a2a2a;
+            --section-bg: #222222;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            background-color: var(--primary-color);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+        
+        .section {
+            background-color: var(--section-bg);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: rgba(255, 255, 255, 0.4);
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        h2, h3, h4 {
+            color: var(--accent-color);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #333;
+        }
+        
+        .note {
+            background-color: #3a3a3a;
+            padding: 10px;
+            border-left: 4px solid var(--accent-color);
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .tab-container {
+            margin: 20px 0;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #444;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: transparent;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-btn.active {
+            border-bottom: 3px solid var(--accent-color);
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 0 0 6px 6px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 5px 0;
+            }
+            
+            .container {
+                padding: 0 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Elden Aion Wiki</h1>
+            <p>Your comprehensive guide to Elden Aion</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#starter-gear">Starter Gear</a></li>
+                <li><a href="#lumen">Lumen</a></li>
+                <li><a href="#gift-codes">Gift Codes</a></li>
+                <li><a href="#atreia-pass">Atreia Pass</a></li>
+                <li><a href="#prism-core">Prism Core</a></li>
+                <li><a href="#leveling">Leveling Guide</a></li>
+                <li><a href="#cube-expansion">Cube Expansion</a></li>
+                <li><a href="#stigma">Stigma Slots</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section id="starter-gear" class="section">
+            <h2>Starter Gear</h2>
+            <div class="card">
+                <h3>What is Starter Gear?</h3>
+                <p>Starter Gear is a special set of 3 weapons and 1 armor set designed to help you level up quickly.</p>
+                <p>It's equivalent in stats to level 50 Daevanion gear, making it strong for early and mid-game content.</p>
+                
+                <ul>
+                    <li>The gear cannot be enchanted or socketed, but:
+                        <ul>
+                            <li>You can enchant and socket the weapons</li>
+                            <li>You can armfuse them with another Starter or e50 weapon for extra power</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="note">
+                    <p><strong>Note:</strong> This gear is completely optional. Feel free to skip it if you prefer a more classic experience!</p>
+                </div>
+                
+                <h3>Where to get it?</h3>
+                <p>You'll receive the full set by completing the "A Ceremony in Pandaemonium" (Asmo) or "A Ceremony in Sanctum" (Elyos) quest – right after Ascension!</p>
+            </div>
+        </section>
+        
+        <section id="lumen" class="section">
+            <h2>Lumen</h2>
+            <div class="card">
+                <h3>What are Lumen?</h3>
+                <p>Lumen are Elden Aion Shop Currency used to buy cosmetics and useful Items from the Lumen Shop</p>
+                
+                <h3>Ways to obtain Lumen:</h3>
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" onclick="openTab(event, 'voting')">Voting System</button>
+                        <button class="tab-btn" onclick="openTab(event, 'instances')">Instances</button>
+                        <button class="tab-btn" onclick="openTab(event, 'events')">Events</button>
+                        <button class="tab-btn" onclick="openTab(event, 'surveys')">Surveys</button>
+                        <button class="tab-btn" onclick="openTab(event, 'streaming')">Streaming</button>
+                    </div>
+                    
+                    <div id="voting" class="tab-content active">
+                        <ol>
+                            <li>Go to website and login</li>
+                            <li>Click on "Vote Rewards"</li>
+                            <li>Select & Follow the steps inside every voting website</li>
+                        </ol>
+                    </div>
+                    
+                    <div id="instances" class="tab-content">
+                        <p>Instances between level 50-55 drop fewer Lumen, while those between levels 56-60 drop the most, depending on their difficulty</p>
+                    </div>
+                    
+                    <div id="events" class="tab-content">
+                        <p>Events like Shugo Tomb & Circus may drop Lumen from chests</p>
+                    </div>
+                    
+                    <div id="surveys" class="tab-content">
+                        <p>You can obtain Lumen from surveys during leveling or events</p>
+                    </div>
+                    
+                    <div id="streaming" class="tab-content">
+                        <p>You can receive Lumen by Streaming on Twitch or Youtube</p>
+                    </div>
+                </div>
+                
+                <h3>How do I use Lumen?</h3>
+                <ol>
+                    <li>Log out from Elden Aion (Character Selection works too),</li>
+                    <li>Login on website</li>
+                    <li>Move to Shop</li>
+                    <li>Select your character name</li>
+                    <li>Select the amount of Lumens you want to Exchange and click on "Add Lumen"</li>
+                </ol>
+            </div>
+        </section>
+        
+        <section id="gift-codes" class="section">
+            <h2>Gift Codes</h2>
+            <div class="card">
+                <h3>What are Gift Codes?</h3>
+                <p>Gift Codes are special promo codes shared weekly by the Administrator in the @gift-codes channel (also available on the official website).</p>
+                <p>They can be redeemed for various rewards like mounts, cosmetics, skins, and more!</p>
+                
+                <div class="note">
+                    <p><strong>Note:</strong> Gift codes are seasonal and expire after a while, so don't miss them!</p>
+                </div>
+                
+                <h3>How to redeem Gift Codes?</h3>
+                <ol>
+                    <li>Go to: <a href="https://eldenaion.com/home" target="_blank">https://eldenaion.com/home</a></li>
+                    <li>Log in with your account credentials</li>
+                    <li>Click your username in the top-right corner</li>
+                    <li>Select "Gift Code" from the dropdown</li>
+                    <li>Enter the code (make sure it includes the #)</li>
+                    <li>Now go to: <a href="https://eldenaion.com/shop" target="_blank">https://eldenaion.com/shop</a></li>
+                    <li>Choose your character name</li>
+                    <li>Click "Claim Gift"</li>
+                </ol>
+                
+                <p>Your rewards will be delivered via <strong>Express Mail</strong> in-game!</p>
+            </div>
+        </section>
+        
+        <section id="atreia-pass" class="section">
+            <h2>Atreia Pass</h2>
+            <div class="card">
+                <h3>What is Atreia Pass?</h3>
+                <p>The Atreia Pass is a non-pay-to-win (non-PZW) loyalty system. By completing missions and running instances, players earn tokens that allow them to progress through the pass. These tokens can be exchanged on the official website for exclusive rewards.</p>
+                <p>Rewards include cosmetics, consumables, and character-enhancing items. The system is designed to keep players engaged by offering valuable bonuses in return for their time and dedication.</p>
+                
+                <h3>Ways to obtain Atreia Pass Tokens</h3>
+                <ol>
+                    <li><strong>Staying online</strong><br>For every hour you spend in-game, you earn 1 token</li>
+                    <li><strong>Completing Campaign Quests</strong><br>Finish yellow campaign quests to receive additional tokens (one time only)</li>
+                    <li><strong>Defeating Final Bosses</strong><br>Earn tokens by killing final bosses in endgame instances and open-world content</li>
+                    <li><strong>Doing Daily & Weekly Quests</strong><br>Tokens are also rewarded for completing <strong>daily and weekly quests</strong>, as well as certain <strong>normal (blue)</strong> quests.</li>
+                </ol>
+                
+                <div class="note">
+                    <p>→ You can find the full list of quests that give tokens here</p>
+                </div>
+                
+                <h3>Exchanging Atreia Pass Tokens</h3>
+                <ol>
+                    <li>Log out from the game (Character Selection works too)</li>
+                    <li>Go to Elden Aion Website and log in</li>
+                    <li>Click on "Atreia Pass"</li>
+                    <li>Select your character name</li>
+                    <li>Click on "Exchange Tokens"</li>
+                    <li>Based on the amount exchanged, click the bonuses — they will be delivered via Express Mail in-game</li>
+                </ol>
+            </div>
+        </section>
+        
+        <section id="prism-core" class="section">
+            <h2>Prism Core</h2>
+            <div class="card">
+                <h3>What are Prism Cores?</h3>
+                <ul>
+                    <li><strong>Prism Core (32)</strong>
+                        <ul>
+                            <li>Untradeable</li>
+                            <li>Unsellable</li>
+                            <li>Unstorable in Account Warehouse</li>
+                            <li>Unstorable in Legion Warehouse</li>
+                            <li>Indestructible</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <p>An exchange currency that can be used to acquire Fleet Commander's Ceremonial equipment from the Novice Equipment Mentor found in every major city.</p>
+                
+                <p><strong>Prism Core</strong> is a special currency earned primarily by completing campaign (yellow) quests. The number of Cores you receive increases as you progress through higher-level campaign content.</p>
+                <p>These Cores can be exchanged for Fleet Commander's Equipment Boxes—a full Level 50 PvP gear set (E50)—through specific NPCs.</p>
+                
+                <h3>Exchange Rates</h3>
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Cost</th>
+                    </tr>
+                    <tr>
+                        <td>Full Set (5 pieces)</td>
+                        <td>100 Cores</td>
+                    </tr>
+                    <tr>
+                        <td>Weapon (1 piece)</td>
+                        <td>10 Cores</td>
+                    </tr>
+                    <tr>
+                        <td>Total (1 weapon)</td>
+                        <td>110 Cores</td>
+                    </tr>
+                    <tr>
+                        <td>Total (2 weapons)</td>
+                        <td>120 Cores</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        
+        <section id="leveling" class="section">
+            <h2>Leveling Guide</h2>
+            <div class="card">
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" onclick="openTab(event, 'asmodian')">Asmodian</button>
+                        <button class="tab-btn" onclick="openTab(event, 'elyos')">Elyos</button>
+                    </div>
+                    
+                    <div id="asmodian" class="tab-content active">
+                        <table>
+                            <tr>
+                                <th>Level Range</th>
+                                <th>Activity</th>
+                            </tr>
+                            <tr>
+                                <td>1-16</td>
+                                <td>Kill mobs in Ishaigen while heading to Munin<br>Farm mobs in Altgard until ~Lv16</td>
+                            </tr>
+                            <tr>
+                                <td>16+</td>
+                                <td>Move to Haramel for faster EXP</td>
+                            </tr>
+                            <tr>
+                                <td>20+</td>
+                                <td>Nochsans Training Camp</td>
+                            </tr>
+                            <tr>
+                                <td>25+</td>
+                                <td>Campaign quests + Free Temple or Alquimis Lab</td>
+                            </tr>
+                            <tr>
+                                <td>30+</td>
+                                <td>Do easy campaigns + Brushboim quests</td>
+                            </tr>
+                            <tr>
+                                <td>35+</td>
+                                <td>Grind Theoborros Lab</td>
+                            </tr>
+                            <tr>
+                                <td>40+</td>
+                                <td>Clear Dark Poeta (color or duo depending on class)</td>
+                            </tr>
+                            <tr>
+                                <td>45+</td>
+                                <td>Run Beahmundir Temple (color if magical, duo if physical)</td>
+                            </tr>
+                            <tr>
+                                <td>50+</td>
+                                <td>Farm Dark Poeta for Kinah and do Sappan/Tiamaranta campaigns</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div id="elyos" class="tab-content">
+                        <table>
+                            <tr>
+                                <th>Level Range</th>
+                                <th>Activity</th>
+                            </tr>
+                            <tr>
+                                <td>1-16</td>
+                                <td>Kill mobs in Poeta while moving<br>Kill mobs in Vertex</td>
+                            </tr>
+                            <tr>
+                                <td>16+</td>
+                                <td>Kill Vertex for the near Ardus Shrine entrance until you can switch to killing monsters in Nx.</td>
+                            </tr>
+                            <tr>
+                                <td>20+</td>
+                                <td>Nochsans Training C</td>
+                            </tr>
+                            <tr>
+                                <td>25+</td>
+                                <td>Campaign quests + Free</td>
+                            </tr>
+                            <tr>
+                                <td>30+</td>
+                                <td>Campaign quests + mind in Aer</td>
+                            </tr>
+                            <tr>
+                                <td>35+</td>
+                                <td>Grind Adina Strongi</td>
+                            </tr>
+                            <tr>
+                                <td>40+</td>
+                                <td>Clear Dark Poeta (earns</td>
+                            </tr>
+                            <tr>
+                                <td>45+</td>
+                                <td>Run Beahmundir Temple (as</td>
+                            </tr>
+                            <tr>
+                                <td>50+</td>
+                                <td>Farm Dark Poeta for Kinah and do Sappan</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="note">
+                    <h4>Notes</h4>
+                    <ul>
+                        <li>Be sure to complete some Campaign (yellow) quests to collect enough Prism Cores for the Level 50 AP gear (E50 set)</li>
+                        <li>If you'd prefer not to skip too much content, you can simply focus on progressing through the Campaign and some blue quests</li>
+                        <li>Don't forget: XP amulets are easy to obtain! Just vote for the server daily to earn Lumen, which you can use to get XP boosts. Additionally, you'll receive Free Siel's Blessings every 2 hours (up to 2 per day)</li>
+                        <li>Pro tip: You can create a second account to hold a group for yourself if you want to solo instances</li>
+                        <li>Save all Coins (Silver, Gold, Platinum) – they can be used to buy PvP accessories from Coin Chests available at camp NPCs</li>
+                    </ul>
+                </div>
+                
+                <h3>Side Activities</h3>
+                <p>These are useful tasks you can complete while leveling to ensure a smooth and efficient start on the server</p>
+                
+                <h4>Platinum Coins</h4>
+                <p>You can get e50 AP accessories from Platinum Coin Chests that will serve as your starter PvP accessories. You can find a full guide here.</p>
+                
+                <h4>Daily Reward</h4>
+                <p>Don't forget to claim your daily reward from the Shop – it includes potions, scrolls, and a Level 85 Enchantment Stone. You will find the daily reward in "Atreia Reward" tab in in-game shop</p>
+                
+                <h4>Starter Manastones</h4>
+                <p>As you level, look out for special pink quests. These provide bonus EXP and reward you with Level 50 Manastones, perfect for early endgame gearing. A full guide is available here.</p>
+            </div>
+        </section>
+        
+        <section id="cube-expansion" class="section">
+            <h2>Cube Expansion Guide</h2>
+            <div class="card">
+                <h3>Default Cube</h3>
+                <table>
+                    <tr>
+                        <th>Row</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>1, 2, 3</td>
+                        <td>The default cube you start the game with</td>
+                    </tr>
+                </table>
+                
+                <h3>Cube 1</h3>
+                <table>
+                    <tr>
+                        <th>Row</th>
+                        <th>Location</th>
+                    </tr>
+                    <tr>
+                        <td>4, 5, 6</td>
+                        <td>Buy at Baconerk at Aldelle Village in Ishaigen or at Baerwenerk at Alarhos Village in Poeta</td>
+                    </tr>
+                </table>
+                
+                <h3>Cube 2</h3>
+                <table>
+                    <tr>
+                        <th>Row</th>
+                        <th>Location</th>
+                    </tr>
+                    <tr>
+                        <td>7, 8, 9</td>
+                        <td>Nekrumerk at the Temple of Gold in Pandaemonium Hierarchy. A Yehmoneva at Hall of Prosperity in Sanctum and they can expand your Cube for 3 levels</td>
+                    </tr>
+                </table>
+                
+                <h3>Cube 3</h3>
+                <table>
+                    <tr>
+                        <th>Row</th>
+                        <th>Location</th>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Jarumonerk on Tigraki Island in Upper Abyss (You will go there in one of the Abyss campaign quests if you wanna save some time)</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Quest at level 29 – Unexpected Reward from Talon in Temple of Artisans in Pandaemonium or A Lucky Day from Demodicos in Protectors Hall in Sanctum</td>
+                    </tr>
+                </table>
+                
+                <h3>Cube 4</h3>
+                <table>
+                    <tr>
+                        <th>Row</th>
+                        <th>Location</th>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Chain of quests at level 35 – starts with Materials for 100-slot Cube at Nekrumerk in Pandaemonium or with The Legend of Vindachinerk at Sugmerk in Heiron (might need to see a guide on VT)</td>
+                    </tr>
+                    <tr>
+                        <td>13, 14, 15, 16</td>
+                        <td>Available to unlock with [Expand Card] Expand Cube Ticket from surveys and shop (up to 4 times total)</td>
+                    </tr>
+                </table>
+                
+                <div class="note">
+                    <h4>Notes</h4>
+                    <ul>
+                        <li>Type /where &lt;NPC&gt; on chat if you cannot find some NPCs</li>
+                        <li>Materials for 100-slot Cube questline guide</li>
+                        <li>The Legend of Vindachinerk questline guide</li>
+                        <li>Vindachinerk locations</li>
+                        <li>Tigraki Island location (around 75 secs flight from the nearest point, might need some flight serums and flight speed scrolls)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="stigma" class="section">
+            <h2>Stigma Slot Expansion</h2>
+            <div class="card">
+                <h3>Normal Stigmas:</h3>
+                <table>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+                
+                <h3>Greater Stigmas:</h3>
+                <table>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                </table>
+                
+                <p>TBD</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Elden Aion Wiki &copy; 2023 | Information taken from EldenAion discord and website as well as Aloncodex and other old 3.x guides</p>
+            <p>This is meant mostly as a new player guide. If you have any questions or want to share feedback visit Discord or directly message @deyariss</p>
+        </div>
+    </footer>
+    
+    <script>
+        function openTab(evt, tabName) {
+            // Hide all tab contents
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tab buttons
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            // Show the current tab and add active class to the button
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
