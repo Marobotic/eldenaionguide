@@ -214,3 +214,123 @@ document.querySelectorAll('.sidebar a').forEach(link => {
         }
     });
 });
+
+function selectClass(element, className) {
+    // Remove "selected" from all
+    document.querySelectorAll('.class_image').forEach(el => el.classList.remove('selected'));
+
+    // Add "selected" to clicked
+    element.classList.add('selected');
+
+    // Call corresponding function
+    switch (className) {
+        case "Gladiator":
+            openGladiator();
+            break;
+        case "Templar":
+            openTemplar();
+            break;
+        case "Assassin":
+            openAssassin();
+            break;
+        case "Ranger":
+            openRanger();
+            break;
+        case "Spiritmaster":
+            openSpiritmaster();
+            break;
+        case "Sorcerer":
+            openSorcerer();
+            break;
+        case "Cleric":
+            openCleric();
+            break;
+        case "Chanter":
+            openChanter();
+            break;
+    }
+}
+
+// Define your functions (you can replace console.log with your logic)
+function openGladiator() { console.log("Gladiator selected"); }
+
+function openTemplar() { console.log("Templar selected"); }
+
+function openAssassin() { console.log("Assassin selected"); }
+
+function openRanger() { console.log("Ranger selected"); }
+
+function openSpiritmaster() { console.log("Spiritmaster selected"); }
+
+function openSorcerer() { console.log("Sorcerer selected"); }
+
+function openCleric() { console.log("Cleric selected"); }
+
+function openChanter() { console.log("Chanter selected"); }
+
+
+// Your data: add descriptions + image paths
+const classData = {
+    Gladiator: {
+        name: "Gladiator",
+        description: "Strong melee fighter, specializing in AoE damage and powerful weapon mastery.",
+        image: "media/characters/gladiator.webp"
+    },
+    Templar: {
+        name: "Templar",
+        description: "Tanky warrior who protects allies with heavy armor and defensive skills.",
+        image: "media/characters/templar.webp"
+    },
+    Assassin: {
+        name: "Assassin",
+        description: "Stealthy DPS with high burst damage and lethal precision.",
+        image: "media/characters/Assassin.webp"
+    },
+    Ranger: {
+        name: "Ranger",
+        description: "Expert at ranged combat, traps, and deadly bow skills.",
+        image: "media/characters/Ranger.webp"
+    },
+    Spiritmaster: {
+        name: "Spiritmaster",
+        description: "Summoner class commanding powerful elemental spirits.",
+        image: "media/characters/Spiritmaster.webp"
+    },
+    Sorcerer: {
+        name: "Sorcerer",
+        description: "Master of destructive magic with high damage spells.",
+        image: "media/characters/Sorcerer.webp"
+    },
+    Cleric: {
+        name: "Cleric",
+        description: "Support and healer, keeping allies alive while dealing holy damage.",
+        image: "media/characters/cleric.webp"
+    },
+    Chanter: {
+        name: "Chanter",
+        description: "Buffer and support fighter, boosting allies with mantras and healing.",
+        image: "media/characters/Chanter.webp"
+    }
+};
+
+// Select and update elements
+function selectClass(element, className) {
+    // Remove highlight from all
+    document.querySelectorAll('.class_image').forEach(el => el.classList.remove('selected'));
+
+    // Highlight clicked one
+    element.classList.add('selected');
+
+    // Update display elements
+    document.querySelector('.className').textContent = classData[className].name;
+    document.querySelector('.classDescription').textContent = classData[className].description;
+    document.querySelector('.classImage').style.backgroundImage = `url(${classData[className].image})`;
+    document.querySelector('.classImage').style.backgroundSize = "contain";
+    document.querySelector('.classImage').style.backgroundPosition = "center";
+    document.querySelector('.classImage').style.backgroundRepeat = "no-repeat";
+}
+
+// ✅ Set default (Gladiator) on page load
+window.onload = () => {
+    selectClass(document.querySelector('.Gladiator'), 'Gladiator');
+};

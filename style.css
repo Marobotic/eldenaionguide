@@ -451,6 +451,7 @@ section.active {
     flex-direction: column;
     flex-wrap: wrap;
 }
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
     width: 10px;
@@ -459,20 +460,23 @@ section.active {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #1a1a1a; /* Matches your --card-bg color */
+    background: #1a1a1a;
+    /* Matches your --card-bg color */
     border-radius: 5px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #4a2c82; /* Your --primary color */
+    background: #4a2c82;
+    /* Your --primary color */
     border-radius: 5px;
     border: 2px solid #1a1a1a;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #6a3cb5; /* Your --secondary color */
+    background: #6a3cb5;
+    /* Your --secondary color */
 }
 
 /* Corner */
@@ -483,5 +487,91 @@ section.active {
 /* For Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #4a2c82 #1a1a1a; /* primary track */
+    scrollbar-color: #4a2c82 #1a1a1a;
+    /* primary track */
+}
+
+.classImage{
+    width:  100%;
+    height:  700px;
+}
+
+.Gladiator {
+    background-image: url("media/classes/gladiator.png");
+}
+
+.Templar {
+    background-image: url("media/classes/templar.png");
+}
+
+.Assassin {
+    background-image: url("media/classes/assassin.png");
+}
+
+.Ranger {
+    background-image: url("media/classes/ranger.png");
+}
+
+.Spiritmaster {
+    background-image: url("media/classes/spiritmaster.png");
+}
+
+.Sorcerer {
+    background-image: url("media/classes/sorcerer.png");
+}
+
+.Chanter {
+    background-image: url("media/classes/chanter.png");
+}
+
+.Cleric {
+    background-image: url("media/classes/cleric.png");
+}
+
+.class_image {
+    width: 63px;
+    height: 70px;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 15px !important;
+    cursor: pointer;
+
+    /* layout + animation */
+    position: relative;
+    display: inline-block;
+    transition: 
+        transform 0.25s ease,
+        box-shadow 0.4s ease,
+        background-color 0.4s ease;
+}
+
+/* hover lift + subtle glow */
+.class_image:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25),
+                0 0 10px rgba(77, 182, 172, 0.4);
+}
+
+/* active press (quick shrink) */
+.class_image:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25),
+                0 0 6px rgba(77, 182, 172, 0.3);
+}
+
+/* ✅ selected state (animated accent background) */
+.class_image.selected {
+    background-color: var(--accent);
+    box-shadow: 0 0 18px rgba(77, 182, 172, 0.6);
+    transform: scale(1.07);
+    animation: selectPulse 0.5s ease; /* entry pulse */
+}
+
+/* selection pulse animation */
+@keyframes selectPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(77, 182, 172, 0); }
+    50% { transform: scale(1.1); box-shadow: 0 0 24px rgba(77, 182, 172, 0.8); }
+    100% { transform: scale(1.07); box-shadow: 0 0 18px rgba(77, 182, 172, 0.6); }
 }
