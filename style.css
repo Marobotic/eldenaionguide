@@ -491,9 +491,9 @@ section.active {
     /* primary track */
 }
 
-.classImage{
-    width:  100%;
-    height:  700px;
+.classImage {
+    width: 100%;
+    height: 700px;
 }
 
 .Gladiator {
@@ -541,7 +541,7 @@ section.active {
     /* layout + animation */
     position: relative;
     display: inline-block;
-    transition: 
+    transition:
         transform 0.25s ease,
         box-shadow 0.4s ease,
         background-color 0.4s ease;
@@ -551,14 +551,14 @@ section.active {
 .class_image:hover {
     transform: translateY(-4px) scale(1.03);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25),
-                0 0 10px rgba(77, 182, 172, 0.4);
+        0 0 10px rgba(77, 182, 172, 0.4);
 }
 
 /* active press (quick shrink) */
 .class_image:active {
     transform: translateY(-1px) scale(0.98);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25),
-                0 0 6px rgba(77, 182, 172, 0.3);
+        0 0 6px rgba(77, 182, 172, 0.3);
 }
 
 /* ✅ selected state (animated accent background) */
@@ -566,12 +566,422 @@ section.active {
     background-color: var(--accent);
     box-shadow: 0 0 18px rgba(77, 182, 172, 0.6);
     transform: scale(1.07);
-    animation: selectPulse 0.5s ease; /* entry pulse */
+    animation: selectPulse 0.5s ease;
+    /* entry pulse */
 }
 
 /* selection pulse animation */
 @keyframes selectPulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 rgba(77, 182, 172, 0); }
-    50% { transform: scale(1.1); box-shadow: 0 0 24px rgba(77, 182, 172, 0.8); }
-    100% { transform: scale(1.07); box-shadow: 0 0 18px rgba(77, 182, 172, 0.6); }
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(77, 182, 172, 0);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 24px rgba(77, 182, 172, 0.8);
+    }
+
+    100% {
+        transform: scale(1.07);
+        box-shadow: 0 0 18px rgba(77, 182, 172, 0.6);
+    }
+}
+
+/* Link styling for dark backgrounds */
+#getting-started-guide a {
+    color: #8ab4f8;
+    /* soft blue, good contrast on dark bg */
+    text-decoration: none;
+    /* remove default underline */
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+#getting-started-guide a:hover {
+    color: #aecbfa;
+    /* lighter on hover */
+    text-decoration: underline;
+    /* add underline for clarity */
+}
+
+#getting-started-guide a:visited {
+    color: #a78bfa;
+    /* soft violet for visited links */
+}
+
+#getting-started-guide a:active {
+    color: #f28b82;
+    /* subtle red when clicked */
+}
+
+
+
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.social-title {
+  color: var(--text-color);
+  margin-right: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  text-decoration: none !important;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none !important;
+}
+
+.social-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    currentColor 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.social-links a:hover::before {
+  opacity: 0.2;
+  animation: rotateBorder 1.5s linear infinite;
+}
+
+.social-links a i {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  text-decoration: none !important;
+}
+
+.social-links a:hover i {
+  transform: scale(1.2);
+}
+
+/* Discord */
+.social-links a.discord {
+  background: #5865F2;
+  color: white;
+}
+
+.social-links a.discord:hover {
+  box-shadow: 0 0 20px #5865F2;
+  transform: translateY(-8px);
+}
+
+/* Website */
+.social-links a.website {
+  background: #3498db;
+  color: white;
+}
+
+.social-links a.website:hover {
+  box-shadow: 0 0 20px #3498db;
+  transform: translateY(-8px);
+}
+
+/* Twitter/X */
+.social-links a.twitter {
+  background: #000000;
+  color: white;
+}
+
+.social-links a.twitter:hover {
+  box-shadow: 0 0 20px #000000;
+  transform: translateY(-8px);
+}
+
+/* Facebook */
+.social-links a.facebook {
+  background: #1877F2;
+  color: white;
+}
+
+.social-links a.facebook:hover {
+  box-shadow: 0 0 20px #1877F2;
+  transform: translateY(-8px);
+}
+
+/* YouTube */
+.social-links a.youtube {
+  background: #FF0000;
+  color: white;
+}
+
+.social-links a.youtube:hover {
+  box-shadow: 0 0 20px #FF0000;
+  transform: translateY(-8px);
+}
+
+@keyframes rotateBorder {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .social-title {
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .social-links a {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+    margin: 0 8px;
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+.elyos-leveling-guide {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    color: #d9d9d9;
+    background-color: #1a1a1a;
+    padding: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.guide-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #81725b;
+    padding-bottom: 0.8rem;
+}
+
+.guide-header h1 {
+    color: #81725b;
+    margin-bottom: 0.4rem;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.intro-text {
+    font-size: 1rem;
+    color: #b0b0b0;
+    margin: 0;
+}
+
+.quick-guide-section {
+ 
+    border-radius: 5px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid #81725b;
+}
+
+.quick-guide-section h2 {
+    color: #81725b;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.quick-guide-section > p {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+}
+
+.leveling-path {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.leveling-path li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #333;
+    font-size: 0.9rem;
+}
+
+.level-range {
+    font-weight: bold;
+    color: #c2af7b;
+    display: inline-block;
+    min-width: 100px;
+}
+
+.detailed-guide-section h2 {
+    color: #81725b;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.detailed-guide-section > p {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+}
+
+.guide-part {
+
+    border-radius: 5px;
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.guide-part h3 {
+    color: #c2af7b;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.guide-part h4 {
+    color: #c2af7b;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.guide-part p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+
+}
+
+.guide-part ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+    padding-left: 1.2rem;
+}
+
+.guide-part ul li {
+    margin-bottom: 0.3rem;
+
+}
+
+.image-placeholder {
+    background-color: #333;
+    border: 1px dashed #555;
+    padding: 1.2rem;
+    text-align: center;
+    margin: 0.8rem 0;
+    border-radius: 3px;
+    color: #777;
+
+}
+
+.note-box {
+    background-color: #2c3e50;
+    border-left: 3px solid #3498db;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    border-radius: 0 3px 3px 0;
+
+}
+
+.tip-box {
+    background-color: #2d4822;
+    border-left: 3px solid #4caf50;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    border-radius: 0 3px 3px 0;
+  
+}
+
+.npc-list {
+    columns: 2;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0.8rem 0;
+}
+
+.npc-list li {
+    padding: 0.2rem 0;
+ 
+}
+
+code {
+    background-color: #333;
+    padding: 0.15rem 0.3rem;
+    border-radius: 2px;
+    font-family: monospace;
+    color: #c2af7b;
+   
+}
+
+ol {
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+ol li {
+    margin-bottom: 0.3rem;
+
+}
+
+@media (max-width: 768px) {
+    .elyos-leveling-guide {
+        padding: 1rem;
+    }
+    
+    .npc-list {
+        columns: 1;
+    }
+    
+    .level-range {
+        min-width: 90px;
+    }
+    
+    .guide-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .quick-guide-section h2,
+    .detailed-guide-section h2 {
+        font-size: 1.3rem;
+    }
 }
