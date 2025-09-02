@@ -273,42 +273,42 @@ function openChanter() { console.log("Chanter selected"); }
 const classData = {
     Gladiator: {
         name: "Gladiator",
-        description: "Strong melee fighter, specializing in AoE damage and powerful weapon mastery.",
+        description: "The Gladiator is the weapons master of the Aion world and boasts excellent tanking and damage dealing capabilities. As such, Gladiators can fill either the tanking or dps role in a group. This class also has the widest variety of weapons available to them, being able to wield any physical weapon with the exception of the staff.",
         image: "media/characters/gladiator.webp"
     },
     Templar: {
         name: "Templar",
-        description: "Tanky warrior who protects allies with heavy armor and defensive skills.",
+        description: "The Templar is the main tanking class of Aion with many defense increasing skills that allow for the Templar to achieve a nearly invincible state for a period of time.",
         image: "media/characters/templar.webp"
     },
     Assassin: {
         name: "Assassin",
-        description: "Stealthy DPS with high burst damage and lethal precision.",
+        description: "The Assassin is the master of the shadows of Aion and has the best stealth and one of the highest damage bursts of all the classes. Assassins are also excellent in disabling and locking down their targets. These abilities go hand in hand, as an expert Assassin can sneak up on his target and burst it down before his target can even react.",
         image: "media/characters/Assassin.webp"
     },
     Ranger: {
         name: "Ranger",
-        description: "Expert at ranged combat, traps, and deadly bow skills.",
+        description: "The Ranger class is the ranged weapon expert of Aion and deals extensive damage from afar by using their bow to launch deadly arrows to destroy their victim. The Ranger is a ranged dps class with one or two skills of CC ability.",
         image: "media/characters/Ranger.webp"
     },
     Spiritmaster: {
         name: "Spiritmaster",
-        description: "Summoner class commanding powerful elemental spirits.",
+        description: "The Spiritmaster is the debuff specialist and the only class that utilizes summons in Aion. Spiritmasters use their powerful summons to damage and keep enemies at bay while they themselves inflict massive damage through the use of their damage over time skills. The Spiritmaster is considered to be a secondary dps and secondary CC class.",
         image: "media/characters/Spiritmaster.webp"
     },
     Sorcerer: {
         name: "Sorcerer",
-        description: "Master of destructive magic with high damage spells.",
+        description: "The Sorcerer is the Crowd Control (CC) specialist of Aion and also a fearsome dps class with the hardest hitting spells in the game. Sorcerers use their powerful CC abilities to control the flow of a fight while also casting devastatingly powerful spells to dispatch their targets quickly. This class is primarily a DPS class with excellent CC capability.",
         image: "media/characters/Sorcerer.webp"
     },
     Cleric: {
         name: "Cleric",
-        description: "Support and healer, keeping allies alive while dealing holy damage.",
+        description: "Clerics are the primary healing class in Aion and they utilize powerful healing spells and dispelling magic to keep their allies standing through even in the worst of conditions.",
         image: "media/characters/cleric.webp"
     },
     Chanter: {
         name: "Chanter",
-        description: "Buffer and support fighter, boosting allies with mantras and healing.",
+        description: "Having a profound mastery in enchantment magic, a Chanter benefits a group greatly by boosting various attributes of every group member.",
         image: "media/characters/Chanter.webp"
     }
 };

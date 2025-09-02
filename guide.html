@@ -22,10 +22,15 @@
 </section>
 <section id="available-classes" title="What classes available in this patch?">
     <h1>What classes available in this patch? </h1>
+    <p>Elden Aion is running on a 4.6 client but the server actual patch is 3.9, that being said the only available classes are the 8 original classes that existed in 3.9, Bard, AT, are disabled/removed from the client. </p>
+    <h3> The following are basic information about each class</h3>
     <div>
-        <div class="classImage"> </div>
-        <h2 class="className"> default name</h2>
-        <p class="classDescription">default description </p>
+        <div class="classImageContainer">
+            <div class="classImage">
+                <h2 class="className"> </h2>
+                <p class="classDescription"> </p>
+            </div>
+        </div>
     </div>
     <div class="class_selector">
         <div class="class_image Gladiator selected" tooltip="Gladiator" onclick="selectClass(this, 'Gladiator')"> </div>
@@ -101,28 +106,60 @@
     <div class="image">
         <img src="media/getting-started/creation-screen.jpg" alt="Faction selection " loading="lazy" />
     </div>
-    <div class="social-container">
+    <!--    <div class="social-container">
         <h2 class="social-title">Join Our Community</h2>
         <div class="social-links">
-            <a href="https://discord.gg/U7x3pAUuHR" target="_blank" rel="noopener" class="social discord">
+            <a href="https://discord.gg/U7x3pAUuHR" target="_blank" rel="noopener" class="social discord squircle-clip">
                 <i class="fab fa-discord"></i>
             </a>
-            <a href="https://www.eldenaion.com/" target="_blank" rel="noopener" class="social website">
-                <i class="fas fa-globe"></i>
-            </a>
-            <a href="https://x.com/AionElden" target="_blank" rel="noopener" class="social twitter">
+      <a href="https://www.tiktok.com/@eldenaion" target="_blank" rel="noopener" class="social tiktok squircle-clip">
+    <i class="fab fa-tiktok"></i>
+</a>
+            <a href="https://x.com/AionElden" target="_blank" rel="noopener" class="social twitter squircle-clip">
                 <i class="fab fa-x-twitter"></i>
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61575045842754" target="_blank" rel="noopener" class="social facebook">
+            <a href="https://www.facebook.com/profile.php?id=61575045842754" target="_blank" rel="noopener" class="social facebook squircle-clip">
                 <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="https://youtube.com/@eldenaion?si=H7SSjIEPUR5diATn" target="_blank" rel="noopener" class="social youtube">
+            <a href="https://youtube.com/@eldenaion?si=H7SSjIEPUR5diATn" target="_blank" rel="noopener" class="social youtube squircle-clip">
                 <i class="fab fa-youtube"></i>
             </a>
         </div>
     </div>
-    <!-- Font Awesome CDN (if not already included in Elementor) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ -->
+    <h1>Join our community </h1>
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <clipPath id="squircleClip" clipPathUnits="objectBoundingBox">
+                <path d="M 0,0.5 C 0,0 0,0 0.5,0 S 1,0 1,0.5 1,1 0.5,1 0,1 0,0.5"></path>
+            </clipPath>
+        </defs>
+    </svg>
+    <div class="relative">
+        <div class="absolute inset-0 bg-black/20 backdrop-blur-xl rounded-2xl "></div>
+        <div class="relative flex items-end gap-x-2 p-2">
+            <!-- Discord -->
+            <div class="relative">
+                <a href="https://discord.gg/U7x3pAUuHR" target="_blank" rel="noopener">
+                    <div style="clip-path: url(#squircleClip)" class="w-14 h-14 bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-xl flex items-center justify-center shadow-lg border border-indigo-500/50 cursor-pointer transform transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-2 hover:shadow-2xl">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02C2.44 9.59 1.9 13.8 2.32 17.97c0 .02.01.04.03.05c1.62 1.21 3.63 2.12 5.73 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c2.1-.53 4.11-1.44 5.73-2.65c.02-.01.03-.03.03-.05c.45-4.53-.78-8.73-3.3-12.62c-.01-.02-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <!-- YouTube -->
+            <div class="relative">
+                <a href="https://youtube.com/@eldenaion?si=H7SSjIEPUR5diATn" target="_blank" rel="noopener">
+                    <div style="clip-path: url(#squircleClip)" class="w-14 h-14 bg-gradient-to-br from-red-600 to-red-800 rounded-xl flex items-center justify-center shadow-lg border border-red-500/50 cursor-pointer transform transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-2 hover:shadow-2xl">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
     <!-- Minimal built-in styling for readability -->
     <style>
     #getting-started-guide {
@@ -168,9 +205,7 @@
         font-size: .95rem;
     }
 
-    #getting-started-guide a {
-        text-decoration: underline;
-    }
+
 
     #getting-started-guide pre {
         background: #1a1a1a;
@@ -283,10 +318,10 @@
                     <p>Elden Aion provides custom starter gear that remains powerful until level 60, allowing you to solo most instances.</p>
                 </div>
                 <p>After equipping your gear, visit Shugo Ylehmonerk or Heerunerk in Sanctum to unlock additional cube slots.</p>
-                <div class="tip-box">
-                    <h4>Tip</h4>
-                    <p>If you need kinah for cube upgrades, loot monsters and sell their drops, or ask friends for assistance.</p>
-                </div>
+            </div>
+            <div class="tip-box">
+                <h4>Tip</h4>
+                <p>If you need kinah for cube upgrades, loot monsters and sell their drops, or ask friends for assistance.</p>
             </div>
             <div class="guide-part">
                 <h3>Level 10 to 16</h3>
@@ -384,18 +419,284 @@
 </section>
 <!-- Add more sections as needed -->
 <section id="asmos-leveling-guide" title="Asmos Leveling Guide">
-    <div class="news-content" style="font-size:19px; line-height:1.8; color: white;">
-        <h2 style="font-weight: bold;"> Asmodian Level Guide</h2>
-        <ul>
-            <li> Lv1 to Lv9 Kill random monsters while moving to Munin (Class Change Quest)</li>
-            <li> Lv10 to Lv25 Hit mobs in Altgard until Lv16, then go to Haramel</li>
-            <li> Lv25 to Lv30 Nochsana Training Camp</li>
-            <li> Lv30 to Lv35–40 Do small campaigns + Fire Temple (solo/duo) or Alquimia Research Lab</li>
-            <li> Lv35–40 to Lv46 Grind campaigns (easy ones) — ensure enough Tribunus tokens; do Brusthonin quests after 45+</li>
-            <li> Lv46 to Lv48–50 Go to Theobomos Lab (clean main + left rooms), exit and repeat</li>
-            <li> Lv53 to Lv60 Go to Beshmundir Temple (easy mode) — solo (if magical), duo (if physical)</li>
+    <div class="guide-container">
+        <h1>Asmodians Leveling Guide</h1>
+        <p class="intro-text">Welcome to the comprehensive leveling guide for Asmodian faction players</p>
+        <div class="rates-section">
+            <h2>Elden Aion Rates</h2>
+            <div class="rates-grid">
+                <div class="rate-item">
+                    <span class="rate-label">Experience</span>
+                    <span class="rate-value">3x (Weekdays)</span>
+                </div>
+                <div class="rate-item">
+                    <span class="rate-label">Experience</span>
+                    <span class="rate-value">4x (Weekends)</span>
+                </div>
+                <div class="rate-item">
+                    <span class="rate-label">Abyss Points</span>
+                    <span class="rate-value">1.5x</span>
+                </div>
+                <div class="rate-item">
+                    <span class="rate-label">Loot</span>
+                    <span class="rate-value">2x</span>
+                </div>
+            </div>
+        </div>
+        <div class="quick-guide-section">
+            <h2>Quick Leveling Path</h2>
+            <p>For experienced players, here's a quick reference:</p>
+            <div class="leveling-path">
+                <div class="path-item">
+                    <span class="level-range">Level 1–9:</span>
+                    <span class="path-description">Kill mobs in Ishalgen while heading to Munin</span>
+                </div>
+                <div class="path-item">
+                    <span class="level-range">Level 10–15: </span>
+                    <span class="path-description">Farm mobs in Altgard until ~Lv16</span>
+                </div>
+                <div class="path-item">
+                    <span class="level-range">Level 15–25:</span>
+                    <span class="path-description">Move to Haramel for faster EXP</span>
+                </div>
+                <div class="path-item">
+                    <span class="level-range">Level 25–30:</span>
+                    <span class="path-description">Nochsana Training Camp</span>
+                </div>
+                <div class="path-item">
+                    <span class="level-range">Level 30–35/40:</span>
+                    <span class="path-description">Campaign quests + Fire Temple or Alquimia Lab</span>
+                </div>
+                <div class="path-item">
+                    <span class="level-range">Level 35/40–46:</span>
+                    <span class="path-description">Do easy campaigns + Brusthonin quests</span>
+                </div>
+                <div class="path-item">
+                    <span class="level-range">Level 46–48/50:</span>
+                    <span class="path-description">Grind Theobomos Lab</span>
+                </div>
+                <div class="path-item">
+                    <span class="level-range">Level 48/50–53:</span>
+                    <span class="path-description">Clear Dark Poeta (solo or duo depending on class)</span>
+                </div>
+                <div class="path-item">
+                    <span class="level-range">Level 53–60:</span>
+                    <span class="path-description">Run Beshmundir Temple (solo if magical, duo if physical)</span>
+                </div>
+                <div class="path-item">
+                    <span class="level-range">Level 53–60 Alternative:</span>
+                    <span class="path-description">Farm Dark Poeta for Kinah and do Sarpan/Tiamaranta campaigns </span>
+                </div>
+            </div>
+        </div>
+        <h2 id="notes-title" class="notes-heading">Leveling & Early Gear Notes</h2>
+        <ul class="notes-list">
+            <li class="note-item">
+                <span class="note-tag tag-campaign">Campaign</span>
+                Complete some <strong>Campaign (yellow)</strong> quests to collect enough <strong>Prism Cores</strong> for the Level 50 <abbr title="Abyss Points">AP</abbr> gear (<strong>E50 set</strong>).
+            </li>
+            <li class="note-item">
+                Prefer not to skip too much content? Focus on progressing through the <strong>Campaign</strong> and some <strong>blue quests</strong>.
+            </li>
+            <li class="note-item">
+                <span class="note-tag tag-xp">XP</span>
+                <strong>XP amulets</strong> are easy to obtain—vote for the server daily to earn <strong>Lumen</strong> and get XP boosts.
+                You’ll also receive <strong>Free Siel’s Blessings</strong> every <strong>2 hours</strong> (up to <strong>2 per day</strong>).
+            </li>
+            <li class="note-item">
+                <span class="note-tag tag-pro">Pro tip</span>
+                Create a <strong>second account</strong> to hold a group for yourself if you want to solo instances.
+            </li>
+            <li class="note-item">
+                <span class="note-tag tag-coins">Coins</span>
+                Save all <strong>Coins</strong> (Silver, Gold, Platinum) — they can be used to buy <strong>PvP accessories</strong> from <strong>Coin Chests</strong> at camp NPCs.
+            </li>
         </ul>
-    </div>
+        <div class="detailed-guide-section">
+            <h2>Detailed Leveling Guide</h2>
+            <p>For players who need more detailed instructions:</p>
+            <div class="guide-part">
+                <h3>Starting Out</h3>
+                <p>After creating your character, accept the survey notifications that appear next to your minimap.</p>
+                <p>Click on the pouch icon and press "Complete" to receive your starting items.</p>
+                <img src="media/elyos-leveling-guide/survey.png" alt="Survey icons" loading="lazy" />
+                <p>Use these items based on your class:</p>
+                <ul>
+                    <li>Physical classes: Use physical scrolls</li>
+                    <li>Magical classes: Use magical scrolls</li>
+                    <li>Always use movement speed scrolls</li>
+                </ul>
+                <p>Activate your experience amulet and candy immediately. Save your cube expansion for later.</p>
+                <h4>Title Selection</h4>
+                <p>Equip your title to benefit from stat bonuses.</p>
+                <img src="media/elyos-leveling-guide/equip your title.png" alt="Equip your title interface" loading="lazy" />
+            </div>
+            <div class="guide-part">
+                <h3>Level 1 to 10</h3>
+                <p>When you reach Aldelle Village, speak with the NPC specific to your class.</p>
+                <img src="media/asmos-leveling-guide/class-npc-starter.png" alt="Class training NPC" loading="lazy" />
+                <p>Then speak with Bacorerk to unlock your first cube slot.</p>
+                <img src="media/asmos-leveling-guide/cube-unlock-asmos.png" alt="Class training NPC" loading="lazy" />
+                <p>For fastest leveling:</p>
+                <ul>
+                    <li>Focus on killing monsters while moving toward your ascension quest</li>
+                    <li>Accept yellow quests as you encounter them</li>
+                    <li>The ascension quest unlocks at level 9</li>
+                </ul>
+                <p>Follow the ascension questline</p>
+                <p>You will then select your advanced class specialization.</p>
+                <img src="media/asmos-leveling-guide/munin ascension.png" alt="Class selection interface" loading="lazy" />
+                <p>Complete the Ceremony quest to receive your starter gear and weapon.</p>
+                <img src="media/asmos-leveling-guide/starter-gear.png" alt="Class training NPC" loading="lazy" />
+                <div class="note-box">
+                    <p>Open your reward boxes, select your weapon, and equip all items.</p>
+                    <h4>Note</h4>
+                    <p>Elden Aion provides custom starter gear that remains powerful until level 60, allowing you to solo most instances.</p>
+                </div>
+                <p>After equipping your gear, visit Shugo Nekorunerk or Ondarinerk in Pandaemonium to unlock additional cube slots.</p>
+                <img src="media/asmos-leveling-guide/unlock-your-cube-pandae.jpg" alt="Class training NPC" loading="lazy" />
+                <div class="tip-box">
+                    <h4>Tip</h4>
+                    <p>If you need kinah for cube upgrades, loot monsters and sell their drops, or ask friends for assistance.</p>
+                </div>
+                <div class="guide-part">
+                    <h3>Level 10 to 16</h3>
+                    <p>Travel to Altgard using the Pandaemonium</p>
+                    <p>Accept yellow quests as you encounter them—they will be useful later.</p>
+                    <div class="note-box">
+                        <h4>Note</h4>
+                        <p>You can defeat monsters up to 10 levels higher than your current level.</p>
+                    </div>
+                    <p>Farm kinah by killing monsters, looting them, and selling items.</p>
+                    <p>Fly to the Haramel entrance and defeat monsters until you reach level 16.</p>
+                </div>
+                <div class="guide-part">
+                    <h3>Level 16 to 25</h3>
+                    <p>Enter the Haramel instance and clear all monsters following the dungeon path.</p>
+                    <p>After one complete clear, you should reach level 21-22. Wait 10 minutes to re-enter for additional runs.</p>
+                    <div class="note-box">
+                        <h4>Note</h4>
+                        <p>There’s an optional questline related to the instance that starts with Odella, Odella, Where Art Thou?, given by NPC Morn in Altgard Fortress, that will guide you to the instance entry.
+                        </p>
+                    </div>
+                    <img src="media/asmos-leveling-guide/altgardmap.png" alt="Stigma quest interface" loading="lazy" />
+                </div>
+                <div class="guide-part">
+                    <h3>Stigma Unlock</h3>
+                    <p>At level 20, accept the "No Escaping Destiny" quest in Pandaemonium to unlock your stigma slots.</p>
+                    <p>Note: You unlock one stigma slot every 10 levels.</p>
+                    <img src="media/asmos-leveling-guide/noescapingdestiny.png" alt="Stigma quest interface" loading="lazy" />
+                    <p>Complete the quest chain to unlock your primary stigma abilities.</p>
+                </div>
+                <div class="guide-part">
+                    <h3>Level 25 to 35</h3>
+                    <p>At level 25, access Nochsana Training Camp by speaking with NPC Barlack in Morheim Fortress.</p>
+                    <img src="media/asmos-leveling-guide/ntc.png" alt="Nochsana Training Camp location" style="max-width: 100%;" loading="lazy" />
+                    <p>You need a group to enter but can clear it solo. Options:</p>
+                    <ol>
+                        <li>Request in chat: <code>/3 RecruitGroupMember hold group please!</code></li>
+                        <li>Use a second account to form a group</li>
+                    </ol>
+                    <p>Repeat this instance until level 30-31, then proceed to Fire Temple.</p>
+                    <img src="media/asmos-leveling-guide/firetemple.png" alt="Nochsana Training Camp location" style="max-width: 100%;" loading="lazy" />
+                    <div class="note-box">
+                        <h4>Note</h4>
+                        <p>There are two Campaign quests related to Fire Temple (optional):
+                        </p>
+                        <ol>
+                            <li>
+                                [Group] The Three Keys
+                            </li>
+                            <li> A Captive Flame</li>
+                        </ol>
+                        <p>There is also an Abyss entry questline that starts with the Honing Your Skills campaign quest in Pandaemonium. You can either do it now for XP or keep it for later (note that you won’t be able to enter the Abyss until you finish the questline).
+                        </p>
+                    </div>
+                </div>
+                <div class="guide-part">
+                    <h3>Level 35 to 46</h3>
+                    <p>Teleport to Beluslan through Pandaemonium (or from Morheim) and travel to Alquimia Research Center.</p>
+                    <p>You can solo this instance but need a group to enter.</p>
+                    <div class="warning-box">
+                        <h4>Warning</h4>
+                        <p>Death in this dungeon returns you to your bind point. Place a kisk outside the instance entrance.</p>
+                    </div>
+                    <p>Repeat this instance until you reach level 45-46.</p>
+                    <div class="note-box">
+                        <p class="note-label"><strong>NOTE:</strong> If you are following campaign quests, there are two quests related to <strong>Alquimia</strong>, upon completion of which you will be granted a one-time-only shortcut to the instance:</p>
+                        <ul class="quest-list">
+                            <li>&lt;A Missing Father&gt;</li>
+                            <li>&lt;A Spy Among the Lepharists&gt;</li>
+                        </ul>
+                        <p>
+                            Repeat this instance until you reach <strong>level 45–46</strong>. At around <strong>level 42</strong> the XP will noticeably slow down, so you can alternatively do your <strong>Campaign quests</strong> in <strong>Beluslan</strong> and <strong>Reshanta</strong>.
+                        </p>
+                    </div>
+                    <div class="note-box">
+                        <p class="note-label"><strong>NOTE:</strong> There are two noteworthy <strong>Campaign quests</strong> at this stage:</p>
+                        <ul class="quest-list">
+                            <li>&lt;Light up the Lighthouse&gt;</li>
+                            <li>&lt;The Seiren’s Treasure&gt;</li>
+                        </ul>
+                        <p>
+                            They are needed later on if you wish to complete the <strong>Adma Stronghold</strong> campaign in <strong>Brusthonin</strong>. As a bonus, you will receive the <strong>Easy Mark</strong> title that grants <strong>4% speed</strong>.
+                        </p>
+                    </div>
+                </div>
+                <div class="guide-part">
+                    <h3>Greater Stigma Slots</h3>
+                    <p>Return to Stigma Master Vergelmir in Pandaemonium to unlock Greater Stigma slots with these quests:</p>
+                    <ul>
+                        <li>The Shulack’s Stigma - Unlocks one greater stigma slot</li>
+                        <li>[Group] A Booklet on Stigma - Unlocks one greater stigma slot</li>
+                    </ul>
+                    <img src="media/asmos-leveling-guide/greater stigma quest.png" alt="Stigma Master interface" loading="lazy" />
+                    <p>Complete these quests to unlock the slots.</p>
+                    <div class="note-box">
+                        <h4>Note</h4>
+                        <p>Your first character receives free Groggets. Additional characters need approximately 3 days of dailies to unlock all slots.</p>
+                    </div>
+                </div>
+                <div class="guide-part">
+                    <h3>Level 46 to 53</h3>
+                    <p>Travel to Brusthonin and fly using the Flight Transport to Baltasar Hill Village for the Theobomos Lab instance. Prepare with proper stigmas, shards, and keybinds. You can either solo or duo, depending on your class.</p>
+                    <div class="note-box">
+                        <h4>Note</h4>
+                        <p>If you're still level 45, defeat monsters outside the instance until you reach level 46.</p>
+                    </div>
+                    <img src="media/elyos-leveling-guide/adma-ending.jpg" alt="Adma Stronghold interior" loading="lazy" />
+                    <p>With 200% experience boost and recovery tea, one complete run should get you to level 53.</p>
+                    <p>Alternatively, you can complete the Brusthonin campaign and do Adma Stronghold instead, as it rewards a decent amount of Prism Cores</p>
+
+                    <div class="note-box"> <h4> Note </h4>
+                        <p> NOTE: If the NPC Sahnu refuses to talk to you, make sure you have completed Light Up the Lighthouse Campaign </p>
+
+                     </div> 
+                </div>
+                <div class="guide-part">
+                    <h3>Level 53 to 60</h3>
+                    <p>Teleport to Gelkmaros  through Pandaemonium. Your destination is Beshmundir Temple.</p>
+                    <img src="media/asmos-leveling-guide/gelkmaros.png" alt="Inggison map" loading="lazy" />
+                    <p>Enter through the portal to Silentera Canyon (marked with a blue portal on your map).</p>
+                    <p>In Gelkmaros, use the air route to Rhonnam Refugee Village, then either walk from there or teleport to any captured Asmodian fort, if there is one, and go from there instead for a shortcut.</p>
+                    <div class="warning-box">
+                        <h4>Warning</h4>
+                        <p>You may encounter enemy faction players and the world boss Omega. Proceed with caution.</p>
+                    </div>
+                    <p>Beshmundir Temple is located in the southern part of Silentera Canyon.</p>
+                    <img src="media/asmos-leveling-guide/silentera canyon.png" alt="Beshmundir Temple entrance" loading="lazy" />
+                    <p>This instance requires a duo partner. Find players at similar levels for optimal experience gain.</p>
+                    <p>Congratulations on reaching level 60! Explore these additional guides to enhance your gameplay:</p>
+                    <div class="guide-links">
+                        <a href="#lumen-guide" class="guide-link">Lumen Farming Guide</a>
+                        <a href="#prism-core-guide" class="guide-link">Prism Core and Weapon Augmentation</a>
+                        <a href="" class="guide-link">AP and Mithril Farming</a>
+                        <a href="" class="guide-link">Endgame Instances Overview</a>
+                        <a href="" class="guide-link">Class Specialization Guides</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 </section>
 <section id="starter-gear-guide" title="Getting started into Elden Aion: Starter Gear">
     <h1> Starter Gear </h1>

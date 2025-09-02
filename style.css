@@ -18,7 +18,7 @@ html {
 header {
     will-change: backdrop-filter, opacity;
     transition: backdrop-filter .8s ease, -webkit-backdrop-filter .8s ease;
-    height: 135px;
+    height: 60px;
     position: fixed;
     /* width: 90%; */
     /* left: 50%; */
@@ -116,7 +116,7 @@ h2 {
     }
 
     .search-container {
-        width: 300px;
+        width: 500px;
         margin-bottom: 0;
     }
 
@@ -169,7 +169,7 @@ body {
 header {
     will-change: backdrop-filter, opacity;
     transition: backdrop-filter .8s ease, -webkit-backdrop-filter .8s ease;
-    height: 135px;
+    height: 60px;
     position: fixed;
     /* width: 90%; */
     /* left: 50%; */
@@ -178,7 +178,7 @@ header {
     z-index: 2;
     padding: 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     position: fixed;
     width: 100%;
@@ -221,7 +221,8 @@ header::after {
 
 .search-container {
     position: relative;
-    width: 300px;
+  width: 500px;
+    margin-left: 61px;
 }
 
 #search {
@@ -271,7 +272,7 @@ main {
     background: var(--card-bg);
     padding: 1rem;
     position: fixed;
-    top: 135px;
+    top: 60px;
     bottom: 0;
     left: -250px;
     transition: left 0.3s ease;
@@ -487,13 +488,13 @@ section.active {
 /* For Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #4a2c82 #1a1a1a;
+    scrollbar-color: var(--accent) #1a1a1a;
     /* primary track */
 }
 
 .classImage {
     width: 100%;
-    height: 700px;
+    height: 600px;
 }
 
 .Gladiator {
@@ -537,14 +538,15 @@ section.active {
     background-size: contain;
     border-radius: 15px !important;
     cursor: pointer;
-
+    filter: grayscale(100%);
+    transform: translateY(-1px) scale(0.8);
     /* layout + animation */
     position: relative;
     display: inline-block;
     transition:
-        transform 0.25s ease,
-        box-shadow 0.4s ease,
-        background-color 0.4s ease;
+        transform 0.1s ease,
+        box-shadow 0.1s ease,
+        background-color 0.1s ease;
 }
 
 /* hover lift + subtle glow */
@@ -556,6 +558,7 @@ section.active {
 
 /* active press (quick shrink) */
 .class_image:active {
+    filter: grayscale(90%);
     transform: translateY(-1px) scale(0.98);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25),
         0 0 6px rgba(77, 182, 172, 0.3);
@@ -563,11 +566,10 @@ section.active {
 
 /* ✅ selected state (animated accent background) */
 .class_image.selected {
-    background-color: var(--accent);
-    box-shadow: 0 0 18px rgba(77, 182, 172, 0.6);
-    transform: scale(1.07);
-    animation: selectPulse 0.5s ease;
-    /* entry pulse */
+    filter: grayscale(0%);
+    transform: translateY(-1px) scale(1.1);
+    border: 1px solid var(--accent);
+
 }
 
 /* selection pulse animation */
@@ -590,7 +592,7 @@ section.active {
 
 /* Link styling for dark backgrounds */
 #getting-started-guide a {
-    color: #8ab4f8;
+    color: white;
     /* soft blue, good contrast on dark bg */
     text-decoration: none;
     /* remove default underline */
@@ -600,7 +602,7 @@ section.active {
 #getting-started-guide a:hover {
     color: #aecbfa;
     /* lighter on hover */
-    text-decoration: underline;
+
     /* add underline for clarity */
 }
 
@@ -617,162 +619,59 @@ section.active {
 
 
 
-.social-links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  padding: 1rem 0;
+/* Remove underline from all links */
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
 }
 
-.social-title {
-  color: var(--text-color);
-  margin-right: 2rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  text-decoration: none !important;
+/* Alternative: More specific selector for social links only */
+.social-links a,
+.social-links a:hover,
+.social-links a:focus,
+.social-links a:active {
+    text-decoration: none;
 }
 
-.social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin: 0 10px;
-  font-size: 1.5rem;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
-  text-decoration: none !important;
-}
 
-.social-links a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg at 50% 50%,
-    currentColor 0%,
-    transparent 100%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 0;
-}
-
-.social-links a:hover::before {
-  opacity: 0.2;
-  animation: rotateBorder 1.5s linear infinite;
-}
-
-.social-links a i {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.3s ease;
-  text-decoration: none !important;
-}
-
-.social-links a:hover i {
-  transform: scale(1.2);
-}
-
-/* Discord */
-.social-links a.discord {
-  background: #5865F2;
-  color: white;
-}
-
-.social-links a.discord:hover {
-  box-shadow: 0 0 20px #5865F2;
-  transform: translateY(-8px);
-}
-
-/* Website */
-.social-links a.website {
-  background: #3498db;
-  color: white;
-}
-
-.social-links a.website:hover {
-  box-shadow: 0 0 20px #3498db;
-  transform: translateY(-8px);
-}
-
-/* Twitter/X */
-.social-links a.twitter {
-  background: #000000;
-  color: white;
-}
-
-.social-links a.twitter:hover {
-  box-shadow: 0 0 20px #000000;
-  transform: translateY(-8px);
-}
-
-/* Facebook */
-.social-links a.facebook {
-  background: #1877F2;
-  color: white;
-}
-
-.social-links a.facebook:hover {
-  box-shadow: 0 0 20px #1877F2;
-  transform: translateY(-8px);
-}
-
-/* YouTube */
-.social-links a.youtube {
-  background: #FF0000;
-  color: white;
-}
-
-.social-links a.youtube:hover {
-  box-shadow: 0 0 20px #FF0000;
-  transform: translateY(-8px);
-}
 
 @keyframes rotateBorder {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .social-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .social-title {
-    width: 100%;
-    text-align: center;
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
-  
-  .social-links a {
-    width: 45px;
-    height: 45px;
-    font-size: 1.3rem;
-    margin: 0 8px;
-  }
+    .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .social-title {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .social-links a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        margin: 0 8px;
+    }
 }
 
 
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-    
+
 .elyos-leveling-guide {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
@@ -805,7 +704,7 @@ section.active {
 }
 
 .quick-guide-section {
- 
+
     border-radius: 5px;
     padding: 1.2rem;
     margin-bottom: 1.5rem;
@@ -821,7 +720,7 @@ section.active {
     font-size: 1.4rem;
 }
 
-.quick-guide-section > p {
+.quick-guide-section>p {
     margin-top: 0;
     margin-bottom: 0.8rem;
 }
@@ -855,7 +754,7 @@ section.active {
     font-size: 1.5rem;
 }
 
-.detailed-guide-section > p {
+.detailed-guide-section>p {
     margin-top: 0;
     margin-bottom: 1.2rem;
 }
@@ -928,7 +827,7 @@ section.active {
     padding: 0.8rem;
     margin: 0.8rem 0;
     border-radius: 0 3px 3px 0;
-  
+
 }
 
 .npc-list {
@@ -940,7 +839,7 @@ section.active {
 
 .npc-list li {
     padding: 0.2rem 0;
- 
+
 }
 
 code {
@@ -949,7 +848,7 @@ code {
     border-radius: 2px;
     font-family: monospace;
     color: #c2af7b;
-   
+
 }
 
 ol {
@@ -967,19 +866,19 @@ ol li {
     .elyos-leveling-guide {
         padding: 1rem;
     }
-    
+
     .npc-list {
         columns: 1;
     }
-    
+
     .level-range {
         min-width: 90px;
     }
-    
+
     .guide-header h1 {
         font-size: 1.6rem;
     }
-    
+
     .quick-guide-section h2,
     .detailed-guide-section h2 {
         font-size: 1.3rem;
@@ -1004,7 +903,7 @@ ol li {
 }
 
 .guide-header h1 {
-  
+
     margin-bottom: 10px;
     font-size: 2.2rem;
 }
@@ -1058,7 +957,7 @@ ol li {
 }
 
 .quick-guide-section h2 {
- 
+
     margin-bottom: 15px;
     border-bottom: 1px solid #444;
     padding-bottom: 10px;
@@ -1084,7 +983,7 @@ ol li {
 
 .level-range {
     font-weight: bold;
-  
+
     min-width: 120px;
 }
 
@@ -1102,12 +1001,12 @@ ol li {
 .guide-part {
     margin-bottom: 40px;
     padding: 20px;
- 
+
     border-radius: 8px;
 }
 
 .guide-part h3 {
-  
+
     margin-bottom: 15px;
     font-size: 1.4rem;
 }
@@ -1124,7 +1023,9 @@ ol li {
     border: 1px solid #444;
 }
 
-.note-box, .tip-box, .warning-box {
+.note-box,
+.tip-box,
+.warning-box {
     padding: 15px;
     border-radius: 6px;
     margin: 15px 0;
@@ -1136,7 +1037,7 @@ ol li {
 }
 
 .note-box h4 {
-    
+
     margin-top: 0;
 }
 
@@ -1189,7 +1090,8 @@ code {
     font-family: monospace;
 }
 
-ul, ol {
+ul,
+ol {
     padding-left: 20px;
     margin: 10px 0;
 }
@@ -1202,16 +1104,77 @@ li {
     .guide-container {
         padding: 15px;
     }
-    
+
     .path-item {
         flex-direction: column;
     }
-    
+
     .level-range {
         margin-bottom: 5px;
     }
-    
+
     .rates-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* .classImage{
+    position: relative;
+}
+.className{
+    text-align: center;
+    font-size :  25px;
+} */
+
+
+/* Import a badass bulky font */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&display=swap');
+
+.classImage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* vertical center */
+    align-items: center;
+    /* horizontal center */
+    text-align: center;
+    height: 500px;
+}
+
+.className {
+    opacity: 0.9;
+    width: 100%;
+    font-size: 50px;
+    font-weight: 700;
+    background: -webkit-linear-gradient(#ffffff, #FFD700);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #fff0;
+    margin: 0 0 30px 0;
+    -webkit-text-fill-color: transparent;
+    font-family: Cinzel, Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, .3), 0 0 10px rgba(255, 255, 255, .2), 0 0 15px rgba(255, 255, 255, .1), 2px 2px 4px rgba(255, 0, 0, .2);
+    transform: translateY(100%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    line-height: 1.2;
+    text-align: end;
+    margin-right: 600px;
+}
+
+/* New badass animation: power pulse */
+
+
+.classDescription {
+    opacity: 0.9;
+    font-size: 18px !important;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 100px;
+    max-width: 850px;
+    text-align: left;
+    color: #C7C7C7;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.9);
+    margin-bottom: 1rem;
 }
