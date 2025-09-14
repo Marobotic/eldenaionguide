@@ -215,12 +215,18 @@ document.querySelectorAll('.sidebar a').forEach(link => {
     });
 });
 
+
+
+
 function selectClass(element, className) {
     // Remove "selected" from all
     document.querySelectorAll('.class_image').forEach(el => el.classList.remove('selected'));
 
     // Add "selected" to clicked
     element.classList.add('selected');
+
+    // Update the stats display
+    updateStats(className);
 
     // Call corresponding function
     switch (className) {
@@ -251,23 +257,43 @@ function selectClass(element, className) {
     }
 }
 
-// Define your functions (you can replace console.log with your logic)
+// Add this class stats data (place it near your classData object)
+const classStats = {
+    Gladiator: { Power: 110, Health: 110, Accuracy: 100, Agility: 90, Knowledge: 70, Will: 80 },
+    Templar: { Power: 90, Health: 120, Accuracy: 90, Agility: 80, Knowledge: 85, Will: 100 },
+    Assassin: { Power: 100, Health: 90, Accuracy: 110, Agility: 110, Knowledge: 80, Will: 70 },
+    Ranger: { Power: 90, Health: 90, Accuracy: 120, Agility: 110, Knowledge: 85, Will: 75 },
+    Spiritmaster: { Power: 70, Health: 85, Accuracy: 95, Agility: 85, Knowledge: 120, Will: 110 },
+    Sorcerer: { Power: 80, Health: 80, Accuracy: 90, Agility: 80, Knowledge: 120, Will: 100 },
+    Cleric: { Power: 85, Health: 100, Accuracy: 85, Agility: 80, Knowledge: 110, Will: 110 },
+    Chanter: { Power: 90, Health: 100, Accuracy: 85, Agility: 85, Knowledge: 100, Will: 120 }
+};
+
+// Add this function to update the stats
+function updateStats(className) {
+    const stats = classStats[className];
+    const statElements = document.querySelectorAll('.stat');
+    
+    // Update each stat bar and value
+    statElements.forEach((statElement) => {
+        const statName = statElement.querySelector('.fill').textContent;
+        const value = stats[statName];
+        
+        // Update the width and value
+        statElement.querySelector('.fill').style.width = `${value}%`;
+        statElement.querySelector('.value').textContent = value;
+    });
+}
+
+// Your existing functions
 function openGladiator() { console.log("Gladiator selected"); }
-
 function openTemplar() { console.log("Templar selected"); }
-
 function openAssassin() { console.log("Assassin selected"); }
-
 function openRanger() { console.log("Ranger selected"); }
-
 function openSpiritmaster() { console.log("Spiritmaster selected"); }
-
 function openSorcerer() { console.log("Sorcerer selected"); }
-
 function openCleric() { console.log("Cleric selected"); }
-
 function openChanter() { console.log("Chanter selected"); }
-
 
 // Your data: add descriptions + image paths
 const classData = {
