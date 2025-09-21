@@ -367,19 +367,19 @@ window.onload = () => {
 const slots = [
   { id: 'slot1',  img: 'class_stigmas/gladiator/PVP/AbsorbingFury.png',       text: 'Absorbing Fury'   },
   { id: 'slot2',  img: 'class_stigmas/gladiator/PVP/AdvancedDualWielding.png', text: 'Adv. Dual Wielding'  },
-  { id: 'slot3',  img: 'class_stigmas/gladiator/PVP/SecondWind.png',           text: 'Second Wind' },
+  { id: 'slot3',  img: 'class_stigmas/gladiator/PVP/secondwind.png',           text: 'Second Wind' },
   { id: 'slot4',  img: 'class_stigmas/gladiator/PVP/SharpStrike.png',          text: 'Sharp Strike'  },
-  { id: 'slot5',  img: 'class_stigmas/gladiator/PVP/CripplingCut.png',         text: 'Crippling Cut'   },
-  { id: 'slot6',  img: 'class_stigmas/gladiator/PVP/Slaughter.png',            text: 'Slaughter'  },
+  { id: 'slot5',  img: 'class_stigmas/gladiator/PVP/cripplingcut.png',         text: 'Crippling Cut'   },
+  { id: 'slot6',  img: 'class_stigmas/gladiator/PVP/slaughter.png',            text: 'Slaughter'  },
   { id: 'slot7',  img: 'class_stigmas/gladiator/PVP/ExhaustingWave.png',       text: 'Exhausting Wave' },
-  { id: 'slot8',  img: 'class_stigmas/gladiator/PVP/TendonSlice.png',          text: 'Tendon Slice'},
+  { id: 'slot8',  img: 'class_stigmas/gladiator/PVP/tendonslice.png',          text: 'Tendon Slice'},
   { id: 'slot9',  img: 'class_stigmas/gladiator/PVP/UnwaveringDevotion.png',   text: 'Unwavering Devotion'  },
-  { id: 'slot10', img: 'class_stigmas/gladiator/PVP/Lockdown.png',             text: 'Lockdown'   },
+  { id: 'slot10', img: 'class_stigmas/gladiator/PVP/lockdown.png',             text: 'Lockdown'   },
   { id: 'slot11', img: 'class_stigmas/gladiator/PVP/PiercingRupture.png',      text: 'Piercing Rupture'  },
-  { id: 'slot12', img: 'class_stigmas/gladiator/PVP/Berserking.png',           text: 'Berserking' },
+  { id: 'slot12', img: 'class_stigmas/gladiator/PVP/berserking.png',           text: 'Berserking' },
 
-    { id: 'LockDownVPVE', img: 'class_stigmas/gladiator/PVE/Lockdown.png', text: 'Lockdown' }, //done
-  { id: 'BerserkingIPVE', img: 'class_stigmas/gladiator/PVE/Berserking.png', text: 'Berserking' }, //done
+    { id: 'LockDownVPVE', img: 'class_stigmas/gladiator/PVE/lockdown.png', text: 'Lockdown' }, //done
+  { id: 'BerserkingIPVE', img: 'class_stigmas/gladiator/PVE/berserking.png', text: 'Berserking' }, //done
   { id: 'SevereWeakeningBlowVIPVE', img: 'class_stigmas/gladiator/PVE/SevereWeakeningBlow.png', text: 'Severe Weakening Blow' }, //done
   { id: 'VengefulStrikeVIPVE', img: 'class_stigmas/gladiator/PVE/VengefulStrike.png', text: 'Vengeful Strike' }, //done
   { id: 'DauntlessSpiritVPVE', img: 'class_stigmas/gladiator/PVE/DauntlessSpirit.png', text: 'Dauntless Spirit' }, //done
@@ -389,7 +389,7 @@ const slots = [
   { id: 'ViciousBlowIV', img: 'class_stigmas/gladiator/PVE/ViciousBlow.png', text: 'Vicious Blow' }, // done
   { id: 'WhirlingStrikeIIIPVE', img: 'class_stigmas/gladiator/PVE/WhirlingStrike.png', text: 'Whirling Strike' }, //done
   { id: 'DrainingSwordIIPVE', img: 'class_stigmas/gladiator/PVE/DrainingSword.png', text: 'Draining Sword' }, //done
-  { id: 'SecondWindPVE', img: 'class_stigmas/gladiator/PVE/SecondWind.png', text: 'Second Wind' } //done
+  { id: 'SecondWindPVE', img: 'class_stigmas/gladiator/PVE/secondwind.png', text: 'Second Wind' } //done
 ];
 
 // Delay execution by 1 second
