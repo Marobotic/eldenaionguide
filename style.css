@@ -1,194 +1,193 @@
+@keyframes selectPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 transparent
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 24px rgba(77, 182, 172, .8)
+    }
+
+    to {
+        transform: scale(1.07);
+        box-shadow: 0 0 18px rgba(77, 182, 172, .6)
+    }
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
 :root {
     --primary: #4a2c82;
     --secondary: #6a3cb5;
     --accent: #81725b;
     --text: #f0f0f0;
     --bg: #000000;
-    --card-bg: #1a1a1a;
+    --card-bg: #1a1a1a
 }
 
-/* Add this at the top of your CSS */
 html {
     font-size: 14px;
-    /* Base font size for mobile */
-    scroll-behavior: smooth;
+    scroll-behavior: smooth
 }
 
-/* Modify the header section */
+body {
+    background-image: url(media/background.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--text);
+
+
+}
+
 header {
-    will-change: backdrop-filter, opacity;
-    transition: backdrop-filter .8s ease, -webkit-backdrop-filter .8s ease;
-    height: 60px;
-    position: fixed;
-    /* width: 90%; */
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
-    margin: 0 auto;
-    z-index: 2;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
     backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px)
 }
 
 h3 {
     font-size: 22px;
-    line-height: 50px;
+    line-height: 50px
+}
+
+p {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important
 }
 
 .logo {
-    margin-bottom: 0.5rem;
     justify-content: center;
-    width: 100%;
+    width: 100%
 }
 
+.logo,
 .search-container {
-    width: 100%;
-    margin-bottom: 0.5rem;
-}
-
-/* Update main content area */
-main {
-    padding: 1rem;
-    margin-top: 100px;
-    /* Reduced from 6rem */
-}
-
-/* Make sidebar full-width on mobile */
-.sidebar {
-    width: 100%;
-    left: -100%;
-    top: 120px;
-    /* Adjusted for mobile header */
+    margin-bottom: .5rem
 }
 
 .sidebar.visible {
-    left: 0;
+    left: 0
 }
 
-/* Adjust section padding */
 section {
-    padding: 1rem 0;
     scroll-margin-top: 100px;
-    margin-top: 50px;
-    /* Adjust based on your header height */
-    background: none !important;
+    margin-top: 0px;
     border: 20px solid transparent;
-    border-image: url(https://cdn.eldenaion.com/img/frame_square_dark.png) 60 stretch;
+    border-image: url(https://cdn.eldenaion.com/img/frame_square_dark.png)60 stretch;
+    display: none;
+
 }
 
-/* Make navigation buttons full width */
 .nav-buttons {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: .5rem
 }
 
+#search,
 .nav-btn {
-    width: 100%;
+    width: 100%
 }
 
-/* Responsive font sizes */
 h1 {
-    font-size: 1.8rem;
+    font-size: 1.8rem
 }
 
 h2 {
-    font-size: 1.4rem;
+    font-size: 1.4rem
 }
 
-/* Add media queries at the end of your CSS */
-@media (min-width: 768px) {
+@media (min-width:768px) {
     html {
-        font-size: 16px;
+        font-size: 16px
     }
 
     header {
         flex-direction: row;
         padding: 1rem;
-        height: 72px;
+        height: 72px
     }
 
     .logo {
         margin-bottom: 0;
         justify-content: flex-start;
-        width: auto;
+        width: auto
     }
 
     .search-container {
         width: 500px;
-        margin-bottom: 0;
+        margin-bottom: 0
     }
 
     main {
         padding: 6rem 2rem 2rem;
-        margin-top: 0;
+        margin-top: 0
     }
 
     .sidebar {
         width: 250px;
         left: -250px;
-        top: 72px;
+        top: 72px
     }
 
     .nav-buttons {
-        flex-direction: row;
+        flex-direction: row
     }
 
     .nav-btn {
-        width: auto;
+        width: auto
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width:992px) {
     main {
         margin-left: 0;
-        transition: margin-left 0.3s ease;
+        transition: margin-left .3s ease
     }
 
     .sidebar.visible+main {
-        margin-left: 250px;
+        margin-left: 250px
     }
 }
 
 * {
-
     box-sizing: border-box;
-    font-family: 'Philosopher', sans-serif;
+    font-family: "Philosopher", sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) #1a1a1a
 }
 
+header,
+section.active {
+    background: rgba(0, 0, 0, 0.6);
+    /* dark & transparent */
+    backdrop-filter: blur(10px);
+    /* blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+}
 
-
-body {
-    background: var(--bg);
-    color: var(--text);
-    display: flex;
-    min-height: 100vh;
+header,
+main {
+    margin: 0 auto
 }
 
 header {
-    will-change: backdrop-filter, opacity;
-    transition: backdrop-filter .8s ease, -webkit-backdrop-filter .8s ease;
     height: 60px;
-    position: fixed;
-    /* width: 90%; */
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
-    margin: 0 auto;
-    z-index: 2;
     padding: 1rem;
-    display: flex;
     justify-content: start;
-    align-items: center;
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 100;
+    z-index: 100
 }
 
 header::after {
@@ -198,48 +197,47 @@ header::after {
     bottom: 0;
     width: 100%;
     height: 1px;
-    background: linear-gradient(to right, rgba(169, 141, 80, 0) 0, rgba(169, 141, 80, .2) 40%, rgba(169, 141, 80, 0) 100%);
-    pointer-events: none;
+    background: linear-gradient(to right, rgba(169, 141, 80, 0)0, rgba(169, 141, 80, .2) 40%, rgba(169, 141, 80, 0) 100%);
+    pointer-events: none
+}
+
+.logo,
+.logo-icon,
+header {
+    display: flex;
+    align-items: center
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    gap: 1rem
 }
 
 .logo-icon {
     width: 60px;
     height: 60px;
-    background-image: url("media/ico.png");
+    background-image: url(media/ico.png);
     background-size: contain;
-    /* scale image to fit */
     background-repeat: no-repeat;
-    /* prevent tiling */
     background-position: center;
-    /* keep it centered */
-    display: flex;
-    align-items: center;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 5px
 }
 
 .search-container {
     position: relative;
     width: 500px;
-    margin-left: 61px;
+    margin-left: 61px
 }
 
 #search {
-    width: 100%;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    padding: .5rem 1rem;
+    background: rgba(255, 255, 255, .1);
+    color: #fff;
     border: 5px solid transparent !important;
     border-image-source: url(https://cdn.eldenaion.com/img/frame_square_dark.png) !important;
     border-image-slice: 25 !important;
     border-image-repeat: stretch !important;
-    background: rgba(0, 0, 0, 0.2) !important;
+    background: rgba(0, 0, 0, .2) !important
 }
 
 .search-results {
@@ -251,112 +249,100 @@ header::after {
     border-radius: 0 0 5px 5px;
     max-height: 300px;
     overflow-y: auto;
-    display: none;
+    display: none
 }
 
 .search-results a {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
     color: var(--text);
-    text-decoration: none;
+    text-decoration: none
 }
 
 .search-results a:hover {
-    background: var(--primary);
+    background: var(--primary)
 }
 
 main {
     flex: 1;
     padding: 6rem 2rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px
+}
+
+.sidebar,
+.titleList {
+    background: var(--card-bg);
+    padding: 1rem
 }
 
 .sidebar {
     width: 250px;
-    background: var(--card-bg);
-    padding: 1rem;
     position: fixed;
     top: 60px;
     bottom: 0;
     left: -250px;
-    transition: left 0.3s ease;
-    overflow-y: auto;
-}
-
-.sidebar.visible {
-    left: 0;
+    transition: left .3s ease;
+    overflow-y: auto
 }
 
 .sidebar h3 {
     color: var(--accent);
     margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--accent);
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--accent)
 }
 
-.sidebar ul {
-    list-style: none;
+.sidebar ul,
+.titleList ul {
+    list-style: none
 }
 
-.sidebar li {
-    margin-bottom: 0.5rem;
+.sidebar li,
+.titleList h3 {
+    margin-bottom: .5rem
 }
 
 .sidebar a {
-    color: var(--text);
-    text-decoration: none;
     display: block;
-    padding: 0.25rem 0;
+    padding: .25rem 0
 }
 
 .sidebar a.active {
     color: var(--accent);
-    font-weight: bold;
-}
-
-section {
-    display: none;
-    padding: 2rem 0;
+    font-weight: 700
 }
 
 section.active {
-    display: block;
+    display: block
 }
 
 .titleList {
-    background: var(--card-bg);
-    padding: 1rem;
     border-radius: 5px;
-    margin: 1rem 0;
+    margin: 1rem 0
 }
 
 .titleList h3 {
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-}
-
-.titleList ul {
-    list-style: none;
+    color: var(--accent)
 }
 
 .titleList li {
-    margin-bottom: 0.25rem;
+    margin-bottom: .25rem
 }
 
+.sidebar a,
 .titleList a {
     color: var(--text);
-    text-decoration: none;
+    text-decoration: none
 }
 
 .nav-buttons {
     display: flex;
     justify-content: space-between;
-    margin-top: 2rem;
+    margin-top: 2rem
 }
 
 .nav-btn {
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
     background: linear-gradient(rgba(51, 42, 34, .77), rgba(14, 11, 6, .77));
     border: 1px solid rgba(255, 255, 255, .1);
     color: #fff;
@@ -371,156 +357,134 @@ section.active {
     cursor: pointer;
     transition: background-color .3s ease;
     top: 15px;
-    position: relative;
+    position: relative
 }
 
 .nav-btn:hover {
-    background: var(--secondary);
+    background: var(--secondary)
 }
 
 .nav-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+    opacity: .5;
+    cursor: not-allowed
 }
 
 .mobile-menu-toggle {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: .5rem;
     position: absolute;
-    left: 0.5rem;
-    top: 0.5rem;
+    left: .5rem;
+    top: .5rem
 }
 
-@media (max-width: 767px) {
+@media (max-width:767px) {
     .mobile-menu-toggle {
-        display: block;
+        display: block
     }
 
     .logo {
-        padding-left: 2rem;
+        padding-left: 2rem
     }
 }
 
-
-
 .guide_button {
     width: auto;
-    /* padding-left: 30px; */
-    padding: 2px 50px 2px 50px;
+    padding: 2px 50px;
     cursor: pointer;
     border-radius: 15px;
     margin-right: 10px;
-    border: 1px solid var(--accent);
     margin-bottom: 10px;
-    /* overflow: hidden; */
     position: relative;
-    height: 54px;
+    height: 54px
 }
 
+.flex_column,
 .flex_row {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap
 }
 
 .guide_button img {
     position: absolute;
-    left: 0px;
+    left: 0;
     margin-left: 10px;
     margin-top: 5px;
     width: 40px;
-    height: 40px;
+    height: 40px
 }
 
 .guide_button p {
     text-align: center !important;
     pointer-events: none;
     inline-size: max-content;
-    margin-left: 10px;
+    margin-left: 10px
 }
 
 .flex_column {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: column
 }
 
-/* Scrollbar Styling */
 ::-webkit-scrollbar {
     width: 10px;
-    height: 10px;
+    height: 10px
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: #1a1a1a;
-    /* Matches your --card-bg color */
-    border-radius: 5px;
+    border-radius: 5px
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: #4a2c82;
-    /* Your --primary color */
     border-radius: 5px;
-    border: 2px solid #1a1a1a;
+    border: 2px solid #1a1a1a
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #6a3cb5;
-    /* Your --secondary color */
+    background: #6a3cb5
 }
 
-/* Corner */
 ::-webkit-scrollbar-corner {
-    background: #1a1a1a;
-}
-
-/* For Firefox */
-* {
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent) #1a1a1a;
-    /* primary track */
+    background: #1a1a1a
 }
 
 .classImage {
-    width: 100%;
-    height: 600px;
+    width: 100%
 }
 
 .Gladiator {
-    background-image: url("media/classes/gladiator.png");
+    background-image: url(media/classes/gladiator.png)
 }
 
 .Templar {
-    background-image: url("media/classes/templar.png");
+    background-image: url(media/classes/templar.png)
 }
 
 .Assassin {
-    background-image: url("media/classes/assassin.png");
+    background-image: url(media/classes/assassin.png)
 }
 
 .Ranger {
-    background-image: url("media/classes/ranger.png");
+    background-image: url(media/classes/ranger.png)
 }
 
 .Spiritmaster {
-    background-image: url("media/classes/spiritmaster.png");
+    background-image: url(media/classes/spiritmaster.png)
 }
 
 .Sorcerer {
-    background-image: url("media/classes/sorcerer.png");
+    background-image: url(media/classes/sorcerer.png)
 }
 
 .Chanter {
-    background-image: url("media/classes/chanter.png");
+    background-image: url(media/classes/chanter.png)
 }
 
 .Cleric {
-    background-image: url("media/classes/cleric.png");
+    background-image: url(media/classes/cleric.png)
 }
 
 .class_image {
@@ -533,266 +497,191 @@ section.active {
     border-radius: 15px !important;
     cursor: pointer;
     filter: grayscale(100%);
-    transform: translateY(-1px) scale(0.8);
-    /* layout + animation */
+    transform: translateY(-1px) scale(.8);
     position: relative;
     display: inline-block;
-    transition:
-        transform 0.1s ease,
-        box-shadow 0.1s ease,
-        background-color 0.1s ease;
+    transition: transform .1s ease, box-shadow .1s ease, background-color .1s ease
 }
 
-/* hover lift + subtle glow */
 .class_image:hover {
     transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25),
-        0 0 10px rgba(77, 182, 172, 0.4);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .25), 0 0 10px rgba(77, 182, 172, .4)
 }
 
-/* active press (quick shrink) */
 .class_image:active {
     filter: grayscale(90%);
-    transform: translateY(-1px) scale(0.98);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25),
-        0 0 6px rgba(77, 182, 172, 0.3);
+    transform: translateY(-1px) scale(.98);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .25), 0 0 6px rgba(77, 182, 172, .3)
 }
 
-/* ✅ selected state (animated accent background) */
 .class_image.selected {
     filter: grayscale(0%);
     transform: translateY(-1px) scale(1.1);
-    border: 1px solid var(--accent);
-
+    border: 1px solid var(--accent)
 }
 
-/* selection pulse animation */
-@keyframes selectPulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 rgba(77, 182, 172, 0);
-    }
-
-    50% {
-        transform: scale(1.1);
-        box-shadow: 0 0 24px rgba(77, 182, 172, 0.8);
-    }
-
-    100% {
-        transform: scale(1.07);
-        box-shadow: 0 0 18px rgba(77, 182, 172, 0.6);
-    }
-}
-
-/* Link styling for dark backgrounds */
 #getting-started-guide a {
-    color: white;
-    /* soft blue, good contrast on dark bg */
+    color: #aecbfa;
     text-decoration: none;
-    /* remove default underline */
-    transition: color 0.2s ease, text-decoration 0.2s ease;
+    transition: color .2s ease, text-decoration .2s ease
 }
 
 #getting-started-guide a:hover {
-    color: #aecbfa;
-    /* lighter on hover */
-
-    /* add underline for clarity */
+    color: #aecbfa
 }
 
 #getting-started-guide a:visited {
-    color: #a78bfa;
-    /* soft violet for visited links */
+    color: #a78bfa
 }
 
 #getting-started-guide a:active {
-    color: #f28b82;
-    /* subtle red when clicked */
+    color: #f28b82
 }
 
-
-
-
-/* Remove underline from all links */
-a,
-a:hover,
-a:focus,
-a:active {
-    text-decoration: none;
-}
-
-/* Alternative: More specific selector for social links only */
 .social-links a,
-.social-links a:hover,
+.social-links a:active,
 .social-links a:focus,
-.social-links a:active {
-    text-decoration: none;
+.social-links a:hover,
+a,
+a:active,
+a:focus,
+a:hover {
+    text-decoration: none
 }
 
-
-
-@keyframes rotateBorder {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width:768px) {
     .social-links {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: center
     }
 
     .social-title {
         width: 100%;
         text-align: center;
         margin-right: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 1rem
     }
 
     .social-links a {
         width: 45px;
         height: 45px;
         font-size: 1.3rem;
-        margin: 0 8px;
+        margin: 0 8px
     }
 }
 
-
-@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 .elyos-leveling-guide {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
     color: #d9d9d9;
     background-color: #1a1a1a;
     padding: 1.5rem;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto
 }
 
 .guide-header {
-    text-align: center;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid #81725b;
-    padding-bottom: 0.8rem;
+    padding-bottom: .8rem
+}
+
+.guide-header h1,
+.quick-guide-section h2 {
+    color: #81725b;
+    font-family: "Philosopher", sans-serif;
+    font-weight: 700
 }
 
 .guide-header h1 {
-    color: #81725b;
-    margin-bottom: 0.4rem;
-    font-family: 'Philosopher', sans-serif;
-    font-weight: 700;
-    font-size: 1.8rem;
+    margin-bottom: .4rem
 }
 
 .intro-text {
-    font-size: 1rem;
-    color: #b0b0b0;
-    margin: 0;
+    margin: 0
 }
 
 .quick-guide-section {
-
     border-radius: 5px;
     padding: 1.2rem;
     margin-bottom: 1.5rem;
-    border-left: 3px solid #81725b;
+    border-left: 3px solid #81725b
 }
 
 .quick-guide-section h2 {
-    color: #81725b;
-    margin-top: 0;
-    margin-bottom: 0.8rem;
-    font-family: 'Philosopher', sans-serif;
-    font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.4rem
 }
 
+.quick-guide-section h2,
 .quick-guide-section>p {
     margin-top: 0;
-    margin-bottom: 0.8rem;
+    margin-bottom: .8rem
 }
 
 .leveling-path {
     list-style-type: none;
     padding-left: 0;
-    margin: 0;
+    margin: 0
 }
 
 .leveling-path li {
-    padding: 0.4rem 0;
+    padding: .4rem 0;
     border-bottom: 1px solid #333;
-    font-size: 0.9rem;
+    font-size: .9rem
 }
 
 .level-range {
-    font-weight: bold;
     color: #c2af7b;
-    display: inline-block;
-    min-width: 100px;
+    display: inline-block
 }
 
 .detailed-guide-section h2 {
     color: #81725b;
-    border-bottom: 1px solid #444;
-    padding-bottom: 0.4rem;
+    padding-bottom: .4rem;
     margin-bottom: 1rem;
-    font-family: 'Philosopher', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.5rem
 }
 
 .detailed-guide-section>p {
     margin-top: 0;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.2rem
 }
 
 .guide-part {
-
-    border-radius: 5px;
     padding: 1.2rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.2rem
+}
+
+.detailed-guide-section h2,
+.guide-part h3,
+.guide-part h4 {
+    font-family: "Philosopher", sans-serif;
+    font-weight: 700
 }
 
 .guide-part h3 {
     color: #c2af7b;
     margin-top: 0;
-    margin-bottom: 0.8rem;
-    font-family: 'Philosopher', sans-serif;
-    font-weight: 700;
-    font-size: 1.2rem;
+    margin-bottom: .8rem;
+    margin-bottom: 15px;
+    font-size: 1.4rem
 }
 
 .guide-part h4 {
-    color: #c2af7b;
     margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-family: 'Philosopher', sans-serif;
-    font-weight: 700;
+    margin-bottom: .5rem;
     font-size: 1.1rem;
+    color: #5a9ee6;
+    margin: 15px 0 10px
 }
 
 .guide-part p {
-    margin-top: 0.5rem;
-    margin-bottom: 0.8rem;
-
+    margin-top: .5rem;
+    margin-bottom: .8rem
 }
 
-.guide-part ul {
-    margin-top: 0.5rem;
-    margin-bottom: 0.8rem;
-    padding-left: 1.2rem;
-}
-
-.guide-part ul li {
-    margin-bottom: 0.3rem;
-
+.guide-part ul li,
+ol li {
+    margin-bottom: .3rem
 }
 
 .image-placeholder {
@@ -800,130 +689,115 @@ a:active {
     border: 1px dashed #555;
     padding: 1.2rem;
     text-align: center;
-    margin: 0.8rem 0;
+    margin: .8rem 0;
     border-radius: 3px;
-    color: #777;
-
+    color: #777
 }
 
-.note-box {
+.note-box,
+.tip-box {
     background-color: #2c3e50;
-    border-left: 3px solid #3498db;
-    padding: 0.8rem;
-    margin: 0.8rem 0;
-    border-radius: 0 3px 3px 0;
-
+    padding: .8rem;
+    margin: .8rem 0
 }
 
 .tip-box {
-    background-color: #2d4822;
-    border-left: 3px solid #4caf50;
-    padding: 0.8rem;
-    margin: 0.8rem 0;
-    border-radius: 0 3px 3px 0;
-
+    background-color: #2d4822
 }
 
 .npc-list {
     columns: 2;
     list-style-type: none;
     padding-left: 0;
-    margin: 0.8rem 0;
+    margin: .8rem 0
 }
 
 .npc-list li {
-    padding: 0.2rem 0;
-
+    padding: .2rem 0
 }
 
 code {
     background-color: #333;
-    padding: 0.15rem 0.3rem;
-    border-radius: 2px;
-    font-family: monospace;
+    padding: .15rem .3rem;
     color: #c2af7b;
-
+    background: rgba(0, 0, 0, .3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace
 }
 
+.guide-part ul,
 ol {
     padding-left: 1.2rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.8rem;
+    margin-top: .5rem;
+    margin-bottom: .8rem
 }
 
-ol li {
-    margin-bottom: 0.3rem;
-
-}
-
-@media (max-width: 768px) {
+@media (max-width:768px) {
     .elyos-leveling-guide {
-        padding: 1rem;
+        padding: 1rem
     }
 
     .npc-list {
-        columns: 1;
+        columns: 1
     }
 
     .level-range {
-        min-width: 90px;
+        min-width: 90px
     }
 
     .guide-header h1 {
-        font-size: 1.6rem;
+        font-size: 1.6rem
     }
 
-    .quick-guide-section h2,
-    .detailed-guide-section h2 {
-        font-size: 1.3rem;
+    .detailed-guide-section h2,
+    .quick-guide-section h2 {
+        font-size: 1.3rem
     }
 }
-
 
 .guide-container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #e0e0e0;
+    color: #e0e0e0
 }
 
 .guide-header {
     text-align: center;
     margin-bottom: 30px;
     border-bottom: 1px solid #444;
-    padding-bottom: 20px;
+    padding-bottom: 20px
 }
 
 .guide-header h1 {
-
     margin-bottom: 10px;
-    font-size: 2.2rem;
+    font-size: 2.2rem
 }
 
 .intro-text {
     font-size: 1.1rem;
-    color: #aaa;
+    color: #aaa
 }
 
 .rates-section {
     margin-bottom: 30px;
-    background: rgba(30, 30, 40, 0.5);
+    background: rgba(30, 30, 40, .5);
     border-radius: 8px;
-    padding: 20px;
+    padding: 20px
 }
 
 .rates-section h2 {
-
     margin-bottom: 15px;
-    text-align: center;
+    text-align: center
 }
 
 .rates-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    gap: 15px
 }
 
 .rate-item {
@@ -931,90 +805,69 @@ ol li {
     flex-direction: column;
     align-items: center;
     padding: 15px;
-    background: rgba(40, 40, 50, 0.7);
-    border-radius: 6px;
+    background: rgba(40, 40, 50, .7);
+    border-radius: 6px
 }
 
 .rate-label {
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 5px;
-    color: #aaa;
+    color: #aaa
 }
 
 .rate-value {
-
-    font-size: 1.1rem;
+    font-size: 1.1rem
 }
 
 .quick-guide-section {
-    margin-bottom: 40px;
+    margin-bottom: 40px
 }
 
+.detailed-guide-section h2,
 .quick-guide-section h2 {
-
     margin-bottom: 15px;
     border-bottom: 1px solid #444;
-    padding-bottom: 10px;
+    padding-bottom: 10px
 }
 
 .leveling-path {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 10px
 }
 
 .path-item {
     display: flex;
     padding: 12px 15px;
-    background: rgba(30, 30, 40, 0.5);
+    background: rgba(30, 30, 40, .5);
     border-radius: 6px;
-    transition: background 0.2s;
+    transition: background .2s
 }
 
 .path-item:hover {
-    background: rgba(40, 40, 60, 0.7);
+    background: rgba(40, 40, 60, .7)
 }
 
 .level-range {
-    font-weight: bold;
-
-    min-width: 120px;
+    font-weight: 700;
+    min-width: 120px
 }
 
 .detailed-guide-section {
-    margin-top: 40px;
-}
-
-.detailed-guide-section h2 {
-
-    margin-bottom: 15px;
-    border-bottom: 1px solid #444;
-    padding-bottom: 10px;
+    margin-top: 40px
 }
 
 .guide-part {
     margin-bottom: 40px;
     padding: 20px;
-
-    border-radius: 8px;
-}
-
-.guide-part h3 {
-
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-}
-
-.guide-part h4 {
-    color: #5a9ee6;
-    margin: 15px 0 10px;
+    border-radius: 8px
 }
 
 .guide-part img {
     max-width: 100%;
     border-radius: 6px;
     margin: 15px 0;
-    border: 1px solid #444;
+    border: 1px solid #444
 }
 
 .note-box,
@@ -1022,223 +875,183 @@ ol li {
 .warning-box {
     padding: 15px;
     border-radius: 6px;
-    margin: 15px 0;
+    margin: 15px 0
+}
+
+.note-box,
+.tip-box {
+    border-left: 4px solid #8fbc56
 }
 
 .note-box {
-    background: rgba(40, 60, 80, 0.3);
-    border-left: 4px solid #8fbc56;
+    background: rgba(40, 60, 80, .3)
 }
 
-.note-box h4 {
-
-    margin-top: 0;
+.note-box h4,
+.tip-box h4 {
+    margin-top: 0
 }
 
 .tip-box {
-    background: rgba(60, 80, 40, 0.3);
-    border-left: 4px solid #8fbc56;
+    background: rgba(60, 80, 40, .3)
 }
 
 .tip-box h4 {
-    color: #8fbc56;
-    margin-top: 0;
+    color: #8fbc56
 }
 
 .warning-box {
-    background: rgba(80, 40, 40, 0.3);
-    border-left: 4px solid #bc5656;
+    background: rgba(80, 40, 40, .3);
+    border-left: 4px solid #bc5656
 }
 
 .warning-box h4 {
     color: #bc5656;
-    margin-top: 0;
+    margin-top: 0
 }
 
 .guide-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 20px
 }
 
 .guide-link {
     display: block;
     padding: 12px 15px;
-    background: rgba(50, 70, 100, 0.4);
+    background: rgba(50, 70, 100, .4);
     color: #8fbcde;
     text-decoration: none;
     border-radius: 6px;
-    transition: background 0.2s;
-    text-align: center;
+    transition: background .2s;
+    text-align: center
 }
 
 .guide-link:hover {
-    background: rgba(60, 90, 130, 0.6);
+    background: rgba(60, 90, 130, .6)
 }
 
-code {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: monospace;
-}
-
-ul,
-ol {
+ol,
+ul {
     padding-left: 20px;
-    margin: 10px 0;
+    margin: 10px 0
 }
 
 li {
-    margin-bottom: 5px;
+    margin-bottom: 5px
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
     .guide-container {
-        padding: 15px;
+        padding: 15px
     }
 
     .path-item {
-        flex-direction: column;
+        flex-direction: column
     }
 
     .level-range {
-        margin-bottom: 5px;
+        margin-bottom: 5px
     }
 
     .rates-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr
     }
 }
-
-/* .classImage{
-    position: relative;
-}
-.className{
-    text-align: center;
-    font-size :  25px;
-} */
-
-
-/* Import a badass bulky font */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&display=swap');
 
 .classImage {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* vertical center */
     align-items: center;
-    /* horizontal center */
     text-align: center;
-    height: 500px;
+    height: 500px
 }
 
 .className {
-    opacity: 0.9;
-    /* width: 100%; */
+    opacity: .9;
     font-size: 50px;
     font-weight: 700;
-    background: -webkit-linear-gradient(#ffffff, #FFD700);
+    background: -webkit-linear-gradient(#fff, gold);
     background-clip: border-box;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: #fff0;
-    margin: 0 0 30px 0;
     -webkit-text-fill-color: transparent;
     font-family: Cinzel, Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: 0;
+    margin: 0 0 30px;
     text-shadow: 0 0 5px rgba(255, 255, 255, .3), 0 0 10px rgba(255, 255, 255, .2), 0 0 15px rgba(255, 255, 255, .1), 2px 2px 4px rgba(255, 0, 0, .2);
-    /* transform: translateY(100%); */
     transition: opacity 1s ease-out, transform 1s ease-out;
-    line-height: 1.2;
-    /* text-align: end; */
-    /* margin-right: 600px; */
+    line-height: 1.2
 }
 
-/* New badass animation: power pulse */
-
-
 .classDescription {
-    opacity: 0.9;
+    opacity: .9;
     font-size: 18px !important;
     font-weight: 400;
     line-height: 1.5;
-
     max-width: 850px;
     text-align: left;
-    color: #C7C7C7;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.9);
-    margin-bottom: 1rem;
+    color: #c7c7c7;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, .9);
+    margin-bottom: 1rem
 }
 
 .stats-container {
     width: 400px;
-
     font-family: Arial, sans-serif;
-    color: inherit;
-    /* inherits from your page */
+    color: inherit
 }
 
+.stat,
 .stats-container h2 {
-    margin-bottom: 20px;
-}
-
-.stat {
-    margin-bottom: 20px;
+    margin-bottom: 20px
 }
 
 .label {
     margin-bottom: 6px;
-    font-weight: bold;
-    display: block;
+    font-weight: 700;
+    display: block
 }
 
 .bar {
     width: 100%;
     height: 22px;
-    position: relative;
+    position: relative
 }
 
 .fill {
     height: 100%;
     background: linear-gradient(to right, #a8977d, #81725b, #5e5242);
-    padding-left: 10px;
-
-
-
+    padding-left: 10px
 }
 
 .value {
     position: absolute;
     right: 10px;
     top: -2px;
-    font-size: 14px;
+    font-size: 14px
 }
 
 .classesBox {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 25px;
+    gap: 25px
 }
 
 .classImageContainer {
     height: 500px;
-    width: 300px;
+    width: 300px
 }
 
-
-/* Grid container */
 .gem-grid {
     display: grid;
-        grid-template-columns: repeat(4, minmax(10px, 91px));
+    grid-template-columns: repeat(4, minmax(10px, 91px));
     gap: 16px;
-    padding: 8px 0;
+    padding: 8px 0
 }
 
-/* Individual boxes */
 .gem-box {
     display: flex;
     flex-direction: column;
@@ -1248,21 +1061,16 @@ li {
     width: 90px;
     height: 125px;
     padding: 11px;
-    border-radius: 8px;
-    border: 1px solid var(--accent);
-overflow: hidden;
-
-}
-
-.gem-box:hover {
-    background-color: var(--accent);
+    position: relative;
+    overflow: hidden;
+    z-index: 100
 }
 
 .gem-box img {
     width: 40px;
     height: 40px;
-    grid-template-columns: repeat(4, minmax(10px, 0.060fr));
-    display: block;
+    grid-template-columns: repeat(4, minmax(10px, .06fr));
+    display: block
 }
 
 .gem-box .label {
@@ -1271,5 +1079,5 @@ overflow: hidden;
     text-shadow: 0 1px 0 rgba(0, 0, 0, .6);
     margin-top: 8px;
     word-break: auto-phrase;
-    font-size: 14px;
+    font-size: 14px
 }
