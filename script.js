@@ -389,7 +389,7 @@ const slots = [
   { id: 'ViciousBlowIV', img: 'class_stigmas/gladiator/PVE/ViciousBlow.png', text: 'Vicious Blow' }, // done
   { id: 'WhirlingStrikeIIIPVE', img: 'class_stigmas/gladiator/PVE/WhirlingStrike.png', text: 'Whirling Strike' }, //done
   { id: 'DrainingSwordIIPVE', img: 'class_stigmas/gladiator/PVE/DrainingSword.png', text: 'Draining Sword' }, //done
-  { id: 'SecondWindPVE', img: 'class_stigmas/gladiator/PVE/secondwind.png', text: 'Second Wind' } //done
+  { id: 'SecondWindPVE', img: 'class_stigmas/gladiator/PVE/siegebreaker.png', text: 'Siegebreaker' } //done
 ];
 
 // Delay execution by 1 second
