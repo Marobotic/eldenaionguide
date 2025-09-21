@@ -520,6 +520,11 @@ section.active {
     border: 1px solid var(--accent)
 }
 
+ a {
+    color: #aecbfa;
+}
+
+
 #getting-started-guide a {
     color: #aecbfa;
     text-decoration: none;
