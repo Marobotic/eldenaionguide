@@ -419,4 +419,4 @@ setTimeout(() => {
   }
 
   console.log('Slot population finished:', report);
-}, 100);
+}, 1000);
