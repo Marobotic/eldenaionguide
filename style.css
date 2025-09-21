@@ -158,11 +158,18 @@ h2 {
     }
 }
 
+@font-face {
+    font-family: 'AstoriaRoman';
+    src: url('AstoriaRoman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     box-sizing: border-box;
-    font-family: "Philosopher", sans-serif;
+    font-family: "AstoriaRoman", "Philosopher", sans-serif;
     scrollbar-width: thin;
-    scrollbar-color: var(--accent) #1a1a1a
+    scrollbar-color: var(--accent) #1a1a1a;
 }
 
 header,
@@ -1085,4 +1092,27 @@ li {
     margin-top: 8px;
     word-break: auto-phrase;
     font-size: 14px
+}
+
+@media (max-width: 767px) {
+  .sidebar, .mobile-menu-toggle, .logo h1 {
+    display: none;
+  }
+  .search-container{
+    margin-left:  0px;
+  }
+  .logo, .logo-icon, header {
+    display: flex
+;
+    align-items: center;
+    justify-content: start;
+}
+.logo{
+    width:  unset;
+}
+
+#search, .nav-btn {
+    width: 83%;
+    margin-top:  5pxp;
+}
 }
