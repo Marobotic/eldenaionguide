@@ -403,19 +403,7 @@ section.active {
     }
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 50px);
-    grid-template-rows: repeat(3, 50px);
-    gap: 30px;
-}
 
-.box {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #ccc;
-    background-size: cover;
-}
 
 .guide_button {
     width: auto;
@@ -424,10 +412,11 @@ section.active {
     cursor: pointer;
     border-radius: 15px;
     margin-right: 10px;
-    background-color: #0a0d16;
+    border: 1px solid var(--accent);
     margin-bottom: 10px;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
+    height: 54px;
 }
 
 .flex_row {
@@ -1186,7 +1175,7 @@ li {
 
 .stats-container {
     width: 400px;
-    
+
     font-family: Arial, sans-serif;
     color: inherit;
     /* inherits from your page */
@@ -1238,4 +1227,49 @@ li {
 .classImageContainer {
     height: 500px;
     width: 300px;
+}
+
+
+/* Grid container */
+.gem-grid {
+    display: grid;
+        grid-template-columns: repeat(4, minmax(10px, 91px));
+    gap: 16px;
+    padding: 8px 0;
+}
+
+/* Individual boxes */
+.gem-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    width: 90px;
+    height: 125px;
+    padding: 11px;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+overflow: hidden;
+
+}
+
+.gem-box:hover {
+    background-color: var(--accent);
+}
+
+.gem-box img {
+    width: 40px;
+    height: 40px;
+    grid-template-columns: repeat(4, minmax(10px, 0.060fr));
+    display: block;
+}
+
+.gem-box .label {
+    color: #e7f0ff;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .6);
+    margin-top: 8px;
+    word-break: auto-phrase;
+    font-size: 14px;
 }
