@@ -968,8 +968,8 @@ li {
 }
 
 .label {
-    margin-bottom: 6px;
-    font-weight: 700;
+
+
     display: block
 }
 
@@ -1035,7 +1035,7 @@ li {
 .gem-box .label {
     color: #e7f0ff;
     text-align: center;
-    text-shadow: 0 1px 0 rgba(0,0,0,.6);
+
     margin-top: 8px;
     word-break: auto-phrase;
     font-size: 14px
