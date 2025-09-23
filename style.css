@@ -1065,3 +1065,7 @@ li {
         margin-top: 5pxp
     }
 }
+
+.center_text{
+    text-align: center;
+}
