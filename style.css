@@ -52,10 +52,10 @@ h3 {
     line-height: 50px
 }
 
-p {
+/* p {
     margin-top: 10px !important;
     margin-bottom: 10px !important
-}
+} */
 
 .logo {
     justify-content: center;
@@ -1146,4 +1146,22 @@ a:visited {
 
 a:active {
     color: #aecbfa !important;
+}
+
+.flex_row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.w3-light-grey, .w3-hover-light-grey:hover, .w3-light-gray, .w3-hover-light-gray:hover {
+
+
+    background-color: #343d57 !important;
+
+    width: 100%;
+    align-self: center;
+}
+.w3-grey, .w3-hover-grey:hover, .w3-gray, .w3-hover-gray:hover {
+    background-color: var(--accent) !important;
+  
 }
