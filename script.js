@@ -273,12 +273,12 @@ const classStats = {
 function updateStats(className) {
     const stats = classStats[className];
     const statElements = document.querySelectorAll('.stat');
-    
+
     // Update each stat bar and value
     statElements.forEach((statElement) => {
         const statName = statElement.querySelector('.fill').textContent;
         const value = stats[statName];
-        
+
         // Update the width and value
         statElement.querySelector('.fill').style.width = `${value}%`;
         statElement.querySelector('.value').textContent = value;
@@ -287,12 +287,19 @@ function updateStats(className) {
 
 // Your existing functions
 function openGladiator() { console.log("Gladiator selected"); }
+
 function openTemplar() { console.log("Templar selected"); }
+
 function openAssassin() { console.log("Assassin selected"); }
+
 function openRanger() { console.log("Ranger selected"); }
+
 function openSpiritmaster() { console.log("Spiritmaster selected"); }
+
 function openSorcerer() { console.log("Sorcerer selected"); }
+
 function openCleric() { console.log("Cleric selected"); }
+
 function openChanter() { console.log("Chanter selected"); }
 
 // Your data: add descriptions + image paths
@@ -365,58 +372,58 @@ window.onload = () => {
 // app.js
 
 const slots = [
-  { id: 'slot1',  img: 'class_stigmas/gladiator/PVP/AbsorbingFury.png',       text: 'Absorbing Fury'   },
-  { id: 'slot2',  img: 'class_stigmas/gladiator/PVP/AdvancedDualWielding.png', text: 'Adv. Dual Wielding'  },
-  { id: 'slot3',  img: 'class_stigmas/gladiator/PVP/secondwind.png',           text: 'Second Wind' },
-  { id: 'slot4',  img: 'class_stigmas/gladiator/PVP/SharpStrike.png',          text: 'Sharp Strike'  },
-  { id: 'slot5',  img: 'class_stigmas/gladiator/PVP/cripplingcut.png',         text: 'Crippling Cut'   },
-  { id: 'slot6',  img: 'class_stigmas/gladiator/PVP/slaughter.png',            text: 'Slaughter'  },
-  { id: 'slot7',  img: 'class_stigmas/gladiator/PVP/ExhaustingWave.png',       text: 'Exhausting Wave' },
-  { id: 'slot8',  img: 'class_stigmas/gladiator/PVP/tendonslice.png',          text: 'Tendon Slice'},
-  { id: 'slot9',  img: 'class_stigmas/gladiator/PVP/UnwaveringDevotion.png',   text: 'Unwavering Devotion'  },
-  { id: 'slot10', img: 'class_stigmas/gladiator/PVP/lockdown.png',             text: 'Lockdown'   },
-  { id: 'slot11', img: 'class_stigmas/gladiator/PVP/PiercingRupture.png',      text: 'Piercing Rupture'  },
-  { id: 'slot12', img: 'class_stigmas/gladiator/PVP/berserking.png',           text: 'Berserking' },
+    { id: 'slot1', img: 'class_stigmas/gladiator/PVP/AbsorbingFury.png', text: 'Absorbing Fury' },
+    { id: 'slot2', img: 'class_stigmas/gladiator/PVP/AdvancedDualWielding.png', text: 'Adv. Dual Wielding' },
+    { id: 'slot3', img: 'class_stigmas/gladiator/PVP/secondwind.png', text: 'Second Wind' },
+    { id: 'slot4', img: 'class_stigmas/gladiator/PVP/SharpStrike.png', text: 'Sharp Strike' },
+    { id: 'slot5', img: 'class_stigmas/gladiator/PVP/cripplingcut.png', text: 'Crippling Cut' },
+    { id: 'slot6', img: 'class_stigmas/gladiator/PVP/slaughter.png', text: 'Slaughter' },
+    { id: 'slot7', img: 'class_stigmas/gladiator/PVP/ExhaustingWave.png', text: 'Exhausting Wave' },
+    { id: 'slot8', img: 'class_stigmas/gladiator/PVP/tendonslice.png', text: 'Tendon Slice' },
+    { id: 'slot9', img: 'class_stigmas/gladiator/PVP/UnwaveringDevotion.png', text: 'Unwavering Devotion' },
+    { id: 'slot10', img: 'class_stigmas/gladiator/PVP/lockdown.png', text: 'Lockdown' },
+    { id: 'slot11', img: 'class_stigmas/gladiator/PVP/PiercingRupture.png', text: 'Piercing Rupture' },
+    { id: 'slot12', img: 'class_stigmas/gladiator/PVP/berserking.png', text: 'Berserking' },
 
     { id: 'LockDownVPVE', img: 'class_stigmas/gladiator/PVE/lockdown.png', text: 'Lockdown' }, //done
-  { id: 'BerserkingIPVE', img: 'class_stigmas/gladiator/PVE/berserking.png', text: 'Berserking' }, //done
-  { id: 'SevereWeakeningBlowVIPVE', img: 'class_stigmas/gladiator/PVE/SevereWeakeningBlow.png', text: 'Severe Weakening Blow' }, //done
-  { id: 'VengefulStrikeVIPVE', img: 'class_stigmas/gladiator/PVE/VengefulStrike.png', text: 'Vengeful Strike' }, //done
-  { id: 'DauntlessSpiritVPVE', img: 'class_stigmas/gladiator/PVE/DauntlessSpirit.png', text: 'Dauntless Spirit' }, //done
-  { id: 'SpiteStrikeVIPVE', img: 'class_stigmas/gladiator/PVE/SpiteStrike.png', text: 'Spite Strike' }, //done
-  { id: 'AdvancedDualWieldingIIPVE', img: 'class_stigmas/gladiator/PVE/AdvancedDualWielding.png', text: 'Adv. Dual Wielding II' }, //done
-  { id: 'SharpStrikeVIPVE', img: 'class_stigmas/gladiator/PVE/SharpStrike.png', text: 'Sharp Strike' }, //done
-  { id: 'ViciousBlowIV', img: 'class_stigmas/gladiator/PVE/ViciousBlow.png', text: 'Vicious Blow' }, // done
-  { id: 'WhirlingStrikeIIIPVE', img: 'class_stigmas/gladiator/PVE/WhirlingStrike.png', text: 'Whirling Strike' }, //done
-  { id: 'DrainingSwordIIPVE', img: 'class_stigmas/gladiator/PVE/DrainingSword.png', text: 'Draining Sword' }, //done
-  { id: 'SecondWindPVE', img: 'class_stigmas/gladiator/PVE/siegebreaker.png', text: 'Siegebreaker' } //done
+    { id: 'BerserkingIPVE', img: 'class_stigmas/gladiator/PVE/berserking.png', text: 'Berserking' }, //done
+    { id: 'SevereWeakeningBlowVIPVE', img: 'class_stigmas/gladiator/PVE/SevereWeakeningBlow.png', text: 'Severe Weakening Blow' }, //done
+    { id: 'VengefulStrikeVIPVE', img: 'class_stigmas/gladiator/PVE/VengefulStrike.png', text: 'Vengeful Strike' }, //done
+    { id: 'DauntlessSpiritVPVE', img: 'class_stigmas/gladiator/PVE/DauntlessSpirit.png', text: 'Dauntless Spirit' }, //done
+    { id: 'SpiteStrikeVIPVE', img: 'class_stigmas/gladiator/PVE/SpiteStrike.png', text: 'Spite Strike' }, //done
+    { id: 'AdvancedDualWieldingIIPVE', img: 'class_stigmas/gladiator/PVE/AdvancedDualWielding.png', text: 'Adv. Dual Wielding II' }, //done
+    { id: 'SharpStrikeVIPVE', img: 'class_stigmas/gladiator/PVE/SharpStrike.png', text: 'Sharp Strike' }, //done
+    { id: 'ViciousBlowIV', img: 'class_stigmas/gladiator/PVE/ViciousBlow.png', text: 'Vicious Blow' }, // done
+    { id: 'WhirlingStrikeIIIPVE', img: 'class_stigmas/gladiator/PVE/WhirlingStrike.png', text: 'Whirling Strike' }, //done
+    { id: 'DrainingSwordIIPVE', img: 'class_stigmas/gladiator/PVE/DrainingSword.png', text: 'Draining Sword' }, //done
+    { id: 'SecondWindPVE', img: 'class_stigmas/gladiator/PVE/siegebreaker.png', text: 'Siegebreaker' } //done
 ];
 
 // Delay execution by 1 second
 setTimeout(() => {
-  const report = [];
+    const report = [];
 
-  for (const { id, img, text } of slots) {
-    const el = document.getElementById(id);
-    if (!el) {
-      report.push({ id, status: 'missing element' });
-      continue;
+    for (const { id, img, text } of slots) {
+        const el = document.getElementById(id);
+        if (!el) {
+            report.push({ id, status: 'missing element' });
+            continue;
+        }
+
+        const imgEl = el.querySelector('img');
+        const labelEl = el.querySelector('.label');
+
+        if (labelEl) labelEl.textContent = text || id;
+
+        if (imgEl) {
+            const src = (img || '').replace(/^\/+/, ''); // strip leading slash
+            imgEl.alt = text || id;
+            imgEl.src = src;
+            report.push({ id, status: 'applied', src, text });
+        } else {
+            report.push({ id, status: 'missing <img>' });
+        }
     }
 
-    const imgEl = el.querySelector('img');
-    const labelEl = el.querySelector('.label');
-
-    if (labelEl) labelEl.textContent = text || id;
-
-    if (imgEl) {
-      const src = (img || '').replace(/^\/+/, ''); // strip leading slash
-      imgEl.alt = text || id;
-      imgEl.src = src;
-      report.push({ id, status: 'applied', src, text });
-    } else {
-      report.push({ id, status: 'missing <img>' });
-    }
-  }
-
-  console.log('Slot population finished:', report);
+    console.log('Slot population finished:', report);
 }, 1000);
