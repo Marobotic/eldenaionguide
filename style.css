@@ -429,7 +429,8 @@ section.active {
     text-align: center !important;
     pointer-events: none;
     inline-size: max-content;
-    margin-left: 10px
+    margin-left: 10px;
+    margin-top: 14px;
 }
 
 .flex_column {
@@ -1153,7 +1154,11 @@ a:active {
     flex-direction: row;
     flex-wrap: wrap;
 }
-.w3-light-grey, .w3-hover-light-grey:hover, .w3-light-gray, .w3-hover-light-gray:hover {
+
+.w3-light-grey,
+.w3-hover-light-grey:hover,
+.w3-light-gray,
+.w3-hover-light-gray:hover {
 
 
     background-color: #343d57 !important;
@@ -1161,7 +1166,11 @@ a:active {
     width: 100%;
     align-self: center;
 }
-.w3-grey, .w3-hover-grey:hover, .w3-gray, .w3-hover-gray:hover {
+
+.w3-grey,
+.w3-hover-grey:hover,
+.w3-gray,
+.w3-hover-gray:hover {
     background-color: var(--accent) !important;
-  
+
 }
