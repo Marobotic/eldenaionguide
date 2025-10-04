@@ -14,39 +14,120 @@
 
 <body>
     <header>
-        <div class="logo">
+        <div class="logo" id="homeLogo">
             <div class="logo-icon"></div>
-            <h1>Elden Wiki</h1>
+            <a style="color: white !important" href="#getting-started">
+                <h1>Elden Wiki</h1>
+            </a>
         </div>
-        <div class="search-container">
-            <input type="text" id="search" placeholder="Search documentation...">
-            <div class="search-results" id="searchResults"></div>
+        <div class="search-container" id="headerSearch" style="display: none;">
+            <input type="text" id="headerSearchInput" placeholder="Search documentation...">
+            <div class="search-results" id="headerSearchResults"></div>
         </div>
     </header>
     <aside class="sidebar" id="sidebar">
         <h3>Documentation</h3>
+        <div class="search-container" id="sidebarSearch" style="display: none;">
+            <input type="text" id="sidebarSearchInput" placeholder="Search documentation...">
+        </div>
         <ul id="sidebarNav"></ul>
     </aside>
     <main>
         <section class="active" id="getting-started" title="Home">
-            <h1>Welcome to the Elden Aion Wiki. </h1>
-            <p>This is Elden Aion Comprehensive guide for new players and veterans both. In here we will explain all features that's included in the server as well put up guides for the patch of 3.9 which would help every player get started. We will continuesly adding more and updating this to also match up our live updates.</p>
-            <p>The list belew will show all available guides, you may also use the search bar.</p>
-            <p> NOTE: once you leave this page, a side panel appears with the list of all guides if you ever wish to check something else, as well as next and previous button to navigate the guide like a booklet.</p>
-            <div class="titleList">
-                <h3>Available Guides:</h3>
-                <ul id="titleList"></ul>
+            <h1 style="text-align: center;">Welcome to the Elden Aion Wiki. </h1>
+            <p>This is Elden Aion Comprehensive guide for new players and veterans both. In here we will explain all
+                features that's included in the server as well put up guides for the patch of 3.9 which would help every
+                player get started. We will continuesly adding more and updating this to also match up our live updates.
+            </p>
+            <p>Use the search bar below to find guides, or browse the list of available guides.</p>
+            <p> NOTE: once you leave this page, a side panel appears with the list of all guides if you ever wish to
+                check something else.</p>
+
+            <h3 style="color: var(--accent); margin-top: 25px;">Suggested guides </h3>
+            <div class="suggestedGuides">
+
+                <div class="guideCard">
+                    <img src="media/guide/campaign.webp">
+                    <h3> Introductions into Elden Aion</h3>
+                    <a href="#intro-guide"><img src="media/ico.png" width="30px" height="30px"> Introduction Into Aion
+                    </a>
+                    <a href="#aion-faction-comparison"> <img src="media/guide/logo_race_none.png" width="30px"
+                            height="30px"> Introduction into Aion's factions</a>
+                    <a href="#getting-started-guide"> <img src="media/ico.png" width="30px" height="30px"> Register and
+                        Install Elden Aion</a>
+                    <a href="/campaignguide.html" target="_blank"> <img src="media/ico.png" width="30px"
+                            height="30px">Campaign Playthroughs</a>
+                    <a><img src="media/gear/equipment/chest_plate_gold.png" width="30px" height="30px"> Starter Gear
+                        guide</a>
+                    <a href="/#cube-expansion"> <img src="media/cube.png" width="30px" height="30px">How to Unlock your
+                        cube</a>
+                    <a href="#stigma-expansion"> <img src="class_stigmas/stigma.png" width="30px" height="30px"> How to
+                        unlock your stigmas</a>
+                    <a href="#lumen-guide"><img src="media/lumen.png" width="30px" height="30px"> Lumen guide </a>
+                    <a href="#atreia-pass-guide"><img src="media/atreias pass.png" width="30px" height="30px"> Atreia's
+                        pass guide</a>
+
+
+
+
+                </div>
+                <div class="guideCard">
+                    <img src="media/guide/classes.webp">
+                    <h3> Classes guides</h3>
+                    <a href="#gladiator-guide"> <img src="media/classes/gladiator.png" width="30px" height="30px">
+                        Gladiator guide </a>
+                    <a href="#templar-guide"> <img src="media/classes/templar.png" width="30px" height="30px"> Templar
+                        guide</a>
+                    <a href="#assassin-guide"> <img src="media/classes/assassin.png" width="30px" height="30px">
+                        Assassin guide</a>
+                    <a href="#ranger-guide"> <img src="media/classes/ranger.png" width="30px" height="30px"> Ranger
+                        guide </a>
+                    <a href="#sorcerer-guide"> <img src="media/classes/sorcerer.png" width="30px" height="30px">
+                        Sorcerer guide</a>
+                    <a href="#spiritmaster-guide"> <img src="media/classes/spiritmaster.png" width="30px" height="30px">
+                        Spiritmaster guide</a>
+                    <a href="#chanter-guide"> <img src="media/classes/chanter.png" width="30px" height="30px"> Chanter
+                        guide</a>
+                    <a href="#cleric-guide"> <img src="media/classes/cleric.png" width="30px" height="30px"> Cleric
+                        guide</a>
+
+                </div>
+                <div class="guideCard">
+                    <img src="media/guide/instances.webp">
+                    <h3> Instances guides</h3>
+                    <a> <img src="media/guide/instance_icon.png" width="30px" height="30px"> Haramel guide </a>
+                    <a> <img src="media/guide/instance_icon.png" width="30px" height="30px"> Nochsana Training Camp
+                        guide</a>
+                    <a><img src="media/guide/instance_icon.png" width="30px" height="30px"> Alquimia Lab guide</a>
+                    <a> <img src="media/guide/instance_icon.png" width="30px" height="30px">Aetherogenetics Lab guide
+                    </a>
+                    <a><img src="media/guide/instance_icon.png" width="30px" height="30px"> Adma Stronghold guide</a>
+                    <a> <img src="media/guide/instance_icon.png" width="30px" height="30px">Theobomos Lab Guide</a>
+                    <a> <img src="media/guide/instance_icon.png" width="30px" height="30px">Dark Poeta guide</a>
+                    <a><img src="media/guide/instance_icon.png" width="30px" height="30px"> Beshmundir Temple guide</a>
+
+
+
+                </div>
+
             </div>
+            <!-- Search bar replacing the Available Guides section -->
+            <div class="titleList">
+                <h3>Looking for something specific?</h3>
+                <div class="search-container" id="homeSearch">
+                    <input type="text" id="homeSearchInput" placeholder="Search documentation...">
+                    <div class="search-results" id="homeSearchResults"></div>
+                </div>
+            </div>
+
             <div>
-                <p>If you notice errors, typos, or false information please report it to staff as soon as you can, thank you. </p>
+                <p>If you notice errors, typos, or false information please report it to staff as soon as you can, thank
+                    you. </p>
             </div>
         </section>
         <!-- Sections will be loaded dynamically from guide.html -->
         <div id="guideContent"></div>
-        <div class="nav-buttons">
-            <button class="nav-btn" id="prevBtn" disabled>Previous</button>
-            <button class="nav-btn" id="nextBtn">Next</button>
-        </div>
+        <!-- Navigation buttons removed as requested -->
     </main>
     <script src="script.js"></script>
 </body>

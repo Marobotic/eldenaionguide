@@ -1,14 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
     const sidebarNav = document.getElementById('sidebarNav');
     const titleList = document.getElementById('titleList');
-    const searchInput = document.getElementById('search');
-    const searchResults = document.getElementById('searchResults');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
     const sidebar = document.getElementById('sidebar');
     const guideContent = document.getElementById('guideContent');
+    const homeLogo = document.getElementById('homeLogo');
+    const headerSearch = document.getElementById('headerSearch');
+    const homeSearch = document.getElementById('homeSearch');
+    
     let sections = [document.getElementById('getting-started')];
     let currentSectionIndex = 0;
+
+    // Home logo click event
+    homeLogo.addEventListener('click', function() {
+        navigateToSection(0);
+    });
 
     // Load guide content
     fetch('guide.html')
@@ -46,20 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             sidebarItem.appendChild(sidebarLink);
             sidebarNav.appendChild(sidebarItem);
-
-            // Add to title list (only in getting started)
-            if (index > 0) {
-                const titleListItem = document.createElement('li');
-                const titleListLink = document.createElement('a');
-                titleListLink.href = `#${id}`;
-                titleListLink.textContent = title;
-                titleListLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    navigateToSection(index);
-                });
-                titleListItem.appendChild(titleListLink);
-                titleList.appendChild(titleListItem);
-            }
         });
 
         // Navigation functions
@@ -76,17 +67,20 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update URL hash
             window.location.hash = sections[currentSectionIndex].id;
 
-            // Update nav buttons
-            updateNavButtons();
-
             // Update sidebar active link
             updateSidebarActive();
 
-            // Show/hide sidebar based on section
+            // Show/hide sidebar and update search position based on section
             if (currentSectionIndex === 0) {
                 sidebar.classList.remove('visible');
+                // Show home search, hide header search
+                homeSearch.style.display = 'block';
+                headerSearch.style.display = 'none';
             } else {
                 sidebar.classList.add('visible');
+                // Show header search, hide home search
+                homeSearch.style.display = 'none';
+                headerSearch.style.display = 'block';
             }
 
             // Scroll to top
@@ -111,11 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initialize based on current hash
         handleHashChange();
 
-        function updateNavButtons() {
-            prevBtn.disabled = currentSectionIndex === 0;
-            nextBtn.disabled = currentSectionIndex === sections.length - 1;
-        }
-
         function updateSidebarActive() {
             const links = sidebarNav.querySelectorAll('a');
             links.forEach((link, index) => {
@@ -127,36 +116,44 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Button event listeners
-        prevBtn.addEventListener('click', () => {
-            if (currentSectionIndex > 0) {
-                navigateToSection(currentSectionIndex - 1);
-            }
-        });
+        // Search functionality for home page search
+        const homeSearchInput = document.getElementById('homeSearchInput');
+        const homeSearchResults = document.getElementById('homeSearchResults');
 
-        nextBtn.addEventListener('click', () => {
-            if (currentSectionIndex < sections.length - 1) {
-                navigateToSection(currentSectionIndex + 1);
-            }
-        });
-
-        // Search functionality
-        searchInput.addEventListener('input', () => {
-            const query = searchInput.value.toLowerCase();
+        homeSearchInput.addEventListener('input', () => {
+            const query = homeSearchInput.value.toLowerCase();
             if (query.length > 0) {
                 const results = sections.filter(section => {
                     const title = section.getAttribute('title').toLowerCase();
                     return title.includes(query);
                 });
 
-                displaySearchResults(results);
+                displaySearchResults(results, homeSearchResults);
             } else {
-                searchResults.style.display = 'none';
+                homeSearchResults.style.display = 'none';
             }
         });
 
-        function displaySearchResults(results) {
-            searchResults.innerHTML = '';
+        // Search functionality for header search
+        const headerSearchInput = document.getElementById('headerSearchInput');
+        const headerSearchResults = document.getElementById('headerSearchResults');
+
+        headerSearchInput.addEventListener('input', () => {
+            const query = headerSearchInput.value.toLowerCase();
+            if (query.length > 0) {
+                const results = sections.filter(section => {
+                    const title = section.getAttribute('title').toLowerCase();
+                    return title.includes(query);
+                });
+
+                displaySearchResults(results, headerSearchResults);
+            } else {
+                headerSearchResults.style.display = 'none';
+            }
+        });
+
+        function displaySearchResults(results, resultsContainer) {
+            resultsContainer.innerHTML = '';
 
             if (results.length > 0) {
                 results.forEach(section => {
@@ -168,31 +165,42 @@ document.addEventListener('DOMContentLoaded', function() {
                         e.preventDefault();
                         const index = sections.findIndex(s => s.id === section.id);
                         navigateToSection(index);
-                        searchInput.value = '';
-                        searchResults.style.display = 'none';
+                        homeSearchInput.value = '';
+                        headerSearchInput.value = '';
+                        homeSearchResults.style.display = 'none';
+                        headerSearchResults.style.display = 'none';
                     });
-                    searchResults.appendChild(resultItem);
+                    resultsContainer.appendChild(resultItem);
                 });
-                searchResults.style.display = 'block';
+                resultsContainer.style.display = 'block';
             } else {
                 const noResults = document.createElement('div');
                 noResults.textContent = 'No results found';
                 noResults.style.padding = '0.5rem 1rem';
-                searchResults.appendChild(noResults);
-                searchResults.style.display = 'block';
+                resultsContainer.appendChild(noResults);
+                resultsContainer.style.display = 'block';
             }
         }
 
         // Hide search results when clicking outside
         document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target)) {
-                searchResults.style.display = 'none';
+            if (!homeSearchInput.contains(e.target) && !headerSearchInput.contains(e.target)) {
+                homeSearchResults.style.display = 'none';
+                headerSearchResults.style.display = 'none';
             }
         });
 
         // Initialize
-        updateNavButtons();
         updateSidebarActive();
+        
+        // Set initial search position
+        if (currentSectionIndex === 0) {
+            homeSearch.style.display = 'block';
+            headerSearch.style.display = 'none';
+        } else {
+            homeSearch.style.display = 'none';
+            headerSearch.style.display = 'block';
+        }
     }
 });
 
@@ -214,9 +222,6 @@ document.querySelectorAll('.sidebar a').forEach(link => {
         }
     });
 });
-
-
-
 
 function selectClass(element, className) {
     // Remove "selected" from all
@@ -367,7 +372,6 @@ function selectClass(element, className) {
 window.onload = () => {
     selectClass(document.querySelector('.Gladiator'), 'Gladiator');
 };
-
 
 // app.js
 
