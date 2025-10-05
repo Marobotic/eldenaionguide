@@ -35,23 +35,44 @@
 }
 
 html {
-    font-size: 14px;
+    font-size: 18px;
     scroll-behavior: smooth
 }
 
-body {
+p {
+    font-size: 18px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url(media/background.png);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    color: var(--text)
+    filter: brightness(0.5);
+    z-index: -1;
+}
+
+body {
+    color: var(--text);
+    /* Remove background-image from body */
 }
 
 h3 {
-    font-size: 22px;
-    line-height: 50px
+    font-size: 26px;
+    line-height: 50px;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
+p{
+    color:#9d9d9d;
+}
 /* p {
     margin-top: 10px !important;
     margin-bottom: 10px !important
@@ -95,11 +116,11 @@ section {
 }
 
 h1 {
-    font-size: 1.8rem
+    font-size: 32px;
 }
 
 h2 {
-    font-size: 1.4rem
+    font-size: 24px;
 }
 
 @media (min-width:768px) {
@@ -183,7 +204,7 @@ section.active {
 }
 
 section.active {
-    padding: 15px;
+    padding: 35px;
 }
 
 header,
@@ -323,7 +344,8 @@ main {
 
 .sidebar a,
 section.active {
-    display: block
+    display: block;
+    font-size: 18px;
 }
 
 .titleList {
@@ -355,7 +377,7 @@ section.active {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
+    font-size: 16px;
     margin-left: 10px;
     border-radius: 5px;
     height: 35px;
@@ -376,7 +398,7 @@ section.active {
 
 .mobile-menu-toggle {
     display: none;
-    font-size: 1.5rem;
+    font-size: 16px;
     cursor: pointer;
     padding: .5rem;
     position: absolute;
@@ -575,7 +597,7 @@ a:hover {
     .social-links a {
         width: 45px;
         height: 45px;
-        font-size: 1.2rem
+        font-size: 16px;
     }
 }
 
@@ -602,7 +624,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     transition: all .3s ease;
-    font-size: 1.3rem
+    font-size: 16px;
 }
 
 .social-links a:hover {
@@ -656,7 +678,7 @@ a:hover {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
     color: #fff;
     z-index: 2
@@ -980,8 +1002,8 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    min-width: 358px;
-    max-width: 358px;
+    min-width: 344px;
+    max-width: 344px;
 
 }
 
@@ -995,6 +1017,7 @@ h1 {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
+    font-size: 18px;
 }
 
 .quick-guide-section {
@@ -1012,7 +1035,7 @@ h1 {
     margin-bottom: 15px;
     border-bottom: 1px solid #444;
     padding-bottom: 10px;
-    font-size: 1.4rem;
+    font-size: 26px;
 }
 
 .quick-guide-section>p {
@@ -1070,7 +1093,7 @@ h1 {
     }
 
     .quick-guide-section h2 {
-        font-size: 1.3rem;
+        font-size: 26px;
     }
 }
 
@@ -1103,13 +1126,13 @@ h1 {
     font-weight: 700;
     margin-bottom: 8px;
     color: #c2af7b;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .rate-value {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #fff;
 }
@@ -1126,7 +1149,7 @@ h1 {
     }
 
     .rate-value {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 }
 
@@ -1264,14 +1287,14 @@ h2 {
 .gallery-info h3 {
     color: #c2af7b;
     margin: 0 0 8px 0;
-    font-size: 1.2rem;
+    font-size: 24px;
     font-weight: 700;
 }
 
 .gallery-info p {
     color: #aaa;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 16px;
 }
 
 /* Mobile responsiveness */
@@ -1282,7 +1305,7 @@ h2 {
     }
 
     .faction-section h2 {
-        font-size: 1.4rem;
+        font-size: 26px;
     }
 
     .gallery-item img {
@@ -1349,7 +1372,7 @@ h2 {
     text-align: center;
     margin-top: 8px;
     word-break: auto-phrase;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .cube-master-container {
@@ -1364,7 +1387,7 @@ h2 {
 
 .cube-group-title {
     color: #c2af7b;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 12px;
     border-bottom: 1px solid #81725b;
     padding-bottom: 4px;
@@ -1395,15 +1418,15 @@ h2 {
 .row-label {
     min-width: 55px;
     color: #aaa;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: bold;
     text-align: right;
     padding-right: 8px;
 }
 
 .cube-slot {
-    width: 32px;
-    height: 32px;
+    width: 50px;
+    height: 50px;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 3px;
@@ -1419,13 +1442,40 @@ h2 {
 }
 
 /* Softer Cube Row Colors */
-.cube-row.grey .cube-slot { background: #5a5a5a; border-color: #777; }
-.cube-row.soft-pink .cube-slot { background: #e8b4b8; border-color: #d48a90; }
-.cube-row.soft-blue .cube-slot { background: #a8d0e6; border-color: #7bb8d8; }
-.cube-row.soft-yellow .cube-slot { background: #f9dc5c; border-color: #f5c542; }
-.cube-row.soft-green .cube-slot { background: #a8d5ba; border-color: #7dbb95; }
-.cube-row.soft-red .cube-slot { background: #e8a4a4; border-color: #d87a7a; }
-.cube-row.soft-purple .cube-slot { background: #c8b6ff; border-color: #a895e0; }
+.cube-row.grey .cube-slot {
+    background: #5a5a5a;
+    border-color: #777;
+}
+
+.cube-row.soft-pink .cube-slot {
+    background: #e8b4b8;
+    border-color: #d48a90;
+}
+
+.cube-row.soft-blue .cube-slot {
+    background: #a8d0e6;
+    border-color: #7bb8d8;
+}
+
+.cube-row.soft-yellow .cube-slot {
+    background: #f9dc5c;
+    border-color: #f5c542;
+}
+
+.cube-row.soft-green .cube-slot {
+    background: #a8d5ba;
+    border-color: #7dbb95;
+}
+
+.cube-row.soft-red .cube-slot {
+    background: #e8a4a4;
+    border-color: #d87a7a;
+}
+
+.cube-row.soft-purple .cube-slot {
+    background: #c8b6ff;
+    border-color: #a895e0;
+}
 
 /* Locked Row */
 .cube-row.locked .cube-slot {
@@ -1452,7 +1502,7 @@ h2 {
 .quest-rows {
     min-width: 70px;
     color: #c2af7b;
-    font-size: 0.8rem;
+    font-size: 16px;
     font-weight: bold;
     text-align: right;
 }
@@ -1480,7 +1530,7 @@ h2 {
 .quest-link {
     color: #e0e0e0;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 16px;
     flex: 1;
 }
 
@@ -1495,31 +1545,31 @@ h2 {
         flex-direction: column;
         gap: 12px;
     }
-    
+
     .cube-container {
         min-width: 100%;
     }
-    
+
     .cube-slot {
         width: 28px;
         height: 28px;
     }
-    
+
     .row-label {
         min-width: 45px;
-        font-size: 10px;
+        font-size: 14px;
     }
-    
+
     .quest-info {
         min-width: 100%;
     }
-    
+
     .quest-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 4px;
     }
-    
+
     .quest-rows {
         min-width: auto;
         text-align: left;
@@ -1546,4 +1596,165 @@ h2 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.search-container {
+    position: relative;
+    width: 500px;
+    margin-left: 61px;
+}
+
+.search-container::before {
+    content: "\f002";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    z-index: 2;
+}
+
+#search,
+#homeSearchInput,
+#headerSearchInput {
+    padding: .5rem 1rem .5rem 2.5rem !important;
+    background: rgba(255, 255, 255, .1);
+    color: #fff;
+    border: 5px solid transparent !important;
+    border-image-source: url(https://cdn.eldenaion.com/img/frame_square_dark.png) !important;
+    border-image-slice: 25 !important;
+    border-image-repeat: stretch !important;
+    background: rgba(0, 0, 0, .2) !important;
+}
+
+/* For the home search specifically */
+#homeSearch {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 1rem;
+}
+
+#homeSearch::before {
+    content: "\f002";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    z-index: 2;
+}
+
+#homeSearch input {
+    width: 100%;
+    padding: .5rem 1rem .5rem 2.5rem !important;
+    background: rgba(255, 255, 255, .1);
+    color: #fff;
+    border: 5px solid transparent !important;
+    border-image-source: url(https://cdn.eldenaion.com/img/frame_square_dark.png) !important;
+    border-image-slice: 25 !important;
+    border-image-repeat: stretch !important;
+    background: rgba(0, 0, 0, .2) !important;
+}
+
+.guide-part {
+    margin-bottom: 40px;
+
+    border-radius: 8px;
+   
+}
+
+.guide-part h3 {
+    color: #c2af7b;
+    margin-top: 0;
+    margin-bottom: .8rem;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-family: "Philosopher", sans-serif;
+    font-weight: 700;
+}
+
+.guide-part h4 {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    font-size: 1.1rem;
+    color: #5a9ee6;
+    margin: 15px 0 10px;
+    font-family: "Philosopher", sans-serif;
+    font-weight: 700;
+}
+
+.guide-part p, .guide-part ul, ol {
+    margin-top: .5rem;
+    margin-bottom: .8rem;
+    color: #e0e0e0;
+}
+
+.guide-part ul li, ol li {
+    margin-bottom: .3rem;
+    color: #e0e0e0;
+}
+
+.guide-part img {
+    max-width: 100%;
+    border-radius: 6px;
+    margin: 15px 0;
+    border: 1px solid #444;
+}
+
+.guide-part code {
+    background-color: #333;
+    padding: .15rem .3rem;
+    color: #c2af7b;
+    background: rgba(0, 0, 0, .3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.guide-part ul, ol {
+    padding-left: 1.2rem;
+  
+     
+}
+
+.guide-part ol {
+    padding-left: 1.5rem;
+    margin: 15px 0;
+        list-style-type: decimal;
+}
+
+.guide-part ol li {
+    margin-bottom: 8px;
+    color: #e0e0e0;
+}
+
+.guide-part ol li::marker {
+    color: #c2af7b;
+    font-weight: bold;
+}
+
+.quest-link.asmos {
+    color: #7bb8d8;
+
+    padding-left: 8px;
+}
+
+.quest-link.elyos {
+    color: #7dbb95;
+ 
+    padding-left: 8px;
+}
+
+.quest-link.asmos:hover {
+    color: #a8d0e6;
+    text-decoration: underline;
+}
+
+.quest-link.elyos:hover {
+    color: #a8d5ba;
+    text-decoration: underline;
 }
