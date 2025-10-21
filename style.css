@@ -1758,3 +1758,19 @@ h2 {
     color: #a8d5ba;
     text-decoration: underline;
 }
+
+.home_list:hover{
+	 background: rgba(50, 50, 70, 0.8);
+}
+.home_list{
+	padding: 5px;
+	border-radius:7px;
+	cursor: pointer;
+}
+
+.lumen-drop{
+        display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
