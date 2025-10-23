@@ -1786,3 +1786,17 @@ ol {
     margin-bottom: 0px !important;
     font-size: 25px !important;
 }
+
+ ol {
+
+    list-style-type: decimal !important;
+}
+ul{
+    margin-top: 5px; margin-bottom: 5px;
+    line-height: 40px;
+}
+
+.h3correction{
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
