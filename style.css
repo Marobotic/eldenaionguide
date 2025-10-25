@@ -1592,7 +1592,9 @@ h2 {
 .w3-hover-gray:hover {
     background-color: var(--accent) !important;
 }
-
+.w3-grey p {
+    color: #e1dbdb;
+}
 .flex_row {
     display: flex;
     flex-direction: row;
