@@ -1,3 +1,94 @@
+// Collapsible sidebar categories functionality and highlighting
+document.addEventListener('DOMContentLoaded', function() {
+    const categories = document.querySelectorAll('.category');
+    const sidebarLinks = document.querySelectorAll('.subcategory-link');
+    
+    // Collapsible categories functionality
+    categories.forEach(category => {
+        const header = category.querySelector('.category-header');
+        const arrow = category.querySelector('.category-arrow');
+        const subcategories = category.querySelector('.subcategories');
+        
+        header.addEventListener('click', function() {
+            // Toggle active class on category
+            category.classList.toggle('active');
+            
+            // Toggle arrow direction
+            if (category.classList.contains('active')) {
+                arrow.classList.remove('fa-chevron-down');
+                arrow.classList.add('fa-chevron-up');
+                subcategories.style.maxHeight = subcategories.scrollHeight + 'px';
+            } else {
+                arrow.classList.remove('fa-chevron-up');
+                arrow.classList.add('fa-chevron-down');
+                subcategories.style.maxHeight = '0';
+            }
+        });
+        
+        // Initialize all categories as collapsed
+        subcategories.style.maxHeight = '0';
+    });
+    
+    // Function to highlight current page in sidebar
+    function highlightCurrentPage() {
+        // Get current URL hash (for anchor links)
+        const currentHash = window.location.hash;
+        
+        // Remove any existing active classes
+        sidebarLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // If we have a hash, find and highlight the corresponding link
+        if (currentHash) {
+            const targetLink = document.querySelector(`.subcategory-link[href="${currentHash}"]`);
+            if (targetLink) {
+                targetLink.classList.add('active');
+                
+                // Expand the parent category
+                const parentCategory = targetLink.closest('.category');
+                if (parentCategory && !parentCategory.classList.contains('active')) {
+                    const header = parentCategory.querySelector('.category-header');
+                    header.click(); // Simulate click to expand
+                }
+            }
+        }
+        
+        // Fallback: Check if we're on the home page
+        if (!currentHash || currentHash === '#getting-started') {
+            // Highlight the home section if we're on the main page
+            const homeLink = document.querySelector('.subcategory-link[href="#getting-started-guide"]');
+            if (homeLink) {
+                homeLink.classList.add('active');
+                
+                // Expand the Basic Information category
+                const basicInfoCategory = homeLink.closest('.category');
+                if (basicInfoCategory && !basicInfoCategory.classList.contains('active')) {
+                    const header = basicInfoCategory.querySelector('.category-header');
+                    header.click();
+                }
+            }
+        }
+    }
+    
+    // Highlight current page on load
+    highlightCurrentPage();
+    
+    // Also highlight when hash changes (if user navigates via anchor links)
+    window.addEventListener('hashchange', highlightCurrentPage);
+    
+    // Add click handlers to sidebar links to update highlighting
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Remove active class from all links
+            sidebarLinks.forEach(l => l.classList.remove('active'));
+            // Add active class to clicked link
+            this.classList.add('active');
+        });
+    });
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const sidebarNav = document.getElementById('sidebarNav');
     const titleList = document.getElementById('titleList');
@@ -223,211 +314,5 @@ document.querySelectorAll('.sidebar a').forEach(link => {
     });
 });
 
-function selectClass(element, className) {
-    // Remove "selected" from all
-    document.querySelectorAll('.class_image').forEach(el => el.classList.remove('selected'));
 
-    // Add "selected" to clicked
-    element.classList.add('selected');
 
-    // Update the stats display
-    updateStats(className);
-
-    // Call corresponding function
-    switch (className) {
-        case "Gladiator":
-            openGladiator();
-            break;
-        case "Templar":
-            openTemplar();
-            break;
-        case "Assassin":
-            openAssassin();
-            break;
-        case "Ranger":
-            openRanger();
-            break;
-        case "Spiritmaster":
-            openSpiritmaster();
-            break;
-        case "Sorcerer":
-            openSorcerer();
-            break;
-        case "Cleric":
-            openCleric();
-            break;
-        case "Chanter":
-            openChanter();
-            break;
-    }
-}
-
-// Add this class stats data (place it near your classData object)
-const classStats = {
-    Gladiator: { Power: 110, Health: 110, Accuracy: 100, Agility: 90, Knowledge: 70, Will: 80 },
-    Templar: { Power: 90, Health: 120, Accuracy: 90, Agility: 80, Knowledge: 85, Will: 100 },
-    Assassin: { Power: 100, Health: 90, Accuracy: 110, Agility: 110, Knowledge: 80, Will: 70 },
-    Ranger: { Power: 90, Health: 90, Accuracy: 120, Agility: 110, Knowledge: 85, Will: 75 },
-    Spiritmaster: { Power: 70, Health: 85, Accuracy: 95, Agility: 85, Knowledge: 120, Will: 110 },
-    Sorcerer: { Power: 80, Health: 80, Accuracy: 90, Agility: 80, Knowledge: 120, Will: 100 },
-    Cleric: { Power: 85, Health: 100, Accuracy: 85, Agility: 80, Knowledge: 110, Will: 110 },
-    Chanter: { Power: 90, Health: 100, Accuracy: 85, Agility: 85, Knowledge: 100, Will: 120 }
-};
-
-// Add this function to update the stats
-function updateStats(className) {
-    const stats = classStats[className];
-    const statElements = document.querySelectorAll('.stat');
-
-    // Update each stat bar and value
-    statElements.forEach((statElement) => {
-        const statName = statElement.querySelector('.fill').textContent;
-        const value = stats[statName];
-
-        // Update the width and value
-        statElement.querySelector('.fill').style.width = `${value}%`;
-        statElement.querySelector('.value').textContent = value;
-    });
-}
-
-// Your existing functions
-function openGladiator() { console.log("Gladiator selected"); }
-
-function openTemplar() { console.log("Templar selected"); }
-
-function openAssassin() { console.log("Assassin selected"); }
-
-function openRanger() { console.log("Ranger selected"); }
-
-function openSpiritmaster() { console.log("Spiritmaster selected"); }
-
-function openSorcerer() { console.log("Sorcerer selected"); }
-
-function openCleric() { console.log("Cleric selected"); }
-
-function openChanter() { console.log("Chanter selected"); }
-
-// Your data: add descriptions + image paths
-const classData = {
-    Gladiator: {
-        name: "Gladiator",
-        description: "The Gladiator is the weapons master of the Aion world and boasts excellent tanking and damage dealing capabilities. As such, Gladiators can fill either the tanking or dps role in a group. This class also has the widest variety of weapons available to them, being able to wield any physical weapon with the exception of the staff.",
-        image: "media/characters/gladiator.webp"
-    },
-    Templar: {
-        name: "Templar",
-        description: "The Templar is the main tanking class of Aion with many defense increasing skills that allow for the Templar to achieve a nearly invincible state for a period of time.",
-        image: "media/characters/templar.webp"
-    },
-    Assassin: {
-        name: "Assassin",
-        description: "The Assassin is the master of the shadows of Aion and has the best stealth and one of the highest damage bursts of all the classes. Assassins are also excellent in disabling and locking down their targets. These abilities go hand in hand, as an expert Assassin can sneak up on his target and burst it down before his target can even react.",
-        image: "media/characters/Assassin.webp"
-    },
-    Ranger: {
-        name: "Ranger",
-        description: "The Ranger class is the ranged weapon expert of Aion and deals extensive damage from afar by using their bow to launch deadly arrows to destroy their victim. The Ranger is a ranged dps class with one or two skills of CC ability.",
-        image: "media/characters/Ranger.webp"
-    },
-    Spiritmaster: {
-        name: "Spiritmaster",
-        description: "The Spiritmaster is the debuff specialist and the only class that utilizes summons in Aion. Spiritmasters use their powerful summons to damage and keep enemies at bay while they themselves inflict massive damage through the use of their damage over time skills. The Spiritmaster is considered to be a secondary dps and secondary CC class.",
-        image: "media/characters/Spiritmaster.webp"
-    },
-    Sorcerer: {
-        name: "Sorcerer",
-        description: "The Sorcerer is the Crowd Control (CC) specialist of Aion and also a fearsome dps class with the hardest hitting spells in the game. Sorcerers use their powerful CC abilities to control the flow of a fight while also casting devastatingly powerful spells to dispatch their targets quickly. This class is primarily a DPS class with excellent CC capability.",
-        image: "media/characters/Sorcerer.webp"
-    },
-    Cleric: {
-        name: "Cleric",
-        description: "Clerics are the primary healing class in Aion and they utilize powerful healing spells and dispelling magic to keep their allies standing through even in the worst of conditions.",
-        image: "media/characters/cleric.webp"
-    },
-    Chanter: {
-        name: "Chanter",
-        description: "Having a profound mastery in enchantment magic, a Chanter benefits a group greatly by boosting various attributes of every group member.",
-        image: "media/characters/Chanter.webp"
-    }
-};
-
-// Select and update elements
-function selectClass(element, className) {
-    // Remove highlight from all
-    document.querySelectorAll('.class_image').forEach(el => el.classList.remove('selected'));
-
-    // Highlight clicked one
-    element.classList.add('selected');
-
-    // Update display elements
-    document.querySelector('.className').textContent = classData[className].name;
-    document.querySelector('.classDescription').textContent = classData[className].description;
-    document.querySelector('.classImage').style.backgroundImage = `url(${classData[className].image})`;
-    document.querySelector('.classImage').style.backgroundSize = "contain";
-    document.querySelector('.classImage').style.backgroundPosition = "center";
-    document.querySelector('.classImage').style.backgroundRepeat = "no-repeat";
-}
-
-// ✅ Set default (Gladiator) on page load
-window.onload = () => {
-    selectClass(document.querySelector('.Gladiator'), 'Gladiator');
-};
-
-// app.js
-
-const slots = [
-    { id: 'slot1', img: 'class_stigmas/gladiator/PVP/AbsorbingFury.png', text: 'Absorbing Fury' },
-    { id: 'slot2', img: 'class_stigmas/gladiator/PVP/AdvancedDualWielding.png', text: 'Adv. Dual Wielding' },
-    { id: 'slot3', img: 'class_stigmas/gladiator/PVP/secondwind.png', text: 'Second Wind' },
-    { id: 'slot4', img: 'class_stigmas/gladiator/PVP/SharpStrike.png', text: 'Sharp Strike' },
-    { id: 'slot5', img: 'class_stigmas/gladiator/PVP/cripplingcut.png', text: 'Crippling Cut' },
-    { id: 'slot6', img: 'class_stigmas/gladiator/PVP/slaughter.png', text: 'Slaughter' },
-    { id: 'slot7', img: 'class_stigmas/gladiator/PVP/ExhaustingWave.png', text: 'Exhausting Wave' },
-    { id: 'slot8', img: 'class_stigmas/gladiator/PVP/tendonslice.png', text: 'Tendon Slice' },
-    { id: 'slot9', img: 'class_stigmas/gladiator/PVP/UnwaveringDevotion.png', text: 'Unwavering Devotion' },
-    { id: 'slot10', img: 'class_stigmas/gladiator/PVP/lockdown.png', text: 'Lockdown' },
-    { id: 'slot11', img: 'class_stigmas/gladiator/PVP/PiercingRupture.png', text: 'Piercing Rupture' },
-    { id: 'slot12', img: 'class_stigmas/gladiator/PVP/berserking.png', text: 'Berserking' },
-
-    { id: 'LockDownVPVE', img: 'class_stigmas/gladiator/PVE/lockdown.png', text: 'Lockdown' }, //done
-    { id: 'BerserkingIPVE', img: 'class_stigmas/gladiator/PVE/berserking.png', text: 'Berserking' }, //done
-    { id: 'SevereWeakeningBlowVIPVE', img: 'class_stigmas/gladiator/PVE/SevereWeakeningBlow.png', text: 'Severe Weakening Blow' }, //done
-    { id: 'VengefulStrikeVIPVE', img: 'class_stigmas/gladiator/PVE/VengefulStrike.png', text: 'Vengeful Strike' }, //done
-    { id: 'DauntlessSpiritVPVE', img: 'class_stigmas/gladiator/PVE/DauntlessSpirit.png', text: 'Dauntless Spirit' }, //done
-    { id: 'SpiteStrikeVIPVE', img: 'class_stigmas/gladiator/PVE/SpiteStrike.png', text: 'Spite Strike' }, //done
-    { id: 'AdvancedDualWieldingIIPVE', img: 'class_stigmas/gladiator/PVE/AdvancedDualWielding.png', text: 'Adv. Dual Wielding II' }, //done
-    { id: 'SharpStrikeVIPVE', img: 'class_stigmas/gladiator/PVE/SharpStrike.png', text: 'Sharp Strike' }, //done
-    { id: 'ViciousBlowIV', img: 'class_stigmas/gladiator/PVE/ViciousBlow.png', text: 'Vicious Blow' }, // done
-    { id: 'WhirlingStrikeIIIPVE', img: 'class_stigmas/gladiator/PVE/WhirlingStrike.png', text: 'Whirling Strike' }, //done
-    { id: 'DrainingSwordIIPVE', img: 'class_stigmas/gladiator/PVE/DrainingSword.png', text: 'Draining Sword' }, //done
-    { id: 'SecondWindPVE', img: 'class_stigmas/gladiator/PVE/siegebreaker.png', text: 'Siegebreaker' } //done
-];
-
-// Delay execution by 1 second
-setTimeout(() => {
-    const report = [];
-
-    for (const { id, img, text } of slots) {
-        const el = document.getElementById(id);
-        if (!el) {
-            report.push({ id, status: 'missing element' });
-            continue;
-        }
-
-        const imgEl = el.querySelector('img');
-        const labelEl = el.querySelector('.label');
-
-        if (labelEl) labelEl.textContent = text || id;
-
-        if (imgEl) {
-            const src = (img || '').replace(/^\/+/, ''); // strip leading slash
-            imgEl.alt = text || id;
-            imgEl.src = src;
-            report.push({ id, status: 'applied', src, text });
-        } else {
-            report.push({ id, status: 'missing <img>' });
-        }
-    }
-
-    console.log('Slot population finished:', report);
-}, 1000);
