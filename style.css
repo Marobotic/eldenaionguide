@@ -216,6 +216,7 @@ section.active {
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     margin-left: 70px;
+    width: 1175px;
 }
 
 #getting-started {
@@ -223,6 +224,7 @@ section.active {
     border-image: url(https://cdn.eldenaion.com/img/frame_square.png) 60 stretch;
     width: 1236px;
     isolation: isolate;
+        margin-left: 0px;
 }
 
 header,
@@ -315,7 +317,7 @@ header {
 
 main {
     flex: 1;
-    padding: 6rem 2rem 2rem;
+    padding: 6rem 2rem 2rem; 
     max-width: 1200px
 }
 
@@ -1916,10 +1918,9 @@ a .elyos_color {
 
 .category {
     margin-bottom: 0.5rem;
-    border-radius: 8px;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+
+
     transition: all 0.3s ease;
 }
 
