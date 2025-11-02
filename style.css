@@ -1917,7 +1917,7 @@ a .elyos_color {
 }
 
 .category {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.0rem;
     overflow: hidden;
 
 
@@ -1987,6 +1987,7 @@ a .elyos_color {
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: rgba(0, 0, 0, 0.25);
+    margin-bottom: 0px;
 }
 
 .subcategories li {
@@ -2104,8 +2105,8 @@ a .elyos_color {
         rgba(129, 114, 91, 0.25) 0%, 
         rgba(129, 114, 91, 0.1) 100%);
     color: #fff !important;
-    border-left: 3px solid var(--accent);
-    padding-left: 1.5rem;
+
+    padding-left: 1.0rem;
 }
 
 .subcategory-link.active::before {
@@ -2120,7 +2121,7 @@ a .elyos_color {
 .subcategory-link.active::after {
     content: '';
     position: absolute;
-    right: 1rem;
+    left: 1rem;
     top: 50%;
     transform: translateY(-50%);
     width: 6px;
