@@ -224,7 +224,7 @@ section.active {
     border-image: url(https://cdn.eldenaion.com/img/frame_square.png) 60 stretch;
     width: 1236px;
     isolation: isolate;
-        margin-left: 0px;
+    margin-left: 0px;
 }
 
 header,
@@ -317,7 +317,7 @@ header {
 
 main {
     flex: 1;
-    padding: 6rem 2rem 2rem; 
+    padding: 6rem 2rem 2rem;
     max-width: 1200px
 }
 
@@ -1945,16 +1945,16 @@ a .elyos_color {
     left: 1.25rem;
     right: 1.25rem;
     height: 1px;
-    background: linear-gradient(90deg, 
-        rgba(129, 114, 91, 0.3) 0%, 
-        rgba(129, 114, 91, 0.1) 100%);
+    background: linear-gradient(90deg,
+            rgba(129, 114, 91, 0.3) 0%,
+            rgba(129, 114, 91, 0.1) 100%);
     transition: all 0.3s ease;
 }
 
 .category.active .category-header::after {
-    background: linear-gradient(90deg, 
-        rgba(129, 114, 91, 0.6) 0%, 
-        rgba(129, 114, 91, 0.2) 100%);
+    background: linear-gradient(90deg,
+            rgba(129, 114, 91, 0.6) 0%,
+            rgba(129, 114, 91, 0.2) 100%);
 }
 
 .category-header:hover {
@@ -2030,9 +2030,9 @@ a .elyos_color {
     top: 0;
     bottom: 0;
     width: 0;
-    background: linear-gradient(90deg, 
-        rgba(129, 114, 91, 0.2) 0%, 
-        transparent 100%);
+    background: linear-gradient(90deg,
+            rgba(129, 114, 91, 0.2) 0%,
+            transparent 100%);
     transition: width 0.3s ease;
 }
 
@@ -2101,9 +2101,9 @@ a .elyos_color {
 
 /* Active sidebar link styling */
 .subcategory-link.active {
-    background: linear-gradient(90deg, 
-        rgba(129, 114, 91, 0.25) 0%, 
-        rgba(129, 114, 91, 0.1) 100%);
+    background: linear-gradient(90deg,
+            rgba(129, 114, 91, 0.25) 0%,
+            rgba(129, 114, 91, 0.1) 100%);
     color: #fff !important;
 
     padding-left: 1.0rem;
@@ -2142,6 +2142,7 @@ a .elyos_color {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -2157,21 +2158,21 @@ a .elyos_color {
     .category-header {
         padding: 0.875rem 1rem;
     }
-    
+
     .category-header span {
         font-size: 14px;
     }
-    
+
     .subcategory-link {
         padding: 0.625rem 1rem;
         font-size: 13px;
         min-height: 40px;
     }
-    
+
     .subcategory-link.active {
         padding-left: 1.25rem;
     }
-    
+
     .subcategory-link img {
         width: 18px;
         height: 18px;
@@ -2191,4 +2192,44 @@ a .elyos_color {
 .subcategory-link img,
 .subcategory-link span {
     vertical-align: middle;
+}
+
+.yellow {
+    color: #FFCC00;
+}
+
+.green {
+    color: #7dbb95;
+}
+
+.blue {
+    color: #4DA3FF;
+}
+
+.inline-icon {
+    width: 22px;
+    /* ~10% larger than before */
+    vertical-align: middle;
+    margin: 0 4px;
+    display: inline-block;
+    transform: translateY(-2px);
+    /* keeps it visually aligned with text */
+}
+
+.quest-text p {
+    line-height: 1.8;
+    margin: 6px 0;
+}
+
+.fixh3{
+    margin-top:5px;
+}
+.pmargin{
+
+margin-top:10px;
+}
+
+.imgmargin{
+    margin-top:15px;
+    margin-bottom:15px;
 }
