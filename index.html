@@ -14,12 +14,15 @@
 
 <body>
     <header>
-        <div class="logo" id="homeLogo">
-            <div class="logo-icon"></div>
-            <a style="color: white !important" href="#getting-started">
+        <a href="#getting-started">
+            <div class="logo" id="homeLogo">
+
+                <div class="logo-icon"></div>
+
                 <h1 style="margin-top: 19px;">Elden Wiki</h1>
-            </a>
-        </div>
+
+            </div>
+        </a>
         <div class="search-container" id="headerSearch" style="display: none;">
             <input type="text" id="headerSearchInput" placeholder="Search guides...">
             <div class="search-results" id="headerSearchResults"></div>
@@ -172,71 +175,70 @@
                     </li>
                 </ul>
             </div>
+<!-- Instance Guides Category -->
+<div class="category" data-category="instances">
+    <div class="category-header">
+        <span>Instance Guides</span>
+        <i class="fas fa-chevron-down category-arrow"></i>
+    </div>
+    <ul class="subcategories">
+        <li>
+            <a href="#haramel-guide" class="subcategory-link">
+                <img src="media/guide/instance_icon.png" alt="Haramel">
+                <span>Haramel Guide</span>
+            </a>
+        </li>
+        <li>
+            <a href="#nochsana-training-camp-guide" class="subcategory-link">
+                <img src="media/guide/instance_icon.png" alt="Nochsana Training Camp">
+                <span>NTC Guide</span>
+            </a>
+        </li>
+        <li>
+            <a href="#alquimia-lab-guide" class="subcategory-link">
+                <img src="media/guide/instance_icon.png" alt="Alquimia Lab">
+                <span>Alquimia Lab Guide</span>
+            </a>
+        </li>
+        <li>
+            <a href="#aetherogenetics-lab-guide" class="subcategory-link">
+                <img src="media/guide/instance_icon.png" alt="Aetherogenetics Lab">
+                <span>Aetherogenetics Lab Guide</span>
+            </a>
+        </li>
+        <li>
+            <a href="#adma-stronghold-guide" class="subcategory-link">
+                <img src="media/guide/instance_icon.png" alt="Adma Stronghold">
+                <span>Adma Stronghold Guide</span>
+            </a>
+        </li>
+        <li>
+            <a href="#theobomos-lab-guide" class="subcategory-link">
+                <img src="media/guide/instance_icon.png" alt="Theobomos Lab">
+                <span>Theobomos Lab Guide</span>
+            </a>
+        </li>
+        <li>
+            <a href="#dark-poeta-guide" class="subcategory-link">
+                <img src="media/guide/instance_icon.png" alt="Dark Poeta">
+                <span>Dark Poeta Guide</span>
+            </a>
+        </li>
+        <li>
+            <a href="#beshmundir-temple-guide" class="subcategory-link">
+                <img src="media/guide/instance_icon.png" alt="Beshmundir Temple">
+                <span>Beshmundir Temple Guide</span>
+            </a>
+        </li>
+        <li>
+            <a href="#aturam-sky-fortress-guide" class="subcategory-link">
+                <img src="media/guide/instance_icon.png" alt="Aturam Sky Fortress">
+                <span>Aturam Sky Fortress Guide</span>
+            </a>
+        </li>
+    </ul>
+</div>
 
-            <!-- Instance Guides Category -->
-            <div class="category" data-category="instances">
-                <div class="category-header">
-
-                    <span>Instance Guides</span>
-                    <i class="fas fa-chevron-down category-arrow"></i>
-                </div>
-                <ul class="subcategories">
-                    <li>
-                        <a href="#" class="subcategory-link">
-                            <img src="media/guide/instance_icon.png" alt="Haramel">
-                            <span>Haramel Guide</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="subcategory-link">
-                            <img src="media/guide/instance_icon.png" alt="Nochsana Training Camp">
-                            <span>Nochsana Training Camp Guide</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="subcategory-link">
-                            <img src="media/guide/instance_icon.png" alt="Alquimia Lab">
-                            <span>Alquimia Lab Guide</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="subcategory-link">
-                            <img src="media/guide/instance_icon.png" alt="Aetherogenetics Lab">
-                            <span>Aetherogenetics Lab Guide</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="subcategory-link">
-                            <img src="media/guide/instance_icon.png" alt="Adma Stronghold">
-                            <span>Adma Stronghold Guide</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="subcategory-link">
-                            <img src="media/guide/instance_icon.png" alt="Theobomos Lab">
-                            <span>Theobomos Lab Guide</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="subcategory-link">
-                            <img src="media/guide/instance_icon.png" alt="Dark Poeta">
-                            <span>Dark Poeta Guide</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="subcategory-link">
-                            <img src="media/guide/instance_icon.png" alt="Beshmundir Temple">
-                            <span>Beshmundir Temple Guide</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="subcategory-link">
-                            <img src="media/guide/instance_icon.png" alt="Aturam Sky Fortress">
-                            <span>Aturam Sky Fortress Guide</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </aside>
     <main>
@@ -255,7 +257,7 @@
                 check something else.</p>
 
 
-    <!-- Search bar replacing the Available Guides section -->
+            <!-- Search bar replacing the Available Guides section -->
             <div class="titleList">
                 <h3 style="margin-top: 0px;">Looking for something specific?</h3>
                 <div class="search-container" id="homeSearch">
@@ -294,8 +296,8 @@
                     <a class="home_list" href="#atreia-pass-guide"><img src="media/atreias pass.png" width="30px"
                             height="30px" style="margin-right: 7px;"> Atreia's
                         pass guide</a>
-                    <a class="home_list" href="#gift-code-guide"><img src="media/gift.png" width="30px"
-                            height="30px" style="margin-right: 7px;"> Gift codes guide</a>
+                    <a class="home_list" href="#gift-code-guide"><img src="media/gift.png" width="30px" height="30px"
+                            style="margin-right: 7px;"> Gift codes guide</a>
                     <h3 style="color: var(--accent); margin-top: 30px;"> Leveling Guides</h3>
                     <a class="home_list" href="#elyos-leveling-guide"><img src="media/ELYOS.png" width="30px"
                             height="30px" style="margin-right: 7px;"> Elyos Leveling Guide</a>
@@ -335,33 +337,51 @@
                 <div class="guideCard">
                     <img src="media/guide/instances.webp">
                     <h3 style="color: var(--accent);"> Instances guides</h3>
-                    <a class="home_list"> <img src="media/guide/instance_icon.png" width="30px" height="30px"
-                            style="margin-right: 7px;"> Haramel guide </a>
-                    <a class="home_list"> <img src="media/guide/instance_icon.png" width="30px" height="30px"
-                            style="margin-right: 7px;"> Nochsana Training Camp
-                        guide</a>
-                    <a class="home_list"><img src="media/guide/instance_icon.png" width="30px" height="30px"
-                            style="margin-right: 7px;"> Alquimia Lab guide</a>
-                    <a class="home_list"> <img src="media/guide/instance_icon.png" width="30px" height="30px"
-                            style="margin-right: 7px;">Aetherogenetics Lab guide
+                    <a class="home_list" href="#haramel-guide">
+                        <img src="media/guide/instance_icon.png" width="30px" height="30px" style="margin-right: 7px;">
+                        Haramel Guide
                     </a>
-                    <a class="home_list"><img src="media/guide/instance_icon.png" width="30px" height="30px"
-                            style="margin-right: 7px;"> Adma Stronghold guide</a>
-                    <a class="home_list"> <img src="media/guide/instance_icon.png" width="30px" height="30px"
-                            style="margin-right: 7px;">Theobomos Lab Guide</a>
-                    <a class="home_list"> <img src="media/guide/instance_icon.png" width="30px" height="30px"
-                            style="margin-right: 7px;">Dark Poeta guide</a>
-                    <a class="home_list"><img src="media/guide/instance_icon.png" width="30px" height="30px"
-                            style="margin-right: 7px;"> Beshmundir Temple guide</a>
-                    <a class="home_list"><img src="media/guide/instance_icon.png" width="30px" height="30px"
-                            style="margin-right: 7px;"> Aturam Sky Fortress guide</a>
+                    <a class="home_list" href="#nochsana-training-camp-guide">
+                        <img src="media/guide/instance_icon.png" width="30px" height="30px" style="margin-right: 7px;">
+                        Nochsana Training Camp Guide
+                    </a>
+                    <a class="home_list" href="#alquimia-lab-guide">
+                        <img src="media/guide/instance_icon.png" width="30px" height="30px" style="margin-right: 7px;">
+                        Alquimia Lab Guide
+                    </a>
+                    <a class="home_list" href="#aetherogenetics-lab-guide">
+                        <img src="media/guide/instance_icon.png" width="30px" height="30px" style="margin-right: 7px;">
+                        Aetherogenetics Lab Guide
+                    </a>
+                    <a class="home_list" href="#adma-stronghold-guide">
+                        <img src="media/guide/instance_icon.png" width="30px" height="30px" style="margin-right: 7px;">
+                        Adma Stronghold Guide
+                    </a>
+                    <a class="home_list" href="#theobomos-lab-guide">
+                        <img src="media/guide/instance_icon.png" width="30px" height="30px" style="margin-right: 7px;">
+                        Theobomos Lab Guide
+                    </a>
+                    <a class="home_list" href="#dark-poeta-guide">
+                        <img src="media/guide/instance_icon.png" width="30px" height="30px" style="margin-right: 7px;">
+                        Dark Poeta Guide
+                    </a>
+                    <a class="home_list" href="#beshmundir-temple-guide">
+                        <img src="media/guide/instance_icon.png" width="30px" height="30px" style="margin-right: 7px;">
+                        Beshmundir Temple Guide
+                    </a>
+                    <a class="home_list" href="#aturam-sky-fortress-guide">
+                        <img src="media/guide/instance_icon.png" width="30px" height="30px" style="margin-right: 7px;">
+                        Aturam Sky Fortress Guide
+                    </a>
                 </div>
+
             </div>
-        
+
             <div>
                 <p style="margin-top:25px;">
-  Note: These guides are currently a work in progress. If you notice any inaccuracies, please report them to the staff.
-</p>
+                    Note: These guides are currently a work in progress. If you notice any inaccuracies, please report
+                    them to the staff.
+                </p>
 
             </div>
         </section>
