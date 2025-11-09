@@ -2,19 +2,7 @@
 
 ![Elden Aion Logo](https://asset.eldenaion.com/elden_logo.png)
 
-> A complete interactive **quest and gameplay guide database** for **Aion Classic 3.9**, featuring in-depth tutorials, instance breakdowns, and class strategies for both factions.
 
----
-
-## 📘 Overview
-
-The **Elden Aion Guide Database** is your all-in-one companion for Aion Classic — designed to help new and veteran players alike with:
-- Interactive quest walkthroughs  
-- Detailed instance and dungeon strategies  
-- Comprehensive class build and leveling guides  
-- Organized UI for fast access and mobile support  
-
----
 
 ## ⚙️ Basic Information
 
@@ -63,29 +51,7 @@ The **Elden Aion Guide Database** is your all-in-one companion for Aion Classic 
 
 ---
 
-## 🎬 Quest Database Features
 
-- **150+ quests** with video walkthroughs  
-- **YouTube integration** for each quest  
-- **Search by zone, level, or faction**  
-- **Mobile-friendly** responsive layout  
-- **Lightweight navigation** optimized for performance  
-
----
-
-## 🚀 Quick Start
-
-1. Select your faction — **Elyos** or **Asmodian**
-2. Choose a **zone**
-3. Click on any quest or guide to begin watching its walkthrough
-
----
-
-## 🖼️ Preview
-
-![Elden Aion Guides Preview](https://raw.githubusercontent.com/yourrepo/assets/elden_guides_preview.png)
-
----
 
 ## 🛠️ Status
 

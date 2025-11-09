@@ -65,6 +65,7 @@ h2 {
 }
 h1 {
 	color: rgb(167, 166, 165);
+    text-align: center;
 }
 p {
 	color: #9d9d9d;
@@ -1834,4 +1835,68 @@ a .elyos_color {
     height: 100%;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+/* =======================
+   RATES TABLE (Flex Style)
+   ======================= */
+.rates-table {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0;
+  border: 1px solid rgba(129, 114, 91, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(30, 30, 40, 0.5);
+}
+
+.rates-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(129, 114, 91, 0.15);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.rates-row:hover {
+  background: rgba(50, 50, 70, 0.6);
+  transform: translateY(-1px);
+}
+
+.rates-row.header {
+  background: rgba(129, 114, 91, 0.2);
+  border-bottom: 2px solid rgba(129, 114, 91, 0.5);
+  font-weight: 700;
+}
+
+.rates-cell {
+  flex: 1;
+  text-align: center;
+  font-size: 18px;
+  color: #e0e0e0;
+}
+
+.rates-cell.label {
+  color: #c2af7b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rates-cell.value {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .rates-row {
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px;
+  }
+  .rates-cell {
+    text-align: center;
+  }
 }
