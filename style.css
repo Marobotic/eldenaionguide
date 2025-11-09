@@ -66,6 +66,8 @@ h2 {
 h1 {
 	color: rgb(167, 166, 165);
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 p {
 	color: #9d9d9d;
@@ -1900,3 +1902,143 @@ a .elyos_color {
     text-align: center;
   }
 }
+
+
+#gladiator-guide{
+    position: relative;
+}
+
+.gladiator_image{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+.gladiator_character {
+    position: absolute;
+    top: 50px;
+    right: -500px;
+}
+
+
+#templar-guide{
+    position: relative;
+}
+
+.templar_image{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.templar_character {
+    position: absolute;
+    top: 50px;
+    right: -500px;
+}
+
+
+#ranger-guide{
+    position: relative;
+}
+
+.ranger_image{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.ranger_character {
+    position: absolute;
+    top: 50px;
+    right: -500px;
+}
+
+
+#assassin-guide{
+    position: relative;
+}
+
+.assassin_image{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.assassin_character {
+    position: absolute;
+    top: 50px;
+    right: -500px;
+}
+
+
+#sorcerer-guide{
+    position: relative;
+}
+
+.sorcerer_image{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.sorcerer_character {
+    position: absolute;
+    top: 50px;
+    right: -500px;
+}
+
+
+#spiritmaster-guide{
+    position: relative;
+}
+
+.spiritmaster_image{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.spiritmaster_character {
+    position: absolute;
+    top: 50px;
+    right: -500px;
+}
+
+
+#cleric-guide{
+    position: relative;
+}
+
+.cleric_image{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.cleric_character {
+    position: absolute;
+    top: 11px;
+    right: -600px;
+}
+
+
+#chanter-guide{
+    position: relative;
+}
+
+.chanter_image{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.chanter_character {
+    position: absolute;
+    top: 50px;
+    right: -500px;
+}
+
+
+
