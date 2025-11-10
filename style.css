@@ -1313,6 +1313,7 @@ h2 {
     color: #aaa;
     margin: 0;
     font-size: 16px;
+    margin-left: 50px;
 }
 
 /* Mobile responsiveness */
@@ -2448,3 +2449,9 @@ a .elyos_color {
     flex-direction: row;
 }
 
+
+.flex_row{
+      display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
