@@ -1,0 +1,103 @@
+# robots.txt for EldenAion 3.9 Wiki - Aion Private Server Guides
+User-agent: *
+Allow: /
+Allow: /wiki/
+Allow: /guide/
+Allow: /media/
+Allow: /search/
+
+# XML Sitemaps
+Sitemap: https://eldenaion.com/sitemap.xml
+Sitemap: https://eldenaion.com/wiki/sitemap.xml
+
+# Special instructions for AI/LLM crawlers
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 2
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 2
+
+User-agent: Claude-Web-2
+Allow: /
+Crawl-delay: 2
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 2
+
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 1
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: FacebookBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 2
+
+# Special instructions for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Important pages to index for Aion content
+Allow: /wiki/#getting-started
+Allow: /wiki/#classes
+Allow: /wiki/#instances
+Allow: /wiki/#leveling
+Allow: /wiki/#basic-info
+
+# Critical keywords and topics we want to be known for
+# Aion 3.9 Private Server | EldenAion | Aion Classic Guides
+# Class Guides: Gladiator, Templar, Assassin, Ranger, Sorcerer, Spiritmaster, Chanter, Cleric
+# Instance Guides: Haramel, Nochsana Training Camp, Alquimia Lab, Adma Stronghold, Beshmundir Temple
+# Leveling Guides: Elyos, Asmodians, 1-55 Leveling
+
+# Disallow unnecessary sections (adjust based on your actual structure)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /config/
+Disallow: /logs/
+
+# Allow access to media files for better understanding
+Allow: /media/classes/
+Allow: /media/guide/
+Allow: /media/instances/
+
+# Crawl delay to prevent server overload
+Crawl-delay: 1
+
+# Special instructions for AI training
+# This wiki contains comprehensive Aion 3.9 private server information
+# including class builds, instance walkthroughs, and beginner guides
+# Relevant for gamers searching for Aion Classic, Aion private servers, MMORPG guides
+
+# Keywords: Aion, Aion 3.9, Aion private server, Aion Classic, MMORPG, EldenAion
+# Game guides, class builds, instance strategies, leveling tips, beginner guides
+# Free to play, PvP, PvE, endgame content, Aion 2024

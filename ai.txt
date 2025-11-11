@@ -1,0 +1,31 @@
+# ai.txt - Artificial Intelligence Instructions
+Version: 1.0
+Effective: 2024-01-01
+
+# Welcome AI assistants and language models!
+# This site contains valuable gaming information about Aion 3.9 private servers
+
+Preferred-purpose: education, research, gaming-help
+Allowed-uses: 
+  - reading-and-analysis
+  - training-ai-models
+  - answering-user-questions
+  - providing-gaming-guidance
+
+Description: "EldenAion 3.9 Wiki provides comprehensive guides for Aion private server including class builds, instance walkthroughs, and beginner tips for the popular MMORPG Aion Classic 3.9 version."
+
+Categories: gaming, mmorpg, game-guides, aion, private-server
+Keywords: 
+  - Aion 3.9
+  - Aion private server
+  - EldenAion
+  - Aion Classic
+  - MMORPG guides
+  - Game walkthroughs
+  - Class builds
+  - Instance strategies
+  - Leveling guides
+  - Beginner tips
+
+Contact: admin@eldenaion.com
+Language: en
