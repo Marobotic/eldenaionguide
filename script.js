@@ -120,33 +120,49 @@ document.addEventListener('DOMContentLoaded', function() {
             sidebarItem.appendChild(sidebarLink);
             sidebarNav.appendChild(sidebarItem);
         });
-
-        function navigateToSection(index) {
-            if (sections[currentSectionIndex]) {
-                sections[currentSectionIndex].classList.remove('active');
-            }
-
-            currentSectionIndex = index;
-            const section = sections[currentSectionIndex];
-            if (section) section.classList.add('active');
-            if (section && section.id) window.location.hash = section.id;
-
-            updateSidebarActive();
-
-            if (sidebar) {
-                if (currentSectionIndex === 0) {
-                    sidebar.classList.remove('visible');
-                    if (homeSearch) homeSearch.style.display = 'block';
-                    if (headerSearch) headerSearch.style.display = 'none';
-                } else {
-                    sidebar.classList.add('visible');
-                    if (homeSearch) homeSearch.style.display = 'none';
-                    if (headerSearch) headerSearch.style.display = 'block';
-                }
-            }
-
-            window.scrollTo(0, 0);
+function navigateToSection(index) {
+    // Stop all videos from previous section
+    document.querySelectorAll('iframe[src*="youtube"]').forEach(iframe => {
+        if (iframe.src) {
+            // Store the current src for later restoration
+            iframe.dataset.lastSrc = iframe.src;
+            // Remove src to stop video
+            iframe.src = '';
         }
+    });
+
+    if (sections[currentSectionIndex]) {
+        sections[currentSectionIndex].classList.remove('active');
+    }
+
+    currentSectionIndex = index;
+    const section = sections[currentSectionIndex];
+    if (section) section.classList.add('active');
+    if (section && section.id) window.location.hash = section.id;
+
+    updateSidebarActive();
+
+    if (sidebar) {
+        if (currentSectionIndex === 0) {
+            sidebar.classList.remove('visible');
+            if (homeSearch) homeSearch.style.display = 'block';
+            if (headerSearch) headerSearch.style.display = 'none';
+        } else {
+            sidebar.classList.add('visible');
+            if (homeSearch) homeSearch.style.display = 'none';
+            if (headerSearch) headerSearch.style.display = 'block';
+        }
+    }
+
+    // Restore videos for current section
+    if (section) {
+        section.querySelectorAll('iframe[data-last-src]').forEach(iframe => {
+            iframe.src = iframe.dataset.lastSrc;
+        });
+    }
+
+    window.scrollTo(0, 0);
+}
 
         function handleHashChange() {
             const hash = window.location.hash.substring(1);
@@ -282,3 +298,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     videos.forEach(video => observer.observe(video));
 });
+
+
