@@ -1793,12 +1793,13 @@ ol {
     cursor: pointer;
 }
 
-.lumen-drop {
+.lumen-drop, .kahrun-drop {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
 }
+
 
 .titleInstance {
     height: 30px !important;
@@ -2454,4 +2455,84 @@ a .elyos_color {
       display: flex;
     flex-direction: row;
     gap: 5px;
+}
+
+.flex_row_center{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+
+.quests-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.quests-header {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.quests-header th {
+    padding: 8px 10px;
+    color: #c2af7b;
+    font-weight: bold;
+    text-align: left;
+}
+
+.quests-header th:nth-child(1) { width: 40%; }
+.quests-header th:nth-child(2) { width: 20%; }
+.quests-header th:nth-child(3) { width: 20%; }
+.quests-header th:nth-child(4) { width: 20%; }
+
+.quests-row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.quests-row td {
+    padding: 6px 10px;
+    vertical-align: middle;
+}
+
+.quests-row:nth-child(even) {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.quests-row:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.reward-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.reward-cell img {
+    flex-shrink: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .quests-table {
+        font-size: 14px;
+    }
+    
+    .quests-header th,
+    .quests-row td {
+        padding: 4px 6px;
+    }
+    
+    .reward-cell {
+        gap: 4px;
+    }
+    
+    .reward-cell img {
+        width: 16px;
+        height: 16px;
+    }
 }
